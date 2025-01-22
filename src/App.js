@@ -18,7 +18,7 @@ import Footer from "./components/Footer";
 import Login from "./components/Login";
 import Contactus from "./components/Contactus";
 import PrivacyPolicy from "./components/Privacy Policy";
-import TermsConditions from "./components/Terms & Conditions";
+import TermsAndConditions from "./components/TermsAndConditions";
 import RefundPolicy from "./components/Refund Policy"; 
 import JoinNowForm from './components/Joinnow';
 import WhatsAppChat from "./components/Whatsappchat"; // WhatsApp Chat component
@@ -58,7 +58,7 @@ function App() {
           <Route path="/contact" element={<Contactus />} />
           <Route path="/login" element={<Login />} />
           <Route path="/privacypolicy" element={<PrivacyPolicy />} /> 
-          <Route path="/terms&conditions" element={<TermsConditions />} />
+          <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
           <Route path="/refundpolicy" element={<RefundPolicy />} />
           <Route path="/join-us" element={<JoinNowForm />} /> 
 

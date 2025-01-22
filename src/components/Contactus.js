@@ -1,6 +1,5 @@
 import React from "react";
 import Footer from "./Footer"; // Importing the Footer component for the footer section.
-
 const Contact = () => {
   const emailAddress = "contact@edzest.org";
   const subject = "Enquiry About Services";
