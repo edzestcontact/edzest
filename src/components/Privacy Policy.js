@@ -23,7 +23,7 @@ const PrivacyPolicy = () => {
 
       <h2 className="text-2xl font-semibold mb-4">Payment Information</h2>
       <p className="text-lg mb-6">
-        Payments that you make are through a secure gateway by Stripe, and their privacy policy can be checked here: <a href="https://stripe.com/en-in/privacy" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">Stripe Privacy Policy</a>.
+        Payments that you make are through a secure gateway by Razorpay, and their privacy policy can be checked here: <a href="https://razorpay.com/privacy/" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">Razorpay Privacy Policy</a>.
       </p>
 
       <h2 className="text-2xl font-semibold mb-4">Information Disclosure</h2>

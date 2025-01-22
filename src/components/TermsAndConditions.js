@@ -37,7 +37,7 @@ const TermsAndConditions = () => {
           <li>
             <strong>Course Completion and Certification:</strong> Edzest provides training to help participants prepare
             for the PMP® exam, but we do not guarantee passing the exam. Certification is awarded by PMI® after
-            successfully passing the PMP® exam.
+            successfully passing the PMP® exam conducted by PMI®.
           </li>
           <li>
             <strong>User Responsibilities:</strong> Participants must ensure that their login credentials are kept
@@ -56,9 +56,9 @@ const TermsAndConditions = () => {
           </li>
           <li>
             <strong>Privacy Policy:</strong> Edzest is committed to protecting your personal information. Please refer
-            to our{" "}
+            to our 
             <a
-              href="http://localhost:3000/privacypolicy"
+              href="https://www.edzest.org/privacypolicy"
               className="text-blue-600 underline"
               target="_blank"
               rel="noopener noreferrer"
@@ -69,8 +69,8 @@ const TermsAndConditions = () => {
           </li>
           <li>
             <strong>Governing Law:</strong> These terms are governed by and construed in accordance with the laws of
-            [Your Country/State]. Any disputes arising under these terms will be subject to the exclusive jurisdiction
-            of the courts in [Your Jurisdiction].
+            [Karnataka, India]. Any disputes arising under these terms will be subject to the exclusive jurisdiction
+            of the courts in [Bengaluru, Karnataka, India].
           </li>
           <li>
             <strong>Contact Information:</strong> For any questions or concerns regarding these Terms and Conditions,
@@ -79,13 +79,13 @@ const TermsAndConditions = () => {
               <li>
                 Email:{" "}
                 <a
-                  href="mailto:support@edzest.org"
+                  href="mailto:contact@edzest.org"
                   className="text-blue-600 underline"
                 >
                   contact@edzest.org
                 </a>
               </li>
-              <li>Phone: +91-9673332684</li>
+              <li>Phone: +91 9673332684</li>
             </ul>
           </li>
         </ol>
