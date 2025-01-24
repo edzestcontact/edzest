@@ -1,86 +1,87 @@
-require('dotenv').config();
+require('dotenv').config(); // Uncomment if using environment variables
 const express = require('express');
-const bodyParser = require('body-parser');
-const xlsx = require('xlsx');
-const fs = require('fs');
-const path = require('path');
-const cors = require('cors');
+const mongoose = require('mongoose');
 const nodemailer = require('nodemailer');
+const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-const filePath = path.join(__dirname, 'contacts.xlsx');
+// MongoDB connection
+mongoose
+  .connect(
+    `${process.env.MONGO_URI}/contactForm`, // Ensure your .env file has MONGO_URI
+    { useNewUrlParser: true, useUnifiedTopology: true }
+  )
+  .then(() => console.log('Connected to MongoDB'))
+  .catch((err) => console.error('Error connecting to MongoDB:', err));
 
-function saveToExcel(data) {
-  try {
-    let workbook, worksheet;
-
-    if (fs.existsSync(filePath)) {
-      workbook = xlsx.readFile(filePath);
-      worksheet = workbook.Sheets[workbook.SheetNames[0]];
-    } else {
-      workbook = xlsx.utils.book_new();
-      worksheet = xlsx.utils.aoa_to_sheet([['Name', 'Email', 'Message']]);
-      xlsx.utils.book_append_sheet(workbook, worksheet, 'Contacts');
-    }
-
-    const existingData = xlsx.utils.sheet_to_json(worksheet, { header: 1 });
-    existingData.push(data);
-
-    const updatedWorksheet = xlsx.utils.aoa_to_sheet(existingData);
-    workbook.Sheets[workbook.SheetNames[0]] = updatedWorksheet;
-
-    xlsx.writeFile(workbook, filePath);
-  } catch (err) {
-    console.error('Error handling Excel file:', err);
-    throw new Error('Failed to process Excel file.');
-  }
-}
-
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL_USER, // Gmail address
-    pass: process.env.EMAIL_PASS, // App Password
+// MongoDB schema and model
+const ContactSchema = new mongoose.Schema(
+  {
+    fullName: { type: String, required: true },
+    email: { type: String, required: true },
+    phoneNumber: { type: String, required: true },
+    message: { type: String, required: true },
   },
+  { timestamps: true }
+);
+
+const Contact = mongoose.model('Contact', ContactSchema);
+
+// Test Route to Check API
+app.get('/', (req, res) => {
+  res.status(200).send('API is working. Use POST /api/contact to submit data.');
 });
 
-app.post('/contact', (req, res) => {
-  const { name, email, message } = req.body;
+// POST endpoint for form submission
+app.post('/api/contact', async (req, res) => {
+  const { fullName, email, phoneNumber, message } = req.body;
 
-  if (!name || !email || !message || !/\S+@\S+\.\S+/.test(email)) {
-    console.error('Validation failed: Missing or invalid fields');
-    return res.status(400).json({ error: 'All required fields must be valid!' });
+  // Validate input
+  if (!fullName || !email || !phoneNumber || !message) {
+    return res.status(400).json({ message: 'All fields are required.' });
   }
 
   try {
-    saveToExcel([name, email, message]);
-    console.log('Data saved successfully!');
+    // Save to MongoDB
+    const newContact = new Contact({ fullName, email, phoneNumber, message });
+    await newContact.save();
+    console.log('Contact saved to MongoDB:', newContact);
+
+    // Send email using nodemailer
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: process.env.EMAIL_USER, // Your Gmail address
+        pass: process.env.EMAIL_PASS, // Your App Password
+      },
+    });
 
     const mailOptions = {
-      from: email,
-      to: 'contact@edzest.org',
-      subject: `New Contact Form Submission from ${name}`,
-      text: `Message: ${message}`,
+      from: process.env.EMAIL_USER,
+      to: process.env.EMAIL_TO, // Recipient's email
+      subject: `New Contact Form Submission from ${fullName}`,
+      text: `
+        Name: ${fullName}
+        Email: ${email}
+        Phone: ${phoneNumber}
+        Message: ${message}
+      `,
     };
 
-    transporter.sendMail(mailOptions, (error, info) => {
-      if (error) {
-        console.error('Email sending failed:', error.message);
-        return res.status(500).json({ error: 'Failed to send email. Please try again later.' });
-      }
-      console.log('Email sent:', info.response);
-      res.status(200).json({ message: 'Data saved and email sent successfully!' });
-    });
+    const info = await transporter.sendMail(mailOptions);
+    console.log('Email sent successfully:', info.response);
+
+    res.status(200).json({ message: 'Form submitted successfully!' });
   } catch (err) {
-    console.error('Error saving data:', err);
-    res.status(500).json({ error: 'An unexpected error occurred.' });
+    console.error('Error processing the request:', err);
+    res.status(500).json({ message: 'Error submitting form. Email not sent.' });
   }
 });
 
-const PORT = 5000;
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
+// Start the server
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
