@@ -110,7 +110,7 @@ const Contact = () => {
           </div>
           <div>
             <label htmlFor="email" className="block text-lg font-semibold text-gray-700">
-              E-Mail :
+              G-Mail :
             </label>
             <input
               type="email"
