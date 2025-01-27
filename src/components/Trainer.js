@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import trainerImg from "../Assets/Trainerimage.png";
 
 export default function TrainerProfile() {
   const [activeTab, setActiveTab] = useState("training");
+  const navigate = useNavigate(); // React Router navigation hook
 
   // Define tab content dynamically
   const tabs = [
@@ -19,7 +21,7 @@ export default function TrainerProfile() {
       id: "experience",
       label: "Experience",
       heading: "Trainer's Experience",
-      link: "https://linkedin.com/in/trainer",
+      link: "https://www.linkedin.com/company/edzest/?originalSubdomain=in",
       linkText: "Connect on LinkedIn",
       description:
         "Over 10 years of industry experience helping professionals achieve their career goals through expert guidance and mentoring.",
@@ -28,8 +30,8 @@ export default function TrainerProfile() {
       id: "education",
       label: "Education",
       heading: "Educational Background",
-      link: "mailto:contact@edzest.org", // Change to mailto link
-      linkText: "Send an email",
+      link: "/contact", // React Router path to contact form
+      linkText: "Send an Email",
       description:
         "Certified PMP® instructor with formal education in project management and leadership, ensuring the highest quality training.",
     },
@@ -37,6 +39,15 @@ export default function TrainerProfile() {
 
   // Find the active tab's content
   const activeContent = tabs.find((tab) => tab.id === activeTab);
+
+  // Handle link click (checks for internal navigation)
+  const handleLinkClick = (link) => {
+    if (link.startsWith("/")) {
+      navigate(link); // Internal navigation
+    } else {
+      window.open(link, "_blank", "noopener,noreferrer"); // External navigation
+    }
+  };
 
   return (
     <div className="flex flex-col lg:flex-row items-center justify-center h-auto bg-purple-50 p-4 lg:p-6">
@@ -71,14 +82,12 @@ export default function TrainerProfile() {
           </p>
 
           {/* Tab Link */}
-          <a
-            href={activeContent.link}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => handleLinkClick(activeContent.link)}
             className="text-[#4748ac] font-semibold underline text-sm lg:text-base"
           >
             {activeContent.linkText}
-          </a>
+          </button>
         </div>
       </div>
 
