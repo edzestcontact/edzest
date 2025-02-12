@@ -1,3 +1,5 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
@@ -22,6 +24,15 @@ import TermsAndConditions from "./components/TermsAndConditions";
 import RefundPolicy from "./components/Refund Policy"; 
 import JoinNowForm from './components/Joinnow';
 import WhatsAppChat from "./components/Whatsappchat"; // WhatsApp Chat component
+import FlashMain from "./FlashcardApp/FlashMain";
+
+
+// import ProcessCategories from "./FlashcardApp/ProcessCategories";
+// import AgileCategories from "./FlashcardApp/AgileCategories";
+// import DomainCategories from "./FlashcardApp/DomainCategories";
+
+
+
 
 function App() {
   return (
@@ -47,18 +58,27 @@ function App() {
                 <FAQ />
                 <Contact />
                 <Footer />
+                
               </>
             }
           />
 
           {/* Individual Pages */}
-          <Route path="/training" element={<Training />} />
+          <Route path="/training" element={<Training />} /> 
           <Route path="/mock-exam" element={<MockExam />} />
+          
+          <Route path="/flashcards" element={<FlashMain />} />
+          
+        
+          {/* <Route path="/flashcards" element={<FlashMain />} /> */}
+        <Route path="/agile" element={<FlashMain />} />
+        <Route path="/domain" element={<FlashMain />} />
+        <Route path="/process-groups" element={<FlashMain />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contactus />} />
           <Route path="/login" element={<Login />} />
           <Route path="/privacypolicy" element={<PrivacyPolicy />} /> 
-          <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+          <Route path="/termsandconditions" element={<TermsAndConditions />} />
           <Route path="/refundpolicy" element={<RefundPolicy />} />
           <Route path="/join-us" element={<JoinNowForm />} /> 
 

@@ -40,7 +40,7 @@ const Contact = () => {
         <label className="text-md uppercase font-bold tracking-wide mb-1 ">Phone</label>
         <div className="flex items-center space-x-4">
           <span className="text-3xl">📞</span>
-          <p className="text-lg font-medium">+9673332684</p>
+          <p className="text-lg font-medium">+91673332684</p>
         </div>
       </div>
       <div className="flex flex-col  pb-1">

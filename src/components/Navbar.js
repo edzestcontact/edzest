@@ -30,24 +30,18 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <nav className="d-none d-md-flex gap-3 text-gray-700 font-medium">
-          <Link to="/training" className="hover:text-[#4748ac]">Training</Link>
-          <Link to="/mock-exam" className="text-decoration-none hover:text-[#4748ac]">Mock Exam</Link>
-          <a
-            href="https://cards.edzest.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className=""
-          >
-            Flashcards
-          </a>
-          <Link to="/about" className="text-decoration-none hover:text-[#4748ac]">About us</Link>
-          <Link to="/contact" className="text-decoration-none hover:text-[#4748ac]">Contact us</Link>
+          <Link to="/training" className="text-gray-800 text-decoration-none hover:text-[#4748ac]">Training</Link>
+          <Link to="/mock-exam" className="text-gray-800 text-decoration-none hover:text-[#4748ac]">Mock Exam</Link>
+          <Link to="/flashcards" className="text-gray-800 text-decoration-none hover:text-[#4748ac]">Flashcards</Link>
+          <Link to="/about" className="text-gray-800 text-decoration-none hover:text-[#4748ac]">About us</Link>
+          <Link to="/contact" className="text-gray-800 text-decoration-none hover:text-[#4748ac]">Contact us</Link>
+          
           {/* Log In Button for Desktop */}
           <a
             href="https://exams.edzest.org/learn/account/signin"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-3 py-2 rounded text-white  bg-[#4748ac] hover:bg-[#37378c]"
+            className="px-3 py-2 rounded text-white text-decoration-none bg-[#4748ac] hover:bg-[#37378c]"
             style={{marginTop:'-7px'}}
           >
             Log in
@@ -107,15 +101,15 @@ const Navbar = () => {
                 Mock Exam
               </Link>
 
-              <a
-                href="https://cards.edzest.org/"
+              <Link
+                to = "/flashcards"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="d-block text-gray-700 text-center text-decoration-none py-2 hover:text-white hover:bg-[#4748ac]"
                 onClick={closeMenu}
               >
                 Flashcards
-              </a>
+              </Link>
              
               <Link
                 to="/about"
