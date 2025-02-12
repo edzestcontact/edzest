@@ -164,7 +164,7 @@ useEffect(() => {
       </div>
      <div className="container text-center">
      
-     <Nav variant="tabs" style={{ marginBottom: "15px", marginTop:"-70px", }}>
+     <Nav variant="tabs" style={{ marginBottom: "15px", marginTop:"-40px", }}>
     {tabs.map((tab, index) => {
       const tabPath = tab.path || "/flashcards"; // Default path if undefined
 
@@ -190,7 +190,7 @@ useEffect(() => {
 
           {/* ">" Symbol Between Tabs */}
           {index !== tabs.length - 1 && (
-            <span style={{ margin: "0 8px", color: "#4748ac", fontWeight: "bold" }}>{">"}</span>
+            <span style={{ margin: "0 0", color: "#4748ac", fontWeight: "bold" }}>{">"}</span>
           )}
         </div>
       );

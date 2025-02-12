@@ -394,40 +394,33 @@ const Controls = ({
       </div>
 
       <ToastContainer
-        className="p-3"
-        style={{
-          position: "fixed",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-          zIndex: 1055,
-        }}
-      >
-        <Toast
-          key={score}
-          onClose={() => setShowToast(false)}
-          show={showToast}
-          delay={5000}
-          autohide
-          bg="success"
-        >
-          <Toast.Header closeButton={true}>
-            <strong className="me-auto">Quiz Completed 🎉</strong>
-          </Toast.Header>
-          <Toast.Body className="text-white text-center">
-            You scored <strong>{score}</strong> out of{" "}
-            <strong>{totalCards}</strong>! 🚀
-            <div className="mt-3 d-flex justify-content-around">
-              <Button variant="light" onClick={handleTryAgain}>
-                🔄 Try Again
-              </Button>
-              <Button variant="danger" onClick={handleClose}>
-                ❌ Close
-              </Button>
-            </div>
-          </Toast.Body>
-        </Toast>
-      </ToastContainer>
+  className="p-3"
+  style={{
+    position: "fixed",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    zIndex: 1055,
+  }}
+>
+  <Toast key={score} onClose={() => setShowToast(false)} show={showToast}>
+    <Toast.Header closeButton={true}>
+      <strong className="me-auto">Quiz Completed</strong>
+    </Toast.Header>
+    <Toast.Body className="text-center">
+      You scored <strong>{score}</strong> out of <strong>{totalCards}</strong>!
+      <div className="mt-3 d-flex justify-content-around">
+        <Button variant="btn" style={{backgroundColor:"#4748ac", color:"white"}} onClick={handleTryAgain}>
+          Try Again
+        </Button>
+        <Button variant="btn" style={{backgroundColor:"#4748ac", color:"white"}} onClick={handleClose}>
+          Close
+        </Button>
+      </div>
+    </Toast.Body>
+  </Toast>
+</ToastContainer>
+
     </div>
   );
 };
