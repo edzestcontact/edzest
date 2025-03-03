@@ -203,52 +203,46 @@ useEffect(() => {
 
         {/* ✅ Show Main Category Cards */}
         {!selectedType && (
-         <div className="row d-flex align-items-center justify-content-center gap-3">
+        <div className="row d-flex align-items-center justify-content-center gap-3 min-h-[400px]">
 
-        <div
-           className="card col-md-3 col-sm-6"
-           style={{ minWidth: "320px", cursor: "pointer", height: "160px" }}
-           onClick={() => {
-             setSelectedType("Process");
-             navigate("/process-groups");
-           }}
-         >
-           <div
-             className="card-body d-flex align-items-center justify-content-center" // ✅ Centering text
-           >
-             <h4 className="m-0">Process Groups</h4> {/* ✅ Remove margin */}
-           </div>
-         </div>
+<div
+  className="card col-md-3 col-sm-6 bg-gray-500 transition-transform duration-300 hover:scale-105"
+  style={{ minWidth: "320px", cursor: "pointer", height: "160px" }}
+  onClick={() => {
+    setSelectedType("Process");
+    navigate("/process-groups");
+  }}
+>
+  <div className="card-body d-flex align-items-center justify-content-center">
+    <h4 className="m-0">Process Groups</h4>
+  </div>
+</div>
 
-         <div
-           className="card col-md-3 col-sm-6"
-           style={{ minWidth: "320px", cursor: "pointer", height: "160px" }}
-           onClick={() => {
-             setSelectedType("Agile");
-             navigate("/agile");
-           }}
-         >
-           <div
-             className="card-body d-flex align-items-center justify-content-center" // ✅ Centering text
-           >
-             <h4 className="m-0">Agile Categories</h4> {/* ✅ Remove margin for perfect alignment */}
-           </div>
-         </div>
-       
-         <div
-           className="card col-md-3 col-sm-6"
-           style={{ minWidth: "320px", cursor: "pointer", height: "160px" }}
-           onClick={() => {
-             setSelectedType("Domain");
-             navigate("/domain");
-           }}
-         >
-           <div
-             className="card-body d-flex align-items-center justify-content-center" // ✅ Centering text
-           >
-             <h4 className="m-0">Domain Categories</h4> {/* ✅ Remove margin */}
-           </div>
-         </div>
+<div
+  className="card col-md-3 col-sm-6 bg-gray-300 transition-transform duration-300 hover:scale-105"
+  style={{ minWidth: "320px", cursor: "pointer", height: "160px" }}
+  onClick={() => {
+    setSelectedType("Agile");
+    navigate("/agile");
+  }}
+>
+  <div className="card-body d-flex align-items-center justify-content-center">
+    <h4 className="m-0">Agile Categories</h4>
+  </div>
+</div>
+
+<div
+  className="card col-md-3 col-sm-6 bg-gray-500 transition-transform duration-300 hover:scale-105"
+  style={{ minWidth: "320px", cursor: "pointer", height: "160px" }}
+  onClick={() => {
+    setSelectedType("Domain");
+    navigate("/domain");
+  }}
+>
+  <div className="card-body d-flex align-items-center justify-content-center">
+    <h4 className="m-0">Domain Categories</h4>
+  </div>
+</div>
        
         
        </div>

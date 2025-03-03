@@ -31,22 +31,22 @@ const Contact = () => {
   return (
     <div className="flex flex-col md:flex-row items-center justify-center bg-gray-100 min-h-screen p-8">
        {/* Left Section */}
-       <div className="bg-[#4748ac] text-white p-7  md:w-1/2 min-h-screen rounded-l-lg flex flex-col justify-between">
+       <div className="bg-[#e6e7f6] text-black p-7 md:w-1/2 min-h-screen rounded-l-lg flex flex-col justify-between">
   <div>
     <h2 className="text-4xl font-bold mb-6 pb-2">Contact Us</h2>
     <p className="text-lg mb-3 leading-relaxed">We’re here to help you! Feel free to reach out using any of the contact methods below.</p>
     <div className="space-y-3">
-      <div className="flex flex-col  pb-1">
-        <label className="text-md uppercase font-bold tracking-wide mb-1 ">Phone</label>
+      <div className="flex flex-col pb-1">
+        <label className="text-md uppercase font-bold tracking-wide mb-1">Phone</label>
         <div className="flex items-center space-x-4">
-          <span className="text-3xl">📞</span>
+          <span className="text-3xl">☎</span>
           <p className="text-lg font-medium">+91673332684</p>
         </div>
       </div>
-      <div className="flex flex-col  pb-1">
+      <div className="flex flex-col pb-1">
         <label className="text-md uppercase font-bold tracking-wide mb-1">Website</label>
         <div className="flex items-center space-x-4">
-          <span className="text-3xl">🌐</span>
+          <span className="text-3xl">⚫</span>
           <a
             href="http://www.edzest.org"
             className="underline text-lg hover:text-gray-300"
@@ -57,10 +57,10 @@ const Contact = () => {
           </a>
         </div>
       </div>
-      <div className="flex flex-col  pb-1">
+      <div className="flex flex-col pb-1">
         <label className="text-md uppercase font-bold tracking-wide mb-1">Email</label>
         <div className="flex items-center space-x-4">
-          <span className="text-3xl">📧</span>
+          <span className="text-3xl">✉</span>
           <a
             href="mailto:contact@edzest.org"
             className="underline text-lg hover:text-gray-300"
@@ -72,7 +72,7 @@ const Contact = () => {
       <div className="flex flex-col">
         <label className="text-md uppercase font-bold tracking-wide mb-1">Location</label>
         <div className="flex items-start space-x-4">
-          <span className="text-3xl">📍</span>
+          <span className="text-3xl">⚓</span>
           <p className="text-lg font-medium">
             Haralur, Bengaluru - 560102, <br />
             Karnataka, India
@@ -87,8 +87,6 @@ const Contact = () => {
     </p>
   </div>
 </div>
-
-
 
       {/* Right Section */}
       <div className="bg-white p-8 md:w-1/2 rounded-r-lg shadow-lg">
@@ -153,12 +151,14 @@ const Contact = () => {
               required
             ></textarea>
           </div>
-          <button
-            type="submit"
-            className="w-full bg-[#4748ac] text-white font-semibold py-2 rounded-md hover:bg-[#3b3d8c] transition duration-200"
-          >
-            Send
-          </button>
+          <div className="flex justify-center">
+  <button
+    type="submit"
+    className="w-1/4 bg-[#4748ac] text-white font-semibold py-2 rounded-md hover:bg-[#3b3d8c] transition duration-200"
+  >
+    Send
+  </button>
+</div>
         </form>
         {status && <p className="mt-4 text-center text-sm">{status}</p>}
       </div>

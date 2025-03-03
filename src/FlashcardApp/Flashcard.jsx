@@ -58,7 +58,7 @@ const Flashcard = ({
       }}
     >
       <div
-        className="card text-center shadow-lg rounded-4 p-3 bg-light"
+        className="card text-center shadow-lg rounded-4 p-3 bg-grey-500"
         style={{
           width: "100%",
           maxWidth: "30rem",
