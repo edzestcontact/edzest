@@ -1,6 +1,10 @@
 const Chapter10 = [
     {
-        id: "unit10chapter_1",
+      id: "chapter_10",
+        title: "Evaluating project progress",
+        subChapters: [
+          {
+        id: "chapter_10",
         title: "Introduction to Monitoring and Controlling in Project Management ",
         sections: [
           {
@@ -812,7 +816,7 @@ Overall, a velocity chart is a valuable tool in Agile project management, provid
         id : "Trend_Analysis_in_Agile_Projects ",
         title : "Trend Analysis in Agile Projects",
         content  : `Agile project management emphasizes flexibility, collaboration, and continuous improvement. However, to ensure steady progress and high-quality deliverables, teams must track various trends over time. Trend analysis in Agile helps teams identify patterns, predict potential risks, and make data-driven decisions.`,
-        image : "/docs/images/defects.png"
+        image : "/docs/images/defects.jpg"
       },
       {
         content : `One of the key aspects of trend analysis is monitoring critical project metrics, such as defects remaining, clarifications remaining, and change request trends. Along with these, teams can track multiple other indicators to maintain transparency and enhance efficiency. 
@@ -856,4 +860,6 @@ Trend analysis in Agile is not about rigid control but about gaining insights to
 }
 
 ]
+    }
+  ]
 export default Chapter10;

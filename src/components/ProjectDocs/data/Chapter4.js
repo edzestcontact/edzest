@@ -1,6 +1,10 @@
 const Chapter4 = [
     {
-        "id": "unit4chapter_1",
+      "id": "chapter_4",
+        "title": "Agile approach of project management ",
+        subChapters: [
+          {
+        "id": "chapter_4",
         "title": "Introduction to Agile",
         "sections": [
           {
@@ -606,4 +610,6 @@ Why Information Radiators Are Important
           ]
           }
 ]
+    }
+  ]
 export default Chapter4;

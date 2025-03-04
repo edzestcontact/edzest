@@ -39,6 +39,9 @@ import Interview from "./components/Services/CareerDevelopment/Interview";
 import TrainingServices from "./components/Services/TrainingServices/TrainingServices";
 import ProjectFoundation from "./components/Services/TrainingServices/ProjectFoundation";
 import DragDropQuiz from './DragAndDrop/DragDropQuiz';
+import Docs from "./components/ProjectDocs/pages/Docs";
+import Content from "./components/ProjectDocs/pages/Content";
+import DocsWrapper from "./components/ProjectDocs/pages/ContentWrapper";
 
 
 function App() {
@@ -95,6 +98,40 @@ function App() {
           <Route path="/refundpolicy" element={<RefundPolicy />} />
           <Route path="/join-us" element={<JoinNowForm />} />
           <Route path="/dragdropquiz" element={<DragDropQuiz />} />
+
+          {/* Documentation Pages */}
+          <Route path="/docs/*" element={<Docs />}></Route>
+          <Route path="/docs/:chapterId" element={<Docs />} />
+
+          <Route path="/content/:subChapterId" element={<Content />} />
+          {/* <Route
+  path="/docs/:chapterId/:subChapterId/:sectionId"
+  element={
+    <DocsWrapper />
+  }
+/> */}
+
+        {/* Content Page (Shows a specific subchapter inside Docs) */}
+        <Route path="/docs/:chapterId/:subChapterId" element={<Docs />} />
+        <Route path="/content/:chapterId" element={<DocsWrapper />} />
+        <Route path="/content/:chapterId/:subChapterId" element={<DocsWrapper />} />
+        <Route path="/content/:chapterId/:subChapterId/:sectionId" element={<DocsWrapper />} />
+
+
+
+
+
+        {/* Specific Section Inside a Subchapter */}
+        <Route path="/docs/:chapterId/:subChapterId/:sectionId" element={<Docs />} />
+           
+          {/* <Route
+            path="/docs/:chapterId"
+            element={
+              <>
+                <Docs />
+              </>
+            }
+          /> */}
           
           {/* Catch-All Redirect: If no route matches, show the Hero component */}
           <Route path="*" element={<Hero />} />

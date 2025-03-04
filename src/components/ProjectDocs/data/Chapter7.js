@@ -1,6 +1,10 @@
 const Chapter7 = [
     {
-        "id": "unit7chapter_1",
+      "id": "chapter_7",
+        "title": "Agile Way of Working",
+        subChapters: [
+          {
+        "id": "chapter_7",
         "title": "Agile Project Planning ",
         "sections": [
           {
@@ -1054,5 +1058,8 @@ This concludes the unit of Setting performance target, where we discussed way of
               }
 
 ]
+}
+]
+
 
 export default Chapter7;

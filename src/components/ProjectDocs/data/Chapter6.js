@@ -1,7 +1,11 @@
 const Chapter6 = [
 
     {
-        "id": "unit6chapter_1",
+      "id": "chapter_6",
+      "title": "Setting performance targets",
+      subChapters: [
+        {
+        "id": "chapter_6",
         "title": "Introduction to performance targets in projects ",
         "sections": [
           {
@@ -1033,4 +1037,6 @@ This covers the unit where we discussed setting performance target: Scope, Sched
     }
 
 ]
+    }
+  ]
 export default Chapter6;

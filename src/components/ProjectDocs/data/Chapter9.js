@@ -1,6 +1,10 @@
 const Chapter9 = [
     {
-        "id": "unit9chapter_1",
+      "id": "chapter_9",
+        "title": "Leading people in projects",
+        subChapters: [
+          {
+        "id": "chapter_9",
         "title": "Introduction to Project execution",
         "sections": [
           {
@@ -181,13 +185,13 @@ By thoroughly identifying stakeholders, project managers can understand their ne
 `
           },
           {
-            id : "Stakeholder_Mapping/Categorization ",
+            id : "Stakeholder_Mapping_Categorization ",
             title: "Stakeholder Mapping/Categorization ",
             content : `Stakeholder mapping is a technique used to visually represent stakeholders based on their level of interest and influence in a project. It helps project managers understand the relationships, dynamics, and power dynamics among stakeholders. Stakeholder mapping is a valuable tool in stakeholder management as it assists in prioriTIzing engagement efforts and developing effective communication strategies.  
  
 Stakeholder mapping can be approached through various frameworks and models. Here are some commonly used approaches: 
 `,
-image  :"/docs/images/pyramid2/png"
+image  :"/docs/images/pyramid2.png"
           },
 
           {
@@ -630,7 +634,7 @@ It is crucial for project managers to address conflicts proactively, regardless 
           },
 
           {
-            id : "Conflict_Management/Resolution_techniques ",
+            id : "Conflict_Management_Resolution_techniques ",
             title : "Conflict Management/Resolution techniques",
             content : `Conflict management techniques are strategies that project managers can employ to address and resolve conflicts within the project environment.`,
             image : "/docs/images/management.png"
@@ -1030,4 +1034,6 @@ By understanding and implementing the concepts and practices presented in this u
 
 
 ]
+    }
+  ]
 export default Chapter9;

@@ -1,6 +1,10 @@
 const Chapter8 = [
     {
-        "id": "unit8chapter_1",
+      "id": "chapter_8",
+        "title": "Managing Uncertainties",
+        subChapters: [
+          {
+        "id": "chapter_8",
         "title": "Managing Risks ",
         "sections": [
           {
@@ -452,4 +456,6 @@ By following this step-by-step approach to integrated change control, project ma
 
 
 ]
+    }
+  ]
 export default Chapter8;

@@ -1,6 +1,10 @@
 const Chapter5=[
     {
-        "id": "unit5chapter_1",
+      "id": "chapter_5",
+        "title": "Starting a Project",
+        subChapters: [
+          {
+        "id": "chapter_5",
         "title": "Initiating a Project ",
         "sections": [
           {
@@ -102,7 +106,7 @@ A sample project charter for a construction project has been uploaded to the dri
             "content": `In today's fast-paced and complex business environment, project teams have become an integral part of organizations striving to achieve their goals and objectives. Whether it's developing a new product, implementing a process improvement initiative, or executing a strategic plan, project teams play a crucial role in driving innovation, managing resources, and delivering successful outcomes. In this section, we will explore the concept of project teams, their importance, and how they can contribute to organizational success. ` 
           },
           {
-            id : "What_is_a_Project_Team?",
+            id : "what_is_a_project_team",
             title : "What is a Project Team?",
             content : `A project team is a group of individuals with complementary skills and expertise who come together to work on a specific project or task. Unlike traditional departments or functional teams, project teams are typically temporary and are assembled with a specific purpose in mind. They may consist of members from different departments or even external stakeholders, depending on the nature and scope of the project. `
           },
@@ -507,7 +511,7 @@ Successful virtual team management requires a combination of effective communica
           },
 
           {
-            id :"How_to_overcome_the_challenges? ",
+            id :"how_to_overcome_the_challenges",
             title : "How to overcome the challenges? ",
             content : `To overcome the challenges associated with managing virtual teams, project managers can employ the following strategies: 
  
@@ -734,4 +738,6 @@ By involving the appropriate individuals or stakeholders when necessary, project
               ]  
           }
 ]
+    }
+  ]
 export default Chapter5;

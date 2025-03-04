@@ -1,7 +1,12 @@
 const Chapter3 = [
     {
-        "id": "unit3chapter_1",
-        "title": "Introduction to Traditional approach of Project Management ",
+
+      id: "chapter_3",
+      title: "Traditional approach of Project Management",
+      subChapters: [
+        {
+        "id": "chapter_3",
+        "title": "Traditional approach of Project Management",
         "sections": [
           {
             "id": "Introduction_to_Traditional",
@@ -21,7 +26,7 @@ This methodology is defined by five key process groups:
 `,
           },
           {
-            "id": "Various_ways_to_call",
+            "id": "various_ways_to_call",
             "title": "Various ways to call a Traditional approach",
             "content": `While managing a project, you may hear people calling the approach a waterfall methodology, a Plan-driven, or Predictive approach. They all mean same and just represent the different nature of the approach that gives it the following names: 
  
@@ -32,9 +37,9 @@ This methodology is defined by five key process groups:
 `
           },
           {
-            id : "Key_Characteristics_of_the_Traditional_Approach ",
-            title : "Key Characteristics of the Traditional Approach ",
-            content : "The Traditional approach to project management, oUen referred to as the Waterfall model, is one of the most widely recognized and established methodologies in project management. While it may not suit every type of project, it has proven to be highly effective in specific scenarios. In this section, we explore the key characteristics of the Traditional approach.",
+            "id" : "key_characteristics_of_the",
+            "title" : "Key Characteristics of the Traditional Approach ",
+            "content" : "The Traditional approach to project management, oUen referred to as the Waterfall model, is one of the most widely recognized and established methodologies in project management. While it may not suit every type of project, it has proven to be highly effective in specific scenarios. In this section, we explore the key characteristics of the Traditional approach.",
             image : "/docs/images/keyoppor.jpg"
           },
           {
@@ -85,7 +90,7 @@ By understanding the key characteristics and real-world applications of Traditio
           },
 
           {
-            id : "Historical_Context ",
+            id : "historical_context",
             title : "Historical Context ",
             content : `The roots of the traditional project management approach can be traced back to the construction and manufacturing industries in the early 20th century. It gained prominence in the 1950s and 1960s when organizations like NASA and the U.S. Department of Defense adopted structured project management frameworks for large-scale initiatives, such as the Apollo Program. 
  
@@ -93,7 +98,7 @@ For instance, the construction of the Hoover Dam (1931–1936) epitomized the tr
 `,
           },
           {
-            id : "Benefits_of_the_Traditional_Approach ",
+            id : "benefits_of_the_traditional_approach1",
             title : "Benefits of the Traditional Approach ",
             content : `1	Clarity in Planning: Teams and stakeholders have a clear understanding of objectives, timelines, and deliverables. 
 2	Control: Robust documentation and predefined processes allow beYer control over costs, schedules, and scope. 
@@ -104,7 +109,7 @@ For instance, the construction of the Hoover Dam (1931–1936) epitomized the tr
           },
 
           {
-            id : "Challenges_and_Limitations ",
+            id : "challenges_and_limitations_2 ",
             title : "Challenges and Limitations",
             content : `While the traditional approach has proven effective in specific contexts, it is not without limitations: 
 1	Lack of Flexibility: Changes to scope or requirements can disrupt progress. 
@@ -135,15 +140,16 @@ By mastering this approach, PMP® aspirants can build a solid foundation for man
 
           },
         ]
+      
     },
 
 
     {
-        "id": "unit3chapter_2",
+        "id": "process_groups",
         "title": "Process groups",
-        "sections": [
+        "sections": [ 
           {
-            "id": "Process_groups",
+            "id": "process_groups",
             "title": "Understanding the Five Process Groups in Project Management",
             "content": `In project management, the concept of process groups serves as a foundational framework for guiding project activities and ensuring successful outcomes. These process groups, as defined by the Project Management Institute (PMI), represent logical phases of project progression, allowing project managers to organize and manage tasks systematically. 
  
@@ -572,4 +578,6 @@ In a construction project, the project manager may:
         ]
     },
 ]
+    }
+  ]
 export default Chapter3;

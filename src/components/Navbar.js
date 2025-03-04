@@ -65,6 +65,9 @@ const Navbar = () => {
                     >
                       Flashcards
                     </Link>
+                    <Link to="/docs/:chapterId/:subChapterId" className="text-dark text-decoration-none py-2 px-3 rounded hover-bg-light">
+                     Project Docs
+                   </Link>
                     <Link 
                       to="/dragdropquiz" 
                       className="text-dark text-decoration-none py-2 px-3 rounded hover-bg-light"
@@ -143,6 +146,9 @@ const Navbar = () => {
                     >
                       Flashcards
                     </Link>
+                    <Link to="/docs/:chapterId/:subChapterId" className="text-gray-800 text-decoration-none hover:text-[#4748ac]">
+            Project Docs
+          </Link>
                     <Link
                       to="/dragdropquiz"
                       className="text-gray-700 text-center py-2 text-decoration-none hover:bg-[#4748ac] hover:text-white"

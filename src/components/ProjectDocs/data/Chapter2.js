@@ -1,7 +1,12 @@
 const Chapter2 = [
     {
-        "id": "unit2chapter_1",
-        "title": "Projects in Business Environment",
+
+      "id": "chapter_2",
+        "title": "Projects in Business Environment ",
+        subChapters: [
+          {
+        "id": "Business_Environmental_Factors ",
+        "title": "Business Environmental Factors ",
         "sections": [
           {
             "id": "business_environment",
@@ -25,7 +30,7 @@ Competitive Factors: These pertain to the competitive landscape, market dynamics
 Environmental Factors: These encompass environmental regulations, sustainability concerns, and ecological impact assessments that need to be addressed in projects to ensure compliance and mitigate potential environmental risks. 
  
 Understanding the business environment helps project managers identify opportunities, anticipate challenges, and develop strategies to navigate and leverage external factors.`,
-            "image": "/docs/images/pi4jgscu.png"
+           
           },
           
           {
@@ -197,10 +202,12 @@ The PMO is a critical enabler of project success, providing the framework and re
     `,
               },
             ]
+          
         },
+    
 
     {
-        "id": "unit2chapter_2",
+        "id": "project_manager’s_responsibilities_in_business_domain",
         "title": "Project Manager’s responsibilities in Business Domain",
         "sections": [
           {
@@ -260,10 +267,12 @@ There are multiple types of compliance that may apply to projects depending on t
             
           },
           {
+            
             image : "/docs/images/legal_security.png",
           },
 
           {
+            
             content:`Legal Compliance: 
 Labor laws: Ensuring compliance with regulations related to minimum wages, working hours, employment contracts, and worker safety. 
 Intellectual property rights: Adhering to copyright, patent, and trademark laws to protect intellectual property assets. 
@@ -297,7 +306,7 @@ It's important to note that these examples may vary depending on the industry, j
 `
           },
           {
-            "id": "Project_Manager’s_responsibilities",
+            "id": "project_manager’s_responsibilities",
             "title": "Project Manager’s responsibilities in managing compliance ",
             "content" : `A Project Manager can implement below steps to manage compliance effectively in a project.  
  
@@ -319,7 +328,7 @@ Seek Expert Advice: If the project manager encounters complex compliance issues,
 `
           },
           {
-            "id": "Delivering_Value",
+            "id": "delivering_value",
             "title": "Delivering Value",
             "content" : "As we have already seen, the Project is selected in an organization to deliver value and achieve desired outcome. Let’s look at Project Manager’s responsibilities in evaluating and delivering value: ",
             "image": "/docs/images/deliverying.png"
@@ -349,7 +358,7 @@ Throughout these steps, the project manager plays a central role in facilitating
           },
 
           {
-            "id": "Internal_and_External_changes",
+            "id": "internal_and_external_changes",
             "title": "Internal and External changes ",
             "content" : `Let's delve into organizational changes and external changes and their impacts on project management: 
  
@@ -379,7 +388,7 @@ In summary, organizational changes and external changes can significantly impact
           },
 
           {
-            "id": "Project_Manager’s_responsibilities_related_to_these_changes",
+            "id": "project_manager_responsibilities_related_to_these_changes",
             "title": "Project Manager’s responsibilities related to these changes ",
             "content" : `The project manager plays a critical role in managing organizational and external changes within a project. Here are the key responsibilities they have in handling these changes: 
  
@@ -412,7 +421,7 @@ By fulfilling these responsibilities, the project manager can navigate organizat
        },
 
        {
-        "id": "unit2chapter_3",
+        "id": "project_selection",
         "title": "Project Selection",
         "sections": [
           {
@@ -422,6 +431,7 @@ By fulfilling these responsibilities, the project manager can navigate organizat
             "image": "/docs/images/projectsselection.png"
           },
           {
+           
             content :`Creating or Improving Products: 
 One of the primary reasons for project selection is to create or enhance products and services. Organizations must innovate and stay ahead of the curve to remain relevant in the market. By selecting projects that focus on product development or improvement, companies can capitalize on emerging trends, fulfill customer demands, and maintain a competitive edge. These projects may involve research and development efforts, technological advancements, or design and engineering initiatives. 
  
@@ -439,12 +449,13 @@ Project selection is a critical process that organizations undertake to create o
           },
 
           {
-            "id" :"How_do_we_select_project? ",
-            title : "How do we select project? ",
+            id :"how_do_we ",
+            title : "How do we select project",
             content : "A Project is selected in an organization to deliver value and achieve desired outcome, and at any point of time, the management in the organization would be discussing multiple potential projects within their organization. Every project idea potentially benefits the organization but due to limitations and constraints in terms of time, constraints, capabilities, resources, the Management needs to prioritize and select the most beneficial project to work on first.To select a project, the management may choose to follow the below mentioned steps:",
             image : "/docs/images/selectproject.png"
           },
           {
+            id :"how_do_we_select_project ",
             content : `Identify Potential Projects: 
 The first step in project selection is to identify a pool of potential projects. This can be done through brainstorming sessions, market research, competitive analysis, feedback from customers or employees, and industry trends. The goal is to generate a list of project ideas that have the potential to address the organization's needs, goals, and criteria established in the project selection process. 
  
@@ -466,7 +477,7 @@ One of the most important steps in the above process is to prioritize the potent
 `
           },
           {
-            id : "Prioritizing_the_Project ",
+            id : "prioritizing_the_project ",
             title : "Prioritizing the Project ",
             content : `When prioritizing a project in an organization, management typically follows a structured approach that incorporates various factors. While the order of priority may vary depending on the organization's specific context, the following is a commonly observed order of popularity in terms of usage: 
  
@@ -489,13 +500,14 @@ It's important to note that while this order reflects general practices, organiz
 `
           },
           {
-            id  :"Financial_Metrics ",
+            id  :"financial_metrics ",
             title : "Financial Metrics ",
             content  :`The use of financial metrics in project selection provides a systematic and objective approach to evaluating the potential financial benefits and returns of projects, enabling organizations to allocate their resources effectively and pursue projects that align with their strategic objectives while delivering favorable financial outcomes.`,
             image  :"/docs/images/pyramid.png",
           },
 
           {
+            
             content  :`Benefit-to-Cost Ratio (BCR): 
 The Benefit-to-Cost Ratio compares the expected benefits of a project to its costs. It is calculated by dividing the present value of expected benefits by the present value of project costs. A BCR greater than 1 indicates that the benefits outweigh the costs, making the project financially viable. 
 Example: Suppose a manufacturing company is considering investing $1 million in upgrading its production line. The projected benefits over a five-year period, including increased efficiency and reduced maintenance costs, amount to $2.5 million. Calculating the BCR: BCR = $2.5 million / $1 million = 2.5. This indicates that the project is expected to generate $2.50 in benefits for every $1 invested. 
@@ -520,9 +532,11 @@ These financial metrics provide valuable insights into the financial feasibility
  
 It's important to note that these financial metrics should not be used in isolation. They should be considered alongside other factors, such as strategic alignment, business value, and risk assessment, to ensure a comprehensive evaluation of potential projects. Moreover, the selection criteria and thresholds for these financial metrics may vary based on the organization's specific goals, industry, and risk tolerance. 
 `
-          }
-        ]
-     },            
+}
+]
+}
+]
+}           
 ]  
 
 export default Chapter2;
