@@ -40,7 +40,7 @@ const Contact = () => {
         <label className="text-md uppercase font-bold tracking-wide mb-1">Phone</label>
         <div className="flex items-center space-x-4">
           <span className="text-3xl">☎</span>
-          <p className="text-lg font-medium">+91673332684</p>
+          <p className="text-lg font-medium">+91 9673332684</p>
         </div>
       </div>
       <div className="flex flex-col pb-1">
@@ -48,7 +48,7 @@ const Contact = () => {
         <div className="flex items-center space-x-4">
           <span className="text-3xl">⚫</span>
           <a
-            href="http://www.edzest.org"
+            href="https://www.edzest.org"
             className="underline text-lg hover:text-gray-300"
             target="_blank"
             rel="noopener noreferrer"
