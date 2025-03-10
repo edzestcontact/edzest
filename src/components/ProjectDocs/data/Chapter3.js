@@ -5,7 +5,7 @@ const Chapter3 = [
       title: "Traditional approach of Project Management",
       subChapters: [
         {
-        "id": "chapter_3",
+        "id": "traditional_approach_of_project_management",
         "title": "Traditional approach of Project Management",
         "sections": [
           {

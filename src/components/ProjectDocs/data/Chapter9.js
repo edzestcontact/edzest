@@ -4,7 +4,7 @@ const Chapter9 = [
         "title": "Leading people in projects",
         subChapters: [
           {
-        "id": "chapter_9",
+        "id": "introduction_to_project_execution",
         "title": "Introduction to Project execution",
         "sections": [
           {
@@ -45,7 +45,7 @@ In this chapter, we have provided an in-depth introduction to project execution.
     },
 
     {
-        "id": "unit9chapter_2",
+        "id": "servant_leadership",
         "title": "Servant Leadership ",
         "sections": [
           {
@@ -81,7 +81,7 @@ By embracing servant leadership principles, project managers can establish a col
     },
 
     {
-        "id": "unit9chapter_3",
+        "id": "identifying_and_engaging_stakeholders ",
         "title": "Identifying and Engaging Stakeholders ",
         "sections": [
           {
@@ -247,7 +247,7 @@ Low Impact, Low Influence: Stakeholders with low impact and influence may have m
           },
 
           {
-            id : "Stakeholder’s_cube ",
+            id : "stakeholder’s_cube ",
             title : "Stakeholder’s cube ",
             image : "/docs/images/rectangle.png"
           },
@@ -377,7 +377,7 @@ We will also discuss the Project Manager’s responsibilities regarding organiza
     },
 
     {
-        "id": "unit9chapter_4",
+        "id": "planning_communication",
         "title": "Planning Communication ",
         "sections": [
           {
@@ -501,7 +501,7 @@ By following these guidelines, project managers can improve communication within
     },
 
     {
-        "id": "unit9chapter_5",
+        "id": "conflict_management ",
         "title": "Conflict Management  ",
         "sections": [
           {
@@ -668,7 +668,7 @@ It is important for project managers to assess the situation, the nature of the 
         ]
     },
     {
-        "id": "unit9chapter_TI",
+        "id": "managing_changes_in_projects",
         "title": "Managing Changes in Projects",
         "sections": [
           {
@@ -756,7 +756,7 @@ By following this step-by-step approach to integrated change control, project ma
     },
 
     {
-        "id": "unit9chapter_7",
+        "id": "managing_issues_in_projects ",
         "title": "Managing issues in projects ",
         "sections": [
           {
@@ -822,7 +822,7 @@ can effectively manage issues within a project. This structured approach ensures
     },
 
     {
-        "id": "unit9chapter_8",
+        "id": "managing_knowledge",
         "title": "Managing Knowledge ",
         "sections": [
           {
@@ -921,7 +921,7 @@ By implementing these strategies, project managers can ensure effective knowledg
     },
 
     {
-        "id": "unit9chapter_9",
+        "id": "managing_artifacts",
         "title": "Managing Artifacts",
         "sections": [
           {

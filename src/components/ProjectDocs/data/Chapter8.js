@@ -4,7 +4,7 @@ const Chapter8 = [
         "title": "Managing Uncertainties",
         subChapters: [
           {
-        "id": "chapter_8",
+        "id": "managing_risks ",
         "title": "Managing Risks ",
         "sections": [
           {
@@ -292,7 +292,7 @@ By effectively monitoring and controlling risks, project managers can minimize t
     },
 
     {
-        "id": "unit8chapter_2",
+        "id": "managing_issues_in_projects ",
         "title": "Managing issues in projects  ",
         "sections": [
           {
@@ -363,7 +363,7 @@ By following these specific steps, project managers can effectively manage issue
     },
 
     {
-        "id": "unit8chapter_3",
+        "id": "managing_changes_in_projects",
         "title": "Managing Changes in Projects",
         "sections": [
           {

@@ -4,7 +4,7 @@ const Chapter10 = [
         title: "Evaluating project progress",
         subChapters: [
           {
-        id: "chapter_10",
+        id: "introduction_to_monitoring_and_controlling_in_project_management",
         title: "Introduction to Monitoring and Controlling in Project Management ",
         sections: [
           {
@@ -94,7 +94,7 @@ Understanding these benefits and challenges equips project managers with the kno
     },
 
     {
-        id: "unit10chapter_2",
+        id: "defining_project_performance_measures_and_metrics",
         title: "Defining Project Performance Measures and Metrics ",
         sections: [
           {
@@ -170,7 +170,7 @@ By aligning performance measures with project objectives and stakeholder expecta
     },
 
     {
-        id: "unit10chapter_3",
+        id: "project_tracking_and_reporting_systems",
         title: "Project Tracking and Reporting Systems ",
         sections: [
           {
@@ -256,7 +256,7 @@ By utilizing project management software and tools for tracking and reporting, p
     },
 
     {
-        id: "unit10chapter_4",
+        id: "quality_control_and_assurance",
         title: "Quality Control and Assurance",
         sections: [
           {
@@ -341,7 +341,7 @@ Implementing corrective and preventive actions demonstrates a commitment to qual
     },
 
     {
-        id: "unit10chapter_5",
+        id: "project_reviews_and_performance_analysis ",
         title: "Project reviews and performance analysis ",
         sections: [
           {
@@ -538,7 +538,7 @@ In summary, identifying trends, patterns, and areas for improvement is crucial i
     },
 
     {
-        id: "unit10chapter_6",
+        id: "agile_measurement  ",
         title: "Agile Measurement   ",
         sections: [
           {

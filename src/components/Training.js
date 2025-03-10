@@ -22,19 +22,18 @@ const Hero = () => {
           <div className="w-full lg:w-1/2 space-y-6 text-center lg:text-left">
             <h1 className="text-4xl md:text-5xl font-bold leading-tight text-gray-800">
               PMP<span className="text-gray-900">®</span> Exam Prep <br />
-              by <span className="text-[#4748ac]">Edzest</span>
+              by <span className="text-[#4748ac]">edzest</span>
             </h1>
             <p className="text-gray-600 text-lg leading-relaxed">
-              Edzest’s PMP® exam prep program integrates practical insights, proven
-              methodologies, and expert guidance, giving you a clear path to
-              certification.
+            Prepare for your PMP certification exam with our expert-led training courses
+            that gets your ready to pass the exam in the first attempt.
             </p>
             <div>
             <a
   href="https://exams.edzest.org/learn/PMP--exam-prep-March--25-batch"
   target="_blank"
   rel="noopener noreferrer"
-  className="inline-block bg-[#4748ac] hover:bg-[3636ac] text-white font-semibold py-3 px-6 rounded-lg transition duration-300"
+  className="inline-block bg-[#4748ac] hover:bg-[3636ac] text-white font-semibold py-3 px-6 rounded-lg transition text-decoration-none duration-300"
 >
   Enroll Now
 </a>
@@ -54,35 +53,56 @@ const Hero = () => {
       </section>
 
       {/* Section 2: Banner Section */}
-      <section className="bg-gradient-to-r from-blue-50 to-green-50 py-12">
-        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
-          <div className="md:w-1/2 space-y-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 leading-snug">
-              6 Exclusive Batches a year to help <span className="text-pink-600">PMP®</span> aspirants pass <br />
-              on their <span className="text-pink-600">First Attempt</span>
-            </h2>
-            <p className="text-gray-600">
-              Learn from an Authorised Training Partner, ATP of Project Management Institute (PMI).
-            </p>
-            <a
-  href="https://exams.edzest.org/learn/PMP--exam-prep-March--25-batch"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-block bg-[#4748ac] hover:bg-[#3737ac] text-white font-semibold py-3 px-6 rounded-lg transition duration-300"
->
-  Enroll Now
-</a>
+      <section className="bg-gray-100 py-12">
+  <div className="max-w-6xl mx-auto px-6 text-center">
+    <h2 className="text-4xl font-bold text-gray-900">Training options</h2>
+    <p className="text-gray-600 mt-4">
+      Whether you want to attend online instructor-led sessions or study at your own pace, we have the training options available to meet all your needs. Choose from below options to prepare for your exam.
+    </p>
 
-          </div>
-          <div className="md:w-1/2 flex justify-center mt-6 md:mt-0">
-            <img
-              src={pmilogoimg}
-              alt="PMI Training"
-              className="w-32 md:w-48 lg:w-56 object-contain"
-            />
-          </div>
-        </div>
-      </section>
+    <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+      {/* PMP Live Online Training */}
+      <div className="bg-gray-300 p-6 rounded-lg shadow-md">
+        <h3 className="text-lg font-semibold text-gray-900">PMP Live Online Training</h3>
+        <ul className="mt-2 text-gray-700 text-sm space-y-1">
+          <li>40 hrs. of instructor-led sessions</li>
+          <li>Complementary recorded videos course</li>
+          <li>Access to Mock exam simulators</li>
+          <li>Free e-book to study in detail</li>
+          <li>Application support</li>
+          <li>Weekly group revision sessions</li>
+          <li>1:1 guidance till your certification</li>
+        </ul>
+      </div>
+
+      {/* PMP Recorded Videos */}
+      <div className="bg-gray-300 p-6 rounded-lg shadow-md">
+        <h3 className="text-lg font-semibold text-gray-900">PMP Recorded Videos</h3>
+        <ul className="mt-2 text-gray-700 text-sm space-y-1">
+          <li>40+ hrs. of pre-recorded videos</li>
+          <li>Access to Mock exam simulators</li>
+          <li>Free e-book to study in detail</li>
+          <li>Application support</li>
+          <li>Weekly group revision sessions</li>
+          <li>Access to study resources</li>
+        </ul>
+      </div>
+
+      {/* PMP Mock Exams */}
+      <div className="bg-gray-300 p-6 rounded-lg shadow-md">
+        <h3 className="text-lg font-semibold text-gray-900">PMP Mock Exams</h3>
+        <ul className="mt-2 text-gray-700 text-sm space-y-1">
+          <li>8 topic-wise mini mock exams (60 questions each)</li>
+          <li>3 ECO domain-wise mocks</li>
+          <li>5 Full-length mock exams</li>
+          <li>Free revision course</li>
+          <li>Exercises to improve your scores</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Section 3: Why Choose Us */}
       <section className="bg-white py-16">
@@ -115,7 +135,7 @@ const Hero = () => {
               />
               <div>
                 <h3 className="text-xl font-semibold text-gray-800">
-                  60 hrs. of Recorded Videos
+                  40 hrs. of Recorded Videos
                 </h3>
                 <p className="text-gray-600 mt-2">
                   Access recorded versions of live classes anytime.
@@ -188,7 +208,7 @@ const Hero = () => {
               href="https://exams.edzest.org/learn/PMP--exam-prep-March--25-batch"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-[#4748ac] hover:bg-[#3737ac] text-white font-semibold py-3 px-6 rounded-lg transition duration-300"
+              className="inline-block bg-[#4748ac] hover:bg-[#3737ac] text-white font-semibold py-3 px-6 rounded-lg text-decoration-none transition duration-300"
             >
               Enroll Now
             </a>
@@ -198,37 +218,72 @@ const Hero = () => {
       {/* Training Overview Section */}
 <section className="py-12 bg-purple-50">
   <div className="container mx-auto px-4 bg-red shadow-lg rounded-lg p-8">
-    <h2 className="text-4xl font-bold text-center text-black-800 mb-12">Training Overview</h2>
+    <h2 className="text-4xl font-bold text-center text-black-800 mb-12">
+Training content</h2>
     <p className="text-gray-700 text-lg mb-6 leading-relaxed">
-      Empower your project management journey with Edzest's 8-week training program.
-      Designed for professionals aiming to excel in the PMP® exam, our program blends
-      structured learning, real-world insights, and rigorous exam preparation.
+    The content of the training is designed to help you understand the flow of
+activities in Project Management. Over the course of 4 weeks (32 sessions), we
+will help you learn about Project Management from starting to closure.
+Throughout the training program, we have highlighted the important
+scenarios, concepts, and mindset that will help you answer the exam
+questions with ease.
     </p>
 
-    <ul className="text-gray-900 text-lg leading-relaxed space-y-4">
-      <li>
-        <strong>Weeks 1 & 2:</strong> Master the fundamentals with project initiation,
-        traditional methodologies, and agile frameworks.
-      </li>
-      <li>
-        <strong>Weeks 3 to 5:</strong> Advance your skills in setting performance targets,
-        integrating plans, leading teams, and evaluating project progress.
-      </li>
-      <li>
-        <strong>Weeks 6 & 7:</strong> Comprehensive revision to bridge knowledge gaps and refine
-        your preparation.
-      </li>
-      <li>
-        <strong>Week 8:</strong> Final review with hands-on practice mocks to boost confidence
-        and exam readiness.
-      </li>
-    </ul>
+    <section className="bg-gray-100 py-12">
+  <div className="max-w-6xl mx-auto px-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      {/* Pre-training */}
+      <div className="bg-indigo-100 p-6 rounded-xl shadow-md">
+        <h3 className="text-lg font-semibold text-gray-900">Pre-training</h3>
+      </div>
+      <div className="bg-indigo-100 p-6 rounded-xl shadow-md">
+        <p className="text-gray-900 text-sm">
+          Pre-training conceptual knowledge test on Traditional and Agile approach.<br />
+          Discovery call to discuss your experience and plans for PMP certification.
+        </p>
+      </div>
 
-    <p className="text-gray-700 text-lg mt-6 leading-relaxed">
-      Join our live weekend sessions (10:30 AM to 2:30 PM IST) for expert-led training,
-      tailored mock exams, and interactive discussions that pave the way to PMP® success.
-    </p>
+      {/* Training */}
+      <div className="bg-indigo-100 p-6 rounded-xl shadow-md">
+        <h3 className="text-lg font-semibold text-gray-900">Training</h3>
+      </div>
+      <div className="bg-indigo-100 p-6 rounded-xl shadow-md">
+        <ul className="text-gray-900 text-sm space-y-1">
+          <li>Week 1: Starting a Project</li>
+          <li>Week 2: Planning in Projects</li>
+          <li>Week 3: Leading the work</li>
+          <li>Week 4: Delivering project successfully</li>
+        </ul>
+      </div>
+
+      {/* Post-training */}
+      <div className="bg-indigo-100 p-6 rounded-xl shadow-md">
+        <h3 className="text-lg font-semibold text-gray-900">Post-training</h3>
+      </div>
+      <div className="bg-indigo-100 p-6 rounded-xl shadow-md">
+        <p className="text-gray-900 text-sm">
+          Full-length mock exams to test and identify gaps.<br />
+          1:1 discussion with trainers for guidance and plan for the exam.
+        </p>
+      </div>
+
+    </div>
   </div>
+</section>
+<a 
+  href="https://yourwebsite.com/curriculum.pdf" 
+  target="_blank" 
+  rel="noopener noreferrer"
+>
+  <button className="btn" style={{ backgroundColor: "#4748ac", color: "white" }}>
+    Download Curriculum
+  </button>
+</a>
+
+  </div>
+
+
 </section>
 {/* FAQ Section */}
 <FAQ />

@@ -10,9 +10,9 @@ import Banner from "./components/Banner";
 import Benefit from "./components/Benefit";
 import Preparation from "./components/Preparation";
 import Whychooseus from "./components/Whychooseus";
-import Trainer from "./components/Trainer";
+// import Trainer from "./components/Trainer";
 import Testimonial from "./components/Testimonial";
-import FAQ from "./components/FAQ";
+// import FAQ from "./components/FAQ";
 import Contact from "./components/Contact";
 import Training from "./components/Training"; 
 import MockExam from "./components/MockExam"; 
@@ -64,9 +64,9 @@ function App() {
                 <Benefit />
                 <Preparation />
                 <Whychooseus />
-                <Trainer />
+                {/* <Trainer /> */}
                 <Testimonial />
-                <FAQ />
+                {/* <FAQ /> */}
                 <Contact />
                 <Footer />
               </>
@@ -112,7 +112,9 @@ function App() {
 /> */}
 
         {/* Content Page (Shows a specific subchapter inside Docs) */}
+        <Route path="/docs" element={<Docs />} />
         <Route path="/docs/:chapterId/:subChapterId" element={<Docs />} />
+        
         <Route path="/content/:chapterId" element={<DocsWrapper />} />
         <Route path="/content/:chapterId/:subChapterId" element={<DocsWrapper />} />
         <Route path="/content/:chapterId/:subChapterId/:sectionId" element={<DocsWrapper />} />

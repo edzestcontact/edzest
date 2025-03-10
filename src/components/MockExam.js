@@ -74,7 +74,7 @@ const PMPPracticeMockExams = () => { // Defining a functional React component na
               </h2>
               <ul className="list-disc pl-5 text-gray-600 space-y-2">
                 <li>
-                  A complete, real exam-like simulation with 200+ questions
+                  A complete, real exam-like simulation with 1200+ questions
                   covering all PMP® domains. {/* Feature description */}
                 </li>
                 <li>

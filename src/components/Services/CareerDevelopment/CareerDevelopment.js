@@ -1,8 +1,6 @@
-
-
-
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
+import './careerdevelopment.css'
 
 const CareerForm = () => {
   const [formData, setFormData] = useState({
@@ -16,6 +14,7 @@ const CareerForm = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false); 
+  const fileInputRef = useRef(null); // Reference to the file input
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -29,6 +28,11 @@ const CareerForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+
+    // Clear the file input after submission
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
 
     const formDataToSend = new FormData();
     formDataToSend.append("name", formData.name);
@@ -66,7 +70,7 @@ const CareerForm = () => {
 
   return (
     <Container fluid className="d-flex justify-content-center align-items-center vh-150 px-3 mb-8">
-      <div className="w-100" style={{ maxWidth: "600px" }}>
+      <div className="w-70">
         <h2 className="text-center mb-3" style={{ color: "#4748ac" }}>
           Advance Your Project Management Career
         </h2>
@@ -77,9 +81,9 @@ const CareerForm = () => {
         <Form onSubmit={handleSubmit} className="shadow p-4 bg-light rounded">
           {/* Name Field */}
           <Form.Group as={Row} className="mb-3">
-            <Form.Label column sm={4}>Full Name:</Form.Label>
+            <Form.Label column sm={4} >Full Name:</Form.Label>
             <Col sm={8}>
-              <Form.Control type="text" name="name" placeholder="Enter your Name" value={formData.name} onChange={handleChange} required />
+              <Form.Control  type="text" name="name" placeholder="Enter your Name" value={formData.name} onChange={handleChange} required className="custom-placeholder"/>
             </Col>
           </Form.Group>
 
@@ -87,7 +91,7 @@ const CareerForm = () => {
           <Form.Group as={Row} className="mb-3">
             <Form.Label column sm={4}>Email:</Form.Label>
             <Col sm={8}>
-              <Form.Control type="email" name="email" placeholder="Enter your Email" value={formData.email} onChange={handleChange} required />
+              <Form.Control type="email" name="email" placeholder="Enter your Email" value={formData.email} onChange={handleChange} required className="custom-placeholder"/>
             </Col>
           </Form.Group>
 
@@ -106,19 +110,12 @@ const CareerForm = () => {
           </Form.Group>
 
           {/* LinkedIn Profile Field */}
-{/* LinkedIn Profile Field */}
-<Form.Group as={Row} className="mb-3">
-  <Form.Label column sm={4}>LinkedIn:</Form.Label>
-  <Col sm={8}>
-    <Form.Control
-      type="url"
-      name="linkedin"
-      placeholder="Enter your LinkedIn link (optional)"
-      value={formData.linkedin}
-      onChange={handleChange}
-    />
-  </Col>
-</Form.Group>
+          <Form.Group as={Row} className="mb-3">
+            <Form.Label column sm={4}>LinkedIn:</Form.Label>
+            <Col sm={8}>
+              <Form.Control type="url" name="linkedin" placeholder="Enter your LinkedIn link" value={formData.linkedin} onChange={handleChange}  className="custom-placeholder"/>
+            </Col>
+          </Form.Group>
 
           {/* Career Aspiration Field */}
           <Form.Group as={Row} className="mb-3">
@@ -132,6 +129,7 @@ const CareerForm = () => {
                 value={formData.careerAspiration}
                 onChange={handleChange}
                 required
+                className="custom-placeholder"
               />
             </Col>
           </Form.Group>
@@ -150,31 +148,32 @@ const CareerForm = () => {
 
           {/* Resume Upload */}
           <Form.Group as={Row} className="mb-3">
-            <Form.Label column sm={4}>Upload Resume:</Form.Label>
-            <Col sm={8}>
-              <Form.Control type="file" accept=".pdf,.doc,.docx" onChange={handleFileChange} required />
-            </Col>
-          </Form.Group>
+        <Form.Label column sm={4}>Upload Resume:</Form.Label>
+        <Col sm={8}>
+          <Form.Control
+            type="file"
+            accept=".pdf,.doc,.docx"
+            onChange={handleFileChange}
+            ref={fileInputRef} // Assign ref to file input
+            required
+          />
+        </Col>
+      </Form.Group>
 
           {/* Submit Button */}
           <div className="text-center">
-  <Button
-    type="submit"
-    variant="primary"
-    size="sm"
-    style={{
-      backgroundColor: "#4748ac",
-      borderColor: "#4748ac",
-      width: "40%", // Set width to 50% to make it half the size
-      padding: "8px 12px"
-    }}
-    onMouseOver={(e) => (e.target.style.backgroundColor = "#37378c")}
-    onMouseOut={(e) => (e.target.style.backgroundColor = "#4748ac")}
-    disabled={isSubmitting}
-  >
-    {isSubmitting ? "Submitting..." : "Submit Application"}
-  </Button>
-</div>
+            <Button
+              type="submit"
+              variant="primary"
+              style={{ backgroundColor: "#4748ac", borderColor: "#4748ac" }}
+              onMouseOver={(e) => (e.target.style.backgroundColor = "#37378c")}
+              onMouseOut={(e) => (e.target.style.backgroundColor = "#4748ac")}
+              disabled={isSubmitting}
+              className="w-30"
+            >
+              {isSubmitting ? "Submitted..." : "Submit Application"}
+            </Button>
+          </div>
         </Form>
       </div>
     </Container>

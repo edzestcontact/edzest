@@ -1,40 +1,40 @@
 import React from "react";
 import './whychooseus.css';
-import trainerImg from '../Assets/Trainer.png';
-import elearningImg from '../Assets/elearning.png';
-import personalisedsupportImg from '../Assets/personalisedsupport.png';
-import flexibleImg from '../Assets/flexible.png';
-import applicationImg from '../Assets/application.png';
+import trainerImg from '../Assets/trainerImg.jpg';
+import elearningImg from '../Assets/elearningImg.jpg';
+import personalisedsupportImg from '../Assets/personalisedsupportImg.jpg';
+import flexibleImg from '../Assets/flexibleImg.jpg';
+import applicationImg from '../Assets/applicationImg.jpg';
 
 const benefits = [
   {
     title: "Expert Trainers",
     description:
-      "Learn from industry professionals with years of practical experience, bringing real-world insights into every session to ensure you're ready for any challenge.",
+      "Our trainers are qualified and experienced project professionals hence they help you learn the nitty-gritties of Project Management in a real world setting.",
     imgSrc: trainerImg, // Assuming you have imported or defined these images
-  },
-  {
-    title: "Comprehensive Materials",
-    description:
-      "Access a wide range of updated study materials including PDF guides, mock exams, and video tutorials, designed to support your learning at every stage.",
-    imgSrc: elearningImg,
   },
   {
     title: "Personalised Support",
     description:
-      "Receive one-on-one mentoring to address your specific needs, with personalized guidance to help you overcome challenges and stay on track.",
+      "We provide every participants individual attention to help them through their journey of learning and career development.",
     imgSrc: personalisedsupportImg,
   },
   {
-    title: "Flexible Learning",
+    title: "Goal oriented learning",
     description:
-      "Enjoy the convenience of live online sessions paired with on-demand recorded videos, allowing you to learn at your own pace and schedule.",
+      "Our training programs and Workshops are focused on helping you achieve your goals- whether you want to manage projects better or grab that lucrative job/position.",
+    imgSrc: elearningImg,
+  },
+  {
+    title: "Detailed analytics and progress tracking",
+    description:
+      "Throughout your learning, you will receive regular updates on your progress so that you can align your efforts to your goals.",
     imgSrc: flexibleImg,
   },
   {
-    title: "Application Support",
+    title: "Career support",
     description:
-      "Get expert help with your certification application process, ensuring you meet all the requirements and submit your application smoothly and accurately.",
+      "Our expert counsellors will help you build a career that you desire: from resume review to interview prep, we help you through the entire process of career development.",
     imgSrc: applicationImg,
   },
 ];
@@ -42,7 +42,7 @@ const benefits = [
 const WhyChooseUs = () => {
   return (
     <div className="hero-container">
-      <h1 className="section-header">Why Choose Us</h1>
+      <h1 className="section-header">Why learn with Edzest?</h1>
       {benefits.map((benefit, index) => (
         <div key={index} className="hero-item">
           <div className="text-section">

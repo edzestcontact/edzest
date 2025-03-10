@@ -207,7 +207,7 @@ useEffect(() => {
 
 <div
   className="card col-md-3 col-sm-6 bg-gray-500 transition-transform duration-300 hover:scale-105"
-  style={{ minWidth: "320px", cursor: "pointer", height: "160px" }}
+  style={{ minWidth: "320px", cursor: "pointer", height: "160px", backgroundColor:"#ddd" }}
   onClick={() => {
     setSelectedType("Process");
     navigate("/process-groups");
@@ -220,7 +220,7 @@ useEffect(() => {
 
 <div
   className="card col-md-3 col-sm-6 bg-gray-300 transition-transform duration-300 hover:scale-105"
-  style={{ minWidth: "320px", cursor: "pointer", height: "160px" }}
+  style={{ minWidth: "320px", cursor: "pointer", height: "160px", backgroundColor:"#ddd"  }}
   onClick={() => {
     setSelectedType("Agile");
     navigate("/agile");
@@ -233,7 +233,7 @@ useEffect(() => {
 
 <div
   className="card col-md-3 col-sm-6 bg-gray-500 transition-transform duration-300 hover:scale-105"
-  style={{ minWidth: "320px", cursor: "pointer", height: "160px" }}
+  style={{ minWidth: "320px", cursor: "pointer", height: "160px", backgroundColor:"#ddd"  }}
   onClick={() => {
     setSelectedType("Domain");
     navigate("/domain");

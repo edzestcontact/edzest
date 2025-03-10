@@ -5,7 +5,7 @@ const Chapter6 = [
       "title": "Setting performance targets",
       subChapters: [
         {
-        "id": "chapter_6",
+        "id": "introduction_to_performance_targets_in_projects",
         "title": "Introduction to performance targets in projects ",
         "sections": [
           {
@@ -87,7 +87,7 @@ Setting performance targets is a critical component of successful project manage
     },
 
     {
-        "id": "unit6chapter_2",
+        "id": "defining_scope_of_the_project",
         "title": "Defining Scope of the project (Traditional)",
         "sections": [
           {
@@ -518,8 +518,8 @@ Next step in the project is to build the project schedule, for which there are m
     },
 
     {
-        "id": "unit6chapter_3",
-        "title": "Developing a Project Schedule  ",
+        "id": "developing_a_project_schedule",
+        "title": "Developing a Project Schedule",
         "sections": [
           {
             "id": "Developing_a_Project_Schedule ",
@@ -867,7 +867,7 @@ Next, the project team should create the project budget based on the activities 
 
 
         {
-            "id": "unit6chapter_4",
+            "id": "determining_the_project_budget",
             "title": "Determining the project budget  ",
             "sections": [
               {

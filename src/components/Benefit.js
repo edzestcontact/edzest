@@ -3,35 +3,35 @@ import React from "react";
 const Benefits = () => {
   const benefits = [
     {
-      title: "Career Advancement",
+      title: "Engaging Learning",
       description:
-        "Certified project managers are in high demand, with increased opportunities for higher-level roles and leadership positions.",
+        "Reduces monotony and makes learning enjoyable.",
       icon: "📈", // Replace with real icons/images
     },
     {
-      title: "Industry Recognition",
+      title: "Immersive Learning",
       description:
-        "PMP® certification is globally recognized and demonstrates your expertise in project management, making you a standout professional in any industry.",
-      icon: "🌐",
+        "Engages multiple senses making learning active and effective.",
+      icon: "🔄",
     },
     {
-      title: "Higher Salary Potential",
+      title: "Accelerated Learning",
       description:
-        "PMP® certification holders earn 20-25% more on average than their non-certified counterparts, according to PMI’s Salary Survey.",
-      icon: "💰",
+        "Helps grasp concepts faster and retain information longer.",
+      icon: "⚡",
     },
     {
-      title: "Better Job Security",
+      title: "Developing Critical Thinking",
       description:
-        "Certified professionals are often the first choice during hiring or promotions and are more likely to retain their positions during organizational restructuring.",
-      icon: "🔒",
+        "Encourages critical thinking, decision making, and problem solving skills.",
+      icon: "🎯",
     },
   ];
 
   return (
     <section className="container mx-auto px-6 py-16">
       <h2 className="text-4xl font-bold text-center text-gray-900 mb-8">
-        Benefits of PMP® Certification
+      Benefits of Practical Learning
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {benefits.map((benefit, index) => (

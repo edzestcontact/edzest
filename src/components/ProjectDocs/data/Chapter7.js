@@ -4,7 +4,7 @@ const Chapter7 = [
         "title": "Agile Way of Working",
         subChapters: [
           {
-        "id": "chapter_7",
+        "id": "agile_project_planning ",
         "title": "Agile Project Planning ",
         "sections": [
           {
@@ -177,7 +177,7 @@ Release planning and sprint planning are vital components of Agile project manag
 
     
         {
-            "id": "unit7chapter_2",
+            "id": "developing_scope_in_agile",
             "title": "Developing Scope in Agile",
             "sections": [
               {
@@ -781,7 +781,7 @@ The product backlog is a central component of Agile product development, providi
         },
 
         {
-            "id": "unit7chapter_3",
+            "id": "developing_schedule_in_agile",
             "title": "Developing Schedule in Agile ",
             "sections": [
               {
@@ -996,7 +996,7 @@ Flow-based scheduling in Agile offers a flexible and efficient approach to manag
         },
 
         {
-            "id": "unit7chapter_4",
+            "id": "determining_budget_in_agile",
             "title": "Determining Budget in Agile ",
             "sections": [
               {

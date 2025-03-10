@@ -4,12 +4,12 @@ const Chapter4 = [
         "title": "Agile approach of project management ",
         subChapters: [
           {
-        "id": "chapter_4",
+        "id": "introduction_to_agile",
         "title": "Introduction to Agile",
         "sections": [
           {
             "id": "Introduction_to_Agile ",
-            "title": "Introduction_to_Agile ",
+            "title": "Introduction to Agile ",
             "content": `The story of Agile begins in the 1990s when software development projects were becoming more complex and the traditional waterfall methodology was struggling to keep up with the rapidly changing demands of both the market and technology. The waterfall approach, with its rigid phases and heavy upfront planning, oKen led to delays, cost overruns, and products that were not aligned with customer needs. 
 In response to these challenges, a group of 17 software developers and practitioners came together in February 2001 at a ski resort in Snowbird, Utah, to discuss how they could improve software development practices. They were all united by the need for a more flexible, adaptive, and collaborative approach to development. This meeting resulted in the creation of the Agile Manifesto—a declaration of values and principles designed to guide software development in a more adaptive and iterative manner. 
 These individuals, later referred to as the "Agile Alliance," included prominent figures such as 

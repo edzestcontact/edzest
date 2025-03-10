@@ -4,8 +4,8 @@ const Chapter1= [
     title: "Introduction to Project Management ",
     subChapters: [
       {
-      id: "chapter_1",
-      title: "Introduction to Project Management ",
+      id: "introduction_to_project_management",
+      title: "Introduction to Project Management",
       sections: [
         {
           id: "what_is_project",

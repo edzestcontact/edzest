@@ -1,33 +1,43 @@
 import React from 'react';
-/*import { Link } from 'react-router-dom';*/
-import  heroImage from '../Assets/Hero.png'
+import hero from '../Assets/Hero.png';
+import { Link } from 'react-router-dom';
+
 const Hero = () => {
   return (
-    <section className="container mx-auto px-6 py-16 flex flex-col-reverse lg:flex-row items-center">
-      {/* Text Content */}
-      <div className="lg:w-1/2 text-center lg:text-left space-y-4">
-      <h1 className="text-4xl lg:text-5xl font-bold leading-tight text-gray-800 text-left">
-  <span className="block lg:block mb-2">Learn</span>
-  <span className="block lg:block mb-2">Apply</span>
-  <span className="block lg:block">Be Successful</span>
-</h1>
-        <p className="text-gray-600" style={{fontSize: '20px', opacity : '0.7'}}>
-          Your trusted partner in mastering project management with a focused approach to PMP® certification.
-        </p>
-        <a
-              href="https://exams.edzest.org/learn/PMP--exam-prep-March--25-batch"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-[#4748ac] hover:bg-[#37378c] text-white font-semibold py-3 px-6 rounded-lg transition text-decoration-none duration-300"
-            >
-              Enroll Now
-            </a>
+    <section className="relative  h-[80vh] flex items-center justify-center">
+      {/* Background Image with Overlay */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${hero})`, opacity:"0.4" }}
+      >
+        {/* Overlay to Reduce Background Opacity */}
+        <div className="absolute inset-0 bg-black opacity-30"></div>
       </div>
 
-      {/* Hero Image */}
-      <div className="lg:w-1/2 mb-8 lg:mb-0 flex justify-center">
-        <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden shadow-lg">
-          <img src={heroImage} alt="Hero" className="w-full h-full object-cover" />
+      {/* Content Section */}
+      <div className="relative z-10 text-center lg:text-left p-6">
+        <h1 className="text-4xl lg:text-5xl font-openSansBold font-extrabold leading-tight text-gray-800">
+          <span className="block lg:-translate-x-[399px] leading-[1.2]"style={{fontSize:"70px"}}>Learn.</span>
+          <span className="block lg:-translate-x-[399px] leading-[1.2] mx-2"style={{fontSize:"70px"}}>Apply.</span>
+          <span className="block lg:-translate-x-[39px] leading-[1.2]"style={{fontSize:"70px"}}>
+            Deliver Successful Projects.
+          </span>
+        </h1>
+
+        <p className="text-black lg:transform lg:-translate-x-[123px] text-lg lg:text-xl  mt-4">
+          Training programs and workshops that help you master the skills of managing projects.
+        </p>
+
+        <div className="flex justify-center lg:justify-start gap-6 mt-8 lg:ml-[-34px]">
+        <Link 
+                    to="/training" 
+                    className="bg-[#4748ac] hover:bg-[#37378c] text-white font-semibold py-3 px-6 rounded-lg transition duration-300"
+                    style={{textDecoration : "none"}}                    
+                  >
+                    Training
+                  </Link>
+
+         
         </div>
       </div>
     </section>

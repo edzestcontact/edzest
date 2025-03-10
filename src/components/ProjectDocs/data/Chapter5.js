@@ -4,7 +4,7 @@ const Chapter5=[
         "title": "Starting a Project",
         subChapters: [
           {
-        "id": "chapter_5",
+        "id": "initiating_a_project",
         "title": "Initiating a Project ",
         "sections": [
           {
@@ -97,7 +97,7 @@ A sample project charter for a construction project has been uploaded to the dri
     },
 
     {
-        "id": "unit5chapter_2",
+        "id": "forming_a_team",
         "title": "Forming a team",
         "sections": [
           {
@@ -420,15 +420,10 @@ image : "/docs/images/iit.png"
  
  
 Flexibility and Adaptability: 
-Generalizing specialists bring a high level of flexibility and adaptability to project teams. Their ability to work across different disciplines allows them to handle diverse tasks and responsibilities. This flexibility is particularly valuable in dynamic project environments where requirements can change, and new challenges can arise. Generalizing specialists can readily switch roles or take on additional responsibilities to address emerging needs, ensuring that the project remains on track and responsive to changing circumstances. 
- 
+Generalizing specialists bring a high level of flexibility and adaptability to project teams. Their ability to work across different disciplines allows them to handle diverse tasks and responsibilities. This flexibility is particularly valuable in dynamic project environments where requirements can change, and new challenges can arise. Generalizing specialists can readily switch roles or take on additional responsibilities to address emerging needs, ensuring that the project remains on track and responsive to changing circumstances.  
  
 Comprehensive Problem Solving: 
-Projects often involve complex problems that require a multidisciplinary approach. Generalizing specialists, with their broad understanding across various domains, can contribute to comprehensive problem-solving. They can analyze issues from different perspectives, draw connections between seemingly unrelated areas, and propose innovative solutions. Their diverse knowledge allows them to bridge gaps between different disciplines, leading to more holistic problem-solving and more robust project outcomes. 
- 
- 
- 
- 
+Projects often involve complex problems that require a multidisciplinary approach. Generalizing specialists, with their broad understanding across various domains, can contribute to comprehensive problem-solving. They can analyze issues from different perspectives, draw connections between seemingly unrelated areas, and propose innovative solutions. Their diverse knowledge allows them to bridge gaps between different disciplines, leading to more holistic problem-solving and more robust project outcomes.  
  
 ELective Collaboration and Communication: 
 Generalizing specialists excel in collaborating and communicating with individuals from different backgrounds. Their broad understanding of various disciplines enables them to effectively communicate complex concepts to team members with diverse expertise. They can bridge the gap between technical specialists and stakeholders from different departments, facilitating clear and productive communication. By fostering effective collaboration, generalizing specialists help improve coordination, reduce misunderstandings, and enhance overall team dynamics. 
@@ -538,7 +533,7 @@ By implementing these strategies, project managers can effectively overcome the 
 
 
           {
-            "id": "unit5chapter_3",
+            "id": "building_shared_understanding",
             "title": "Building shared understanding ",
             "sections": [
               {
