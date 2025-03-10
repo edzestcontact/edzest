@@ -28,17 +28,16 @@ const Hero = () => {
           Training programs and workshops that help you master the skills of managing projects.
         </p>
 
-        <div className="flex justify-center lg:justify-start gap-6 mt-8 lg:ml-[-34px]">
-        <Link 
-                    to="/training" 
-                    className="bg-[#4748ac] hover:bg-[#37378c] text-white font-semibold py-3 px-6 rounded-lg transition duration-300"
-                    style={{textDecoration : "none"}}                    
-                  >
-                    Training
-                  </Link>
+        <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 sm:gap-6 mt-6 sm:mt-8 lg:ml-[-34px]">
+  <Link 
+    to="/training" 
+    className="bg-[#4748ac] hover:bg-[#37378c] text-white font-semibold py-3 px-6 rounded-lg transition duration-300 text-center sm:text-left"
+    style={{ textDecoration: "none" }}                    
+  >
+    Training
+  </Link>
+</div>
 
-         
-        </div>
       </div>
     </section>
   );
