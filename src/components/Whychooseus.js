@@ -48,7 +48,7 @@ const WhyChooseUs = () => {
           <div className="text-section">
             <h2>{String(index + 1).padStart(2, "0")}</h2>
             <h3>{benefit.title}</h3>
-            <p>{benefit.description}</p>
+            <p style={{fontFamily:"sans-serif", fontSize:"17px"}}>{benefit.description}</p>
           </div>
           <div className="image-section">
             <img

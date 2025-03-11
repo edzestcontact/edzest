@@ -12,6 +12,13 @@ const Navbar = () => {
     setIsMenuOpen((prevState) => !prevState);
   };
 
+  const handleNavClick = (path) => {
+    window.scrollTo(0, 0);
+    closeMenu(); // Ensure this is called for mobile links
+    closeDropdown()
+  };
+  
+
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
@@ -41,10 +48,13 @@ const Navbar = () => {
           {/* Resources Dropdown for Desktop */}
 
         {/* Separate Training Link */}
-        <Link to="/training" className="text-gray-800 text-decoration-none hover:text-[#4748ac]">
+        <Link to="/training" onClick={()=> handleNavClick("/training")} className="text-gray-800 text-decoration-none hover:text-[#4748ac]">
                     Training
           </Link>
 
+          <Link to="/mock-exam" onClick={()=> handleNavClick("/mock-exam")} className="text-gray-800 text-decoration-none hover:text-[#4748ac]">
+            Mock Exam
+          </Link>
 
           <Dropdown show={show} onToggle={(isOpen) => setShow(isOpen)}>
             <Dropdown.Toggle as="button" className="bg-transparent border-0 text-dark p-0 m-0 shadow-none hover:text-primary">
@@ -59,22 +69,22 @@ const Navbar = () => {
                 <Row>
                   <Col className="d-flex flex-column">
 
-                  <Link to="/docs" className="text-dark text-decoration-none py-2 px-3 rounded hover-bg-light">
+                  <Link to="/docs" onClick={()=> handleNavClick("/docs")}  className="text-dark text-decoration-none py-2 px-3 rounded hover-bg-light">
                      Project Docs
                    </Link>
 
                    <Link 
-                      to="/flashcards" 
+                      to="/flashcards"  onClick={()=> handleNavClick("/flashcards")}
                       className="text-dark text-decoration-none py-2 px-3 rounded hover-bg-light"
-                      onClick={closeDropdown}
+                      
                     >
                       Flashcards
                     </Link>
 
                     <Link 
-                      to="/career-development" 
+                      to="/career-development" onClick={()=> handleNavClick("/career-development")}
                       className="text-dark text-decoration-none py-2 px-3 rounded hover-bg-light"
-                      onClick={closeDropdown}
+                      
                     >
                       Career Development
                     </Link>
@@ -95,13 +105,11 @@ const Navbar = () => {
 
           
 
-          <Link to="/mock-exam" className="text-gray-800 text-decoration-none hover:text-[#4748ac]">
-            Mock Exam
-          </Link>
-          <Link to="/about" className="text-gray-800 text-decoration-none hover:text-[#4748ac]">
+          
+          <Link to="/about" onClick={()=> handleNavClick("/about")} className="text-gray-800 text-decoration-none hover:text-[#4748ac]">
             About us
           </Link>
-          <Link to="/contact" className="text-gray-800 text-decoration-none hover:text-[#4748ac]">
+          <Link to="/contact" onClick={()=> handleNavClick("/contact")} className="text-gray-800 text-decoration-none hover:text-[#4748ac]">
             Contact us
           </Link>
 
@@ -138,8 +146,13 @@ const Navbar = () => {
            
             <nav className="p-4">
            
-            <Link to="/training" className="d-block text-gray-700 text-center py-2 text-decoration-none hover:bg-[#4748ac] hover:text-white" onClick={closeMenu}>
+            <Link to="/training" onClick={()=> handleNavClick("/training")} className="d-block text-gray-800 text-center py-2 text-decoration-none hover:bg-[#4748ac] hover:text-white" >
                 Training
+              </Link>
+
+
+              <Link to="/mock-exam" onClick={()=> handleNavClick("/mock-exam")}   className="d-block text-gray-700 text-center py-2 text-decoration-none hover:bg-[#4748ac] hover:text-white" >
+                Mock Exam
               </Link>
 
               {/* Resources Dropdown for Mobile */}
@@ -157,22 +170,22 @@ const Navbar = () => {
                 {showMobileResources && (
                   <div className="d-flex bg-white flex-column align-items-center w-100">
 
-              <Link to="/docs/:chapterId/:subChapterId" className="text-gray-800 py-2 text-decoration-none hover:text-[#4748ac]">
+              <Link to="/docs/:chapterId/:subChapterId" onClick={()=> handleNavClick("/docs")} className="text-gray-800 py-2 text-decoration-none hover:text-white  hover:bg-[#4748ac]">
                           Project Docs
                         </Link>
 
                  <Link
-                      to="/flashcards"
+                      to="/flashcards" onClick={()=> handleNavClick("/flashcards")}
                       className="text-gray-700 text-center py-2 text-decoration-none hover:bg-[#4748ac] hover:text-white"
-                      onClick={closeMenu}
+                      
                     >
                       Flashcards
                     </Link>
 
                     <Link
-                      to="/career-development"
+                      to="/career-development" onClick={()=> handleNavClick("/career-development")}
                       className="text-gray-700 text-center py-2 text-decoration-none hover:bg-[#4748ac] hover:text-white"
-                      onClick={closeMenu}
+                      
                     >
                       Career Development
                     </Link>
@@ -191,13 +204,11 @@ const Navbar = () => {
 
               
 
-              <Link to="/mock-exam" className="d-block text-gray-700 text-center py-2 text-decoration-none hover:bg-[#4748ac] hover:text-white" onClick={closeMenu}>
-                Mock Exam
-              </Link>
-              <Link to="/about" className="d-block text-gray-700 text-center py-2 text-decoration-none hover:bg-[#4748ac] hover:text-white" onClick={closeMenu}>
+              
+              <Link to="/about" onClick={()=> handleNavClick("/about")}  className="d-block text-gray-700 text-center py-2 text-decoration-none hover:bg-[#4748ac] hover:text-white" >
                 About us
               </Link>
-              <Link to="/contact" className="d-block text-gray-700 text-center py-2 text-decoration-none hover:bg-[#4748ac] hover:text-white" onClick={closeMenu}>
+              <Link to="/contact" onClick={()=> handleNavClick("/contact")}  className="d-block text-gray-700 text-center py-2 text-decoration-none hover:bg-[#4748ac] hover:text-white" >
                 Contact us
               </Link>
 

@@ -10,7 +10,7 @@ const PMPPracticeMockExams = () => { // Defining a functional React component na
     <div> {/* Wrapper div for the entire component content */}
     
       {/* Hero Section */}
-      <div className="flex flex-col md:flex-row items-center justify-between h-[70vh] px-6 md:px-16">
+      <div className="flex flex-col md:flex-row items-center justify-between h-[70vh] px-6 md:px-16" style={{fontFamily:"sans-serif", fontSize:"17px"}}>
         {/* Hero section: Styling for layout and responsiveness */}
         <div className="max-w-lg"> {/* Container for text content in the hero section */}
           <h1 className="text-4xl md:text-5xl font-bold text-black-600">
@@ -37,7 +37,7 @@ const PMPPracticeMockExams = () => { // Defining a functional React component na
       </div>
 
       {/* What's Included Section */}
-      <div className="bg-purple-100 py-12"> {/* Background and padding for the section */}
+      <div className="bg-purple-100 py-12" style={{fontFamily:"sans-serif", fontSize:"17px"}}> {/* Background and padding for the section */}
         <div className="max-w-7xl mx-auto px-6"> {/* Container with maximum width */}
           <h1 className="text-3xl font-bold text-gray-800 text-center mb-10">
             What's Included: {/* Section heading */}

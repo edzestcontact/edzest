@@ -66,7 +66,7 @@ const Testimonials = () => {
         </h3>
         <p className="text-gray-600 italic text-center">{testimonial.role}</p>
         <div className="flex-grow">
-          <p className="text-gray-600 mt-4 text-center">{testimonial.feedback}</p>
+          <p className="text-gray-600 mt-4 text-center"style={{fontFamily:"sans-serif", fontSize:"17px"}}>{testimonial.feedback}</p>
         </div>
         {/* Read more button with link */}
         <a

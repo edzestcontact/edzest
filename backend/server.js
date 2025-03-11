@@ -1,3 +1,7 @@
+
+
+
+
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
@@ -89,34 +93,40 @@ app.post("/submit-career-form", upload.single("resume"), async (req, res) => {
 // Handle Contact Form Submission
 app.post("/api/contact", async (req, res) => {
   const { fullName, email, phoneNumber, message } = req.body;
+
   if (!fullName || !email || !phoneNumber || !message) {
     return res.status(400).json({ message: "All fields are required." });
   }
+
   try {
-    // Save data to MongoDB asynchronously
-    const newContact = Contact.create({ fullName, email, phoneNumber, message })
-      .then(contact => console.log("Contact saved:", contact))
-      .catch(err => console.error("Error saving contact:", err));
-    // Immediately respond to user
-    res.status(200).json({ message: "Contact form submitted successfully!" });
-    // Send Email Asynchronously in Background
-    setImmediate(() => {
-      const mailOptions = {
-        from: process.env.EMAIL_USER,
-        to: process.env.EMAIL_TO,
-        subject: `New Contact Form Submission from ${fullName}`,
-        text: `Name: ${fullName}\nEmail: ${email}\nPhone: ${phoneNumber}\nMessage: ${message}`,
-      };
-      transporter.sendMail(mailOptions, (error, info) => {
-        if (error) console.error("Error Sending Email:", error);
-        else console.log("Email Sent:", info.response);
-      });
+    // Respond immediately before database and email operations
+    res.status(200).json({ message: "Form submitted successfully!" });
+
+    // Save to MongoDB in the background
+    const newContact = new Contact({ fullName, email, phoneNumber, message });
+    await newContact.save().catch(err => console.error("Error saving contact:", err));
+
+    // Send Email in the background
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: process.env.EMAIL_TO,
+      subject: `New Contact Form Submission from ${fullName}`,
+      text: `Name: ${fullName}\nEmail: ${email}\nPhone: ${phoneNumber}\nMessage: ${message}`,
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) console.error("Error Sending Email:", error);
+      else console.log("Email Sent:", info.response);
     });
+
   } catch (error) {
     console.error("Error Submitting Contact Form:", error);
-    res.status(500).json({ message: "Server error" });
   }
 });
+
 // Start Server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+
+

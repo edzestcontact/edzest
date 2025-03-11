@@ -14,7 +14,7 @@ const Announcement = () => {
         Training Methodology
           
         </h2>
-        <p className="text-gray-600 text-lg mb-6 leading-relaxed">
+        <p className="text-black text-lg mb-6 leading-relaxed"style={{fontFamily:"sans-serif", fontSize:"17px"}}>
         All our programs are designed for case-based <strong>practical learning</strong> to help 
         you relate the theory with your practical work experience and practice 
         the lessons in a simulated project settings.

@@ -16,7 +16,7 @@ const Hero = () => {
   return (
     <>
       {/* Section 1: Hero Section */}
-      <section className="bg-gray-100 w-full">
+      <section className="bg-gray-100 w-full" style={{fontFamily:"sans-serif", fontSize:"17px"}}>
         <div className="container mx-auto flex flex-col-reverse lg:flex-row items-center px-6 md:px-12 lg:px-24">
           {/* Left Content */}
           <div className="w-full lg:w-1/2 space-y-6 text-center lg:text-left">
@@ -53,7 +53,7 @@ const Hero = () => {
       </section>
 
       {/* Section 2: Banner Section */}
-      <section className="bg-gray-100 py-12">
+      <section className="bg-gray-100 py-12" style={{fontFamily:"sans-serif", fontSize:"17px"}}>
   <div className="max-w-6xl mx-auto px-6 text-center">
     <h2 className="text-4xl font-bold text-gray-900">Training options</h2>
     <p className="text-gray-600 mt-4">
@@ -63,8 +63,8 @@ const Hero = () => {
     <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
       {/* PMP Live Online Training */}
       <div className="bg-gray-300 p-6 rounded-lg shadow-md">
-        <h3 className="text-lg font-semibold text-gray-900">PMP Live Online Training</h3>
-        <ul className="mt-2 text-gray-700 text-sm space-y-1">
+        <h3 className="text-lg  font-semibold text-gray-900">PMP Live Online Training</h3>
+        <ul className=" text-gray-700 text-sm space-y-1"  >
           <li>40 hrs. of instructor-led sessions</li>
           <li>Complementary recorded videos course</li>
           <li>Access to Mock exam simulators</li>
@@ -105,7 +105,7 @@ const Hero = () => {
 
 
       {/* Section 3: Why Choose Us */}
-      <section className="bg-white py-16">
+      <section className="bg-white py-16" style={{fontFamily:"sans-serif", fontSize:"17px"}}>
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">
             Why choose our training program?
@@ -135,7 +135,7 @@ const Hero = () => {
               />
               <div>
                 <h3 className="text-xl font-semibold text-gray-800">
-                  40 hrs. of Recorded Videos
+                  40+ hrs. of Recorded Videos
                 </h3>
                 <p className="text-gray-600 mt-2">
                   Access recorded versions of live classes anytime.
@@ -216,9 +216,9 @@ const Hero = () => {
         </div>
       </section>
       {/* Training Overview Section */}
-<section className="py-12 bg-purple-50">
+<section className="py-12 bg-purple-50" style={{fontFamily:"sans-serif", fontSize:"17px"}}>
   <div className="container mx-auto px-4 bg-red shadow-lg rounded-lg p-8">
-    <h2 className="text-4xl font-bold text-center text-black-800 mb-12">
+    <h2 className="text-3xl font-bold text-center text-black-800 mb-12">
 Training content</h2>
     <p className="text-gray-700 text-lg mb-6 leading-relaxed">
     The content of the training is designed to help you understand the flow of
@@ -229,48 +229,62 @@ scenarios, concepts, and mindset that will help you answer the exam
 questions with ease.
     </p>
 
-    <section className="bg-gray-100 py-12">
+    <section className="bg-gray-100 py-12" style={{ fontFamily: "sans-serif", fontSize: "17px" }}>
   <div className="max-w-6xl mx-auto px-6">
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch"> 
       
-      {/* Pre-training */}
-      <div className="bg-indigo-100 p-6 rounded-xl shadow-md">
-        <h3 className="text-lg font-semibold text-gray-900">Pre-training</h3>
+      {/* Pre-training (Left - Narrower) */}
+      <div className="flex justify-center items-center text-center h-full">
+        <div className="bg-indigo-100 p-6 rounded-xl shadow-md max-w-[180px] sm:max-w-[200px] w-full flex justify-center items-center text-center h-full">
+          <h3 className="text-lg  text-gray-900">Pre-training</h3>
+        </div>
       </div>
-      <div className="bg-indigo-100 p-6 rounded-xl shadow-md">
-        <p className="text-gray-900 text-sm">
-          Pre-training conceptual knowledge test on Traditional and Agile approach.<br />
-          Discovery call to discuss your experience and plans for PMP certification.
-        </p>
-      </div>
-
-      {/* Training */}
-      <div className="bg-indigo-100 p-6 rounded-xl shadow-md">
-        <h3 className="text-lg font-semibold text-gray-900">Training</h3>
-      </div>
-      <div className="bg-indigo-100 p-6 rounded-xl shadow-md">
-        <ul className="text-gray-900 text-sm space-y-1">
-          <li>Week 1: Starting a Project</li>
-          <li>Week 2: Planning in Projects</li>
-          <li>Week 3: Leading the work</li>
-          <li>Week 4: Delivering project successfully</li>
-        </ul>
+      <div className="flex justify-center h-full">
+        <div className="bg-indigo-100 p-6 rounded-xl shadow-md max-w-sm sm:max-w-md w-full h-full flex items-center">
+          <p className="text-gray-900 text-sm" style={{ fontFamily: "sans-serif", fontSize: "14px" }}>
+            Pre-training conceptual knowledge test on Traditional and Agile approach.<br />
+            Discovery call to discuss your experience and plans for PMP certification.
+          </p>
+        </div>
       </div>
 
-      {/* Post-training */}
-      <div className="bg-indigo-100 p-6 rounded-xl shadow-md">
-        <h3 className="text-lg font-semibold text-gray-900">Post-training</h3>
+      {/* Training (Left - Narrower) */}
+      <div className="flex justify-center items-center text-center h-full">
+        <div className="bg-indigo-100 p-6 rounded-xl shadow-md max-w-[180px] sm:max-w-[200px] w-full flex justify-center items-center text-center h-full">
+          <h3 className="text-lg text-gray-900">Training</h3>
+        </div>
       </div>
-      <div className="bg-indigo-100 p-6 rounded-xl shadow-md">
-        <p className="text-gray-900 text-sm">
-          Full-length mock exams to test and identify gaps.<br />
-          1:1 discussion with trainers for guidance and plan for the exam.
-        </p>
+      <div className="flex justify-center h-full">
+        <div className="bg-indigo-100 p-6 rounded-xl shadow-md max-w-sm sm:max-w-md w-full h-full flex items-center">
+          <ul className="text-gray-900 text-sm space-y-1 "style={{marginLeft:"-30px",  fontFamily: "sans-serif", fontSize: "14px" }}>
+            <li>Week 1: Starting a Project</li>
+            <li>Week 2: Planning in Projects</li>
+            <li>Week 3: Leading the work</li>
+            <li>Week 4: Delivering project successfully</li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Post-training (Left - Narrower) */}
+      <div className="flex justify-center items-center text-center h-full">
+        <div className="bg-indigo-100 p-6 rounded-xl shadow-md max-w-[180px] sm:max-w-[200px] w-full flex justify-center items-center text-center h-full">
+          <h3 className="text-lg text-gray-900">Post-training</h3>
+        </div>
+      </div>
+      <div className="flex justify-center h-full">
+        <div className="bg-indigo-100 p-6 rounded-xl shadow-md max-w-sm sm:max-w-md w-full h-full flex items-center">
+          <p className="text-gray-900 text-sm" style={{ fontFamily: "sans-serif", fontSize: "14px" }}>
+            Full-length mock exams to test and identify gaps.<br />
+            1:1 discussion with trainers for guidance and plan for the exam.
+          </p>
+        </div>
       </div>
 
     </div>
   </div>
 </section>
+
+
 <a 
   href="https://yourwebsite.com/curriculum.pdf" 
   target="_blank" 
