@@ -1,10 +1,11 @@
+
 import React from "react";
 
 const DragItem = ({ term, handleDragStart }) => {
   return (
     <div
       className="drag-item"
-      draggable
+       draggable
       onDragStart={(e) => handleDragStart(e, term)}
     >
       {term}

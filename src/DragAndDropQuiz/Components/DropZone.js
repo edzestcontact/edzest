@@ -1,3 +1,4 @@
+
 import React from "react";
 
 const DropZone = ({ definition, handleDrop, placedItem, isAllDropped }) => {
@@ -13,3 +14,5 @@ const DropZone = ({ definition, handleDrop, placedItem, isAllDropped }) => {
 };
 
 export default DropZone;
+
+
