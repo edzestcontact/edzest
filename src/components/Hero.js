@@ -35,7 +35,7 @@ const Hero = () => {
           </span>
         </h1>
 
-        <p className="text-black  sm:text-lg lg:text-xl mt-3 sm:mt-4 lg:-translate-x-[180px]" style={{fontFamily:"sans-serif", fontSize:"17px"}}>
+        <p className="text-black  sm:text-lg lg:text-xl mt-3 sm:mt-4 lg:-translate-x-[180px]" style={{fontFamily:"sans-serif", fontSize:"18px"}}>
           Training programs and workshops that help you master the skills of managing projects.
         </p>
 

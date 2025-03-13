@@ -19,7 +19,7 @@ export default function PreparationOptions() {
         {/* Card 1 */}
         <div className="bg-purple-100 rounded-lg shadow-lg p-6 w-80 text-center flex flex-col items-center">
           <h2 className="text-xl font-bold text-black mb-4">Live Online Training</h2>
-          <ul className="text-gray-700 text-left   mb-6 space-y-2">
+          <ul className="text-gray-700 text-left text-base  mb-6 space-y-2">
             <li>Interactive, Instructor-led training sessions to prepare you for the certification exam</li>
           </ul>
           <a href="https://exams.edzest.org/learn/PMP-training-Apr-25-batch" target="_blank" rel="noopener noreferrer">
@@ -32,7 +32,7 @@ export default function PreparationOptions() {
         {/* Card 2 */}
         <div className="bg-purple-100 rounded-lg shadow-lg p-6 w-80 text-center flex flex-col items-center">
           <h2 className="text-xl font-bold text-black mb-4">Recorded Videos Training</h2>
-          <ul className="text-gray-700 text-left  list-inside mb-6 space-y-2">
+          <ul className="text-gray-700 text-left text-base  list-inside mb-6 space-y-2">
             <li>Learn at your own pace through recorded videos and quizzes.</li>
           </ul>
           <a href="https://exams.edzest.org/learn/PMP-selfstudy" target="_blank" rel="noopener noreferrer">
@@ -45,7 +45,7 @@ export default function PreparationOptions() {
         {/* Card 3 */}
         <div className="bg-purple-100 rounded-lg shadow-lg p-6 w-80 text-center flex flex-col items-center">
           <h2 className="text-xl font-bold text-black mb-4">Mock Exams</h2>
-          <ul className="text-gray-700 text-left  list-inside mb-6 space-y-2">
+          <ul className="text-gray-700 text-left text-base list-inside mb-6 space-y-2">
             <li>Test your preparation with more than 1,200 exam-like questions with detailed explanations.</li>
           </ul>
           <a href="https://exams.edzest.org/learn/PMP-mock-exams-by-edzest" target="_blank" rel="noopener noreferrer">

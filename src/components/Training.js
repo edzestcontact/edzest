@@ -56,18 +56,18 @@ const Hero = () => {
       </section>
 
       {/* Section 2: Banner Section */}
-      <section className="bg-gray-100 py-12" style={{fontFamily:"sans-serif", fontSize:"17px"}}>
+      <section className="bg-gray-100 py-12" style={{ fontFamily: "sans-serif", fontSize: "17px" }}>
   <div className="max-w-6xl mx-auto px-6 text-center">
     <h2 className="text-4xl font-bold text-gray-900">Training options</h2>
-    <p className="text-gray-600 mt-4">
+    <p className="text-gray-600 text-xl mt-4">
       Whether you want to attend online instructor-led sessions or study at your own pace, we have the training options available to meet all your needs. Choose from below options to prepare for your exam.
     </p>
 
     <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
       {/* PMP Live Online Training */}
-      <div className="bg-gray-300 p-6 rounded-lg shadow-md">
-        <h3 className="text-lg  font-semibold text-gray-900">PMP Live Online Training</h3>
-        <ul className=" text-gray-700 text-sm space-y-1"  >
+      <div className="bg-gray-300 p-6 rounded-lg shadow-md flex flex-col h-full">
+        <h3 className="text-xl font-semibold text-gray-900 text-center">PMP Live Online Training</h3>
+        <ul className="text-gray-700 text-base space-y-2 list-disc pl-5 mt-4 flex-grow">
           <li>40 hrs. of instructor-led sessions</li>
           <li>Complementary recorded videos course</li>
           <li>Access to Mock exam simulators</li>
@@ -76,12 +76,17 @@ const Hero = () => {
           <li>Weekly group revision sessions</li>
           <li>1:1 guidance till your certification</li>
         </ul>
+        <a href="https://exams.edzest.org/learn/PMP-training-Apr-25-batch" target="_blank" rel="noopener noreferrer" className="mt-auto text-center">
+          <button className="bg-[#4748ac] hover:bg-[#3737ac] text-white font-semibold py-2 px-6 rounded mt-6">
+            Learn More
+          </button>
+        </a>
       </div>
 
       {/* PMP Recorded Videos */}
-      <div className="bg-gray-300 p-6 rounded-lg shadow-md">
-        <h3 className="text-lg font-semibold text-gray-900">PMP Recorded Videos</h3>
-        <ul className="mt-2 text-gray-700 text-sm space-y-1">
+      <div className="bg-gray-300 p-6 rounded-lg shadow-md flex flex-col h-full">
+        <h3 className="text-xl font-semibold text-gray-900 text-center">PMP Recorded Videos</h3>
+        <ul className="text-gray-700 text-base space-y-2 list-disc pl-5 mt-4 flex-grow">
           <li>40+ hrs. of pre-recorded videos</li>
           <li>Access to Mock exam simulators</li>
           <li>Free e-book to study in detail</li>
@@ -89,18 +94,28 @@ const Hero = () => {
           <li>Weekly group revision sessions</li>
           <li>Access to study resources</li>
         </ul>
+        <a href="https://exams.edzest.org/learn/PMP-selfstudy" target="_blank" rel="noopener noreferrer" className="mt-auto text-center">
+          <button className="bg-[#4748ac] hover:bg-[#3737ac] text-white font-semibold py-2 px-6 rounded mt-6">
+            Learn More
+          </button>
+        </a>
       </div>
 
       {/* PMP Mock Exams */}
-      <div className="bg-gray-300 p-6 rounded-lg shadow-md">
-        <h3 className="text-lg font-semibold text-gray-900">PMP Mock Exams</h3>
-        <ul className="mt-2 text-gray-700 text-sm space-y-1">
+      <div className="bg-gray-300 p-6 rounded-lg shadow-md flex flex-col h-full">
+        <h3 className="text-xl font-semibold text-gray-900 text-center">PMP Mock Exams</h3>
+        <ul className="text-gray-700 text-base space-y-2 list-disc pl-5 mt-4 flex-grow">
           <li>8 topic-wise mini mock exams (60 questions each)</li>
           <li>3 ECO domain-wise mocks</li>
           <li>5 Full-length mock exams</li>
           <li>Free revision course</li>
           <li>Exercises to improve your scores</li>
         </ul>
+        <a href="https://exams.edzest.org/learn/PMP-mock-exams-by-edzest" target="_blank" rel="noopener noreferrer" className="mt-auto text-center">
+          <button className="bg-[#4748ac] hover:bg-[#3737ac] text-white font-semibold py-2 px-6 rounded mt-6">
+            Learn More
+          </button>
+        </a>
       </div>
     </div>
   </div>
@@ -244,7 +259,7 @@ questions with ease.
       </div>
       <div className="flex justify-center h-full">
         <div className="bg-indigo-100 p-6 rounded-xl shadow-md max-w-sm sm:max-w-md w-full h-full flex items-center">
-          <p className="text-gray-900 text-sm" style={{ fontFamily: "sans-serif", fontSize: "14px" }}>
+          <p className="text-gray-900 text-lg" style={{ fontFamily: "sans-serif", fontSize: "14px" }}>
             Pre-training conceptual knowledge test on Traditional and Agile approach.<br />
             Discovery call to discuss your experience and plans for PMP certification.
           </p>
@@ -259,7 +274,7 @@ questions with ease.
       </div>
       <div className="flex justify-center h-full">
         <div className="bg-indigo-100 p-6 rounded-xl shadow-md max-w-sm sm:max-w-md w-full h-full flex items-center">
-          <ul className="text-gray-900 text-sm space-y-1 "style={{marginLeft:"-30px",  fontFamily: "sans-serif", fontSize: "14px" }}>
+          <ul className="text-gray-900 text-lg space-y-1 "style={{marginLeft:"-30px",  fontFamily: "sans-serif", fontSize: "14px" }}>
             <li>Week 1: Starting a Project</li>
             <li>Week 2: Planning in Projects</li>
             <li>Week 3: Leading the work</li>
@@ -271,12 +286,12 @@ questions with ease.
       {/* Post-training (Left - Narrower) */}
       <div className="flex justify-center items-center text-center h-full">
         <div className="bg-indigo-100 p-6 rounded-xl shadow-md max-w-[180px] sm:max-w-[200px] w-full flex justify-center items-center text-center h-full">
-          <h3 className="text-lg text-gray-900">Post-training</h3>
+          <h3 className="text-base text-gray-900">Post-training</h3>
         </div>
       </div>
       <div className="flex justify-center h-full">
         <div className="bg-indigo-100 p-6 rounded-xl shadow-md max-w-sm sm:max-w-md w-full h-full flex items-center">
-          <p className="text-gray-900 text-sm" style={{ fontFamily: "sans-serif", fontSize: "14px" }}>
+          <p className="text-gray-900 text-lg" style={{ fontFamily: "sans-serif", fontSize: "14px" }}>
             Full-length mock exams to test and identify gaps.<br />
             1:1 discussion with trainers for guidance and plan for the exam.
           </p>

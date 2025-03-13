@@ -36,7 +36,7 @@ const Contact = () => {
   return (
     <div className="flex items-center justify-center bg-gray-100 min-h-screen p-4">
       <div className="bg-white p-5 w-full max-w-lg rounded-lg shadow-md">
-        <h2 className="text-3xl font-bold text-center mb-6">Contact</h2>
+        <h2 className="text-3xl font-bold text-center mb-6">Get In Touch</h2>
         <h6 className="text-center" style={{marginTop:"-10px", marginBottom:"30px"}}>Contact Us +91 9673332684 </h6>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
