@@ -88,6 +88,7 @@ function App() {
           <Route path="/agile" element={<FlashMain />} />
           <Route path="/domain" element={<FlashMain />} />
           <Route path="/process-groups" element={<FlashMain />} />
+          <Route path="/project-management" element={<FlashMain />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contactus />} />
           <Route path="/training-services" element={<TrainingServices />} />

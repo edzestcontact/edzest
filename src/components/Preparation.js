@@ -22,7 +22,7 @@ export default function PreparationOptions() {
           <ul className="text-gray-700 text-left   mb-6 space-y-2">
             <li>Interactive, Instructor-led training sessions to prepare you for the certification exam</li>
           </ul>
-          <a href="https://exams.edzest.org/learn/PMP-mock-exams-by-edzest" target="_blank" rel="noopener noreferrer">
+          <a href="https://exams.edzest.org/learn/PMP-training-Apr-25-batch" target="_blank" rel="noopener noreferrer">
             <button className="bg-[#4748ac] hover:bg-[#3737ac] text-white font-semibold py-2 px-6 rounded "style={{marginTop:"10px"}}>
               Learn More
             </button>
