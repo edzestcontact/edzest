@@ -603,9 +603,9 @@ questions with ease.
 
 <div className="text-center mt-6">
 <a
-  href="/Curriculum.pdf"
-  download="PMP_Curriculum.pdf"
-  className="inline-block bg-[#4748ac] hover:bg-[#3737ac] text-white font-semibold py-3 px-6 rounded-lg text-decoration-none transition duration-300"
+  href="/PMP exam prep by edzest.pdf"
+  download
+  className="text-[#4748ac] font-semibold underline text-sm lg:text-base"
 >
   Download Curriculum
 </a>
