@@ -27,7 +27,7 @@ const Hero = () => {
               by <span className="text-[#4748ac]">edzest</span>
             </h1>
             <p className="text-gray-600 text-lg leading-relaxed">
-            Prepare for your PMP certification exam with our expert-led training courses
+            Prepare for your PMP® certification exam with our expert-led training courses
             that gets your ready to pass the exam in the first attempt.
             </p>
             <div>
