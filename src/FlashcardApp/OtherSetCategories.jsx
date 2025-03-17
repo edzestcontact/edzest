@@ -33,7 +33,7 @@
 
 //   export default AgileCategories;
 
-const AgileCategories = ({
+const OtherSetCategories = ({
   categories,
   onSelectCategory,
   setCurrentCardIndex,
@@ -73,4 +73,4 @@ const AgileCategories = ({
   );
 };
 
-export default AgileCategories;
+export default OtherSetCategories;

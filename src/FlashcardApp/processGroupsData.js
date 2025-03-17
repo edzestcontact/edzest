@@ -1,1259 +1,640 @@
 const processData = [
-    {
-      "category": "Initiation",
-      "question": "Project Charter",
-      "answer": "A document that formally authorizes a project or phase and provides the project manager with authority."
+    
+      {
+        category: "Initiation",
+        question: "Project Initiation",
+        answer: "Project initiation is the first phase of the project life cycle, where the project is formally authorized, defined, and assigned a project manager.",
+        example: "Before developing an online PMP prep course, the sponsor formally approves the project and assigns a project manager to lead the initiative."
+      },
+      {
+        category: "Initiation",
+        question: "Business Case",
+        answer: "A business case justifies the need for a project, outlining the problem, benefits, risks, and return on investment.",
+        example: "A business case for a new EdTech app may highlight how it increases student engagement and revenue growth."
+      },
+      {
+        category: "Initiation",
+        question: "Feasibility Study",
+        answer: "A feasibility study evaluates technical, financial, and operational aspects to determine whether a project is viable.",
+        example: "Before launching a subscription-based LMS, a feasibility study assesses if the target market is willing to pay for premium content."
+      },
+      {
+        category: "Initiation",
+        question: "Project Charter",
+        answer: "The project charter is a formal document that authorizes the project, defining its objectives, scope, stakeholders, and assigned project manager.",
+        example: "A project charter for a mobile learning app includes the project’s budget, key milestones, and stakeholder list."
+      },
+      {
+        category: "Initiation",
+        question: "Assumption Log",
+        answer: "The assumption log records assumptions and constraints that impact project planning and execution.",
+        example: "Assuming that all instructors will submit video lectures on time is recorded in the assumption log for an online course development project."
+      },
+      {
+        category: "Initiation",
+        question: "Stakeholder Identification",
+        answer: "Stakeholder identification is the process of determining individuals and groups who have an interest in the project.",
+        example: "Stakeholders for an e-learning platform may include students, instructors, developers, and marketing teams."
+      },
+      {
+        category: "Initiation",
+        question: "Stakeholder Register",
+        answer: "A stakeholder register is a document listing key stakeholders, their interests, power levels, and influence on the project.",
+        example: "A stakeholder register for a mock exam platform identifies the sponsor, product owner, and end users, along with their level of engagement."
+      },
+      {
+        category: "Initiation",
+        question: "Benefit Management Plan",
+        answer: "A benefit management plan outlines how a project’s benefits will be measured, sustained, and realized over time.",
+        example: "A benefit management plan for a corporate LMS details how employee productivity improvements will be tracked post-launch."
+      },
+      {
+        category: "Initiation",
+        question: "Agreement (Contract or MOU)",
+        answer: "An agreement (contract, MOU, or SLA) is a formal document that establishes the terms and responsibilities between project stakeholders.",
+        example: "A contract between a software vendor and Edzest outlines payment terms for developing a learning management system (LMS)."
+      },
+      {
+        category: "Initiation",
+        question: "Enterprise Environmental Factors (EEFs)",
+        answer: "EEFs are external and internal factors that influence project success, such as company culture, regulations, and market conditions.",
+        example: "A government-mandated cybersecurity policy impacts how an EdTech platform manages student data."
+      },
+      {
+        category: "Initiation",
+        question: "Organizational Process Assets (OPAs)",
+        answer: "OPAs include historical data, templates, and best practices that organizations use to guide projects.",
+        example: "A project manager uses previous project reports and risk logs from past LMS development projects as OPAs for the new project."
+      },
+      {
+        category: "Initiation",
+        question: "Project Selection Methods",
+        answer: "Project selection methods include techniques like cost-benefit analysis, scoring models, and ROI calculations to choose the best project.",
+        example: "A company chooses to develop an AI-powered test analytics tool over a basic quiz app because of higher ROI and market demand."
+      },
+      {
+        category: "Initiation",
+        question: "Sponsor Approval",
+        answer: "Sponsor approval is the formal authorization from the project sponsor to proceed with the project.",
+        example: "Before launching a new course portal, the project sponsor approves the budget and milestones."
+      },
+      {
+        category: "Initiation",
+        question: "High-Level Scope Statement",
+        answer: "A high-level scope statement outlines what the project will and will not deliver at an early stage.",
+        example: "A high-level scope for an LMS project states that it will include video streaming but not live tutoring features."
+      },
+      {
+        category: "Initiation",
+        question: "Project Constraints",
+        answer: "Project constraints are limitations that impact project execution, such as time, cost, resources, or technology.",
+        example: "A project to develop an online mock exam platform has a fixed budget of $30,000 and a four-month timeline."
+      },
+      {
+        category: "Initiation",
+        question: "Risk Identification (Early-Stage Risks)",
+        answer: "Early-stage risk identification involves assessing potential project threats and opportunities before execution begins.",
+        example: "A risk for a global virtual training project is language barriers affecting communication between trainers and learners."
+      },
+      {
+        category: "Initiation",
+        question: "Roles & Responsibilities Definition",
+        answer: "Clearly defining who does what ensures project roles are assigned properly to team members.",
+        example: "In a course development project, instructors create content, editors proofread, and developers build the platform."
+      },
+      {
+        category: "Initiation",
+        question: "Kickoff Meeting",
+        answer: "The kickoff meeting is the first official project meeting, where stakeholders discuss objectives, expectations, and initial plans.",
+        example: "A kickoff meeting for an LMS upgrade project includes developers, UX designers, and business leaders to align on goals."
+      },
+      {
+        category: "Initiation",
+        question: "Authorization to Proceed (Go/No-Go Decision)",
+        answer: "A go/no-go decision is a formal assessment that determines whether the project should start based on available information.",
+        example: "After reviewing the feasibility study, the company gives a 'go' decision to proceed with developing an AI-powered course recommendation system."
+      },
+      {
+        category: "Planning",
+        question: "Planning Process Group",
+        answer: "The Planning Process Group involves defining the scope, objectives, deliverables, schedule, costs, and risks to create a structured project plan.",
+        example: "Before building a mock exam portal, the team outlines the exam formats, user experience, and testing schedule to ensure smooth development."
     },
     {
-      "category": "Initiation",
-      "question": "Stakeholder Identification",
-      "answer": "The process of determining who is impacted by the project and documenting relevant information about them."
+        category: "Planning",
+        question: "Project Management Plan",
+        answer: "A comprehensive document that integrates and coordinates all subsidiary plans (scope, schedule, cost, quality, risk, etc.).",
+        example: "A PMP-certified manager creates a detailed plan for an LMS development project, defining how work will be executed and controlled."
     },
     {
-      "category": "Initiation",
-      "question": "Business Case",
-      "answer": "A justification for the project, outlining the benefits, costs, and risks."
+        category: "Planning",
+        question: "Scope Management Plan",
+        answer: "A document that outlines how the project scope will be defined, validated, and controlled.",
+        example: "A scope management plan for a PMP certification training website details the included course modules and exclusions like one-on-one mentoring."
     },
     {
-      "category": "Initiation",
-      "question": "Assumptions Log",
-      "answer": "A document capturing all assumptions and constraints identified during project initiation."
+        category: "Planning",
+        question: "Requirements Management Plan",
+        answer: "Defines how project requirements will be collected, analyzed, and documented.",
+        example: "A requirements management plan for a student dashboard system ensures that features like progress tracking and performance analytics are properly gathered."
     },
     {
-      "category": "Initiation",
-      "question": "Project Sponsor",
-      "answer": "The individual or group that provides resources and support for the project."
+        category: "Planning",
+        question: "Schedule Management Plan",
+        answer: "Defines how the project schedule will be planned, developed, managed, and controlled.",
+        example: "A schedule management plan for an e-learning app launch includes task sequencing, milestone tracking, and buffer time for testing."
     },
     {
-      "category": "Initiation",
-      "question": "Project Objectives",
-      "answer": "Specific, measurable, and time-bound goals that the project aims to achieve."
+        category: "Planning",
+        question: "Cost Management Plan",
+        answer: "Outlines how project costs will be estimated, budgeted, and controlled to stay within financial constraints.",
+        example: "A cost management plan for a course video production project includes camera rentals, editing software licenses, and instructor fees."
     },
     {
-      "category": "Initiation",
-      "question": "Project Manager",
-      "answer": "The person assigned by the performing organization to lead the project team."
+        category: "Planning",
+        question: "Quality Management Plan",
+        answer: "Defines quality standards and processes to ensure deliverables meet stakeholder expectations.",
+        example: "A quality management plan for an LMS platform specifies video resolution, content accuracy, and system uptime requirements."
     },
     {
-      "category": "Initiation",
-      "question": "Feasibility Study",
-      "answer": "An assessment of the practicality and viability of a proposed project."
+        category: "Planning",
+        question: "Resource Management Plan",
+        answer: "A plan that details how project resources (people, materials, equipment) will be acquired, allocated, and managed.",
+        example: "A resource plan for a hybrid training program defines instructor roles, student support teams, and required learning materials."
     },
     {
-      "category": "Initiation",
-      "question": "Project Selection Methods",
-      "answer": "Techniques like benefit-cost analysis, scoring models, or decision trees used to determine project viability."
+        category: "Planning",
+        question: "Communications Management Plan",
+        answer: "Outlines who communicates what, when, and how to ensure effective project communication.",
+        example: "A communications plan for a global virtual seminar ensures stakeholders receive weekly progress emails and monthly video updates."
     },
     {
-      "category": "Initiation",
-      "question": "Cost-Benefit Analysis",
-      "answer": "A financial analysis that compares project costs to the benefits."
+        category: "Planning",
+        question: "Risk Management Plan",
+        answer: "A strategy to identify, assess, and mitigate project risks throughout the project lifecycle.",
+        example: "A risk management plan for a live online class includes contingency plans for internet outages and software crashes."
     },
     {
-      "category": "Initiation",
-      "question": "Project Scope",
-      "answer": "A statement of what the project will accomplish, including boundaries and deliverables."
+        category: "Planning",
+        question: "Procurement Management Plan",
+        answer: "Defines how goods and services will be purchased and managed during the project.",
+        example: "A procurement plan for an online learning platform includes contracts for third-party video hosting and AI assessment tools."
     },
     {
-      "category": "Initiation",
-      "question": "Stakeholder Register",
-      "answer": "A document that lists all stakeholders, including their roles and interests in the project."
+        category: "Planning",
+        question: "Stakeholder Engagement Plan",
+        answer: "Outlines strategies to engage and manage stakeholder expectations throughout the project.",
+        example: "A stakeholder engagement plan for a university's digital transformation project details faculty meetings, student surveys, and leadership reports."
     },
     {
-      "category": "Initiation",
-      "question": "Project Vision Statement",
-      "answer": "A short statement describing the long-term goal or direction of the project."
+        category: "Planning",
+        question: "Work Breakdown Structure (WBS)",
+        answer: "A hierarchical breakdown of project work into smaller, manageable components.",
+        example: "A WBS for a PMP training program breaks the work into content creation, video production, website development, and marketing."
     },
     {
-      "category": "Initiation",
-      "question": "High-Level Requirements",
-      "answer": "Broad statements of needs and conditions to be met by the project."
+        category: "Planning",
+        question: "WBS Dictionary",
+        answer: "A document that provides detailed descriptions of each WBS element, including deliverables, activities, and responsible parties.",
+        example: "In a software project, the WBS dictionary defines each module's requirements, developers, and estimated completion time."
     },
     {
-      "category": "Initiation",
-      "question": "Strategic Alignment",
-      "answer": "Ensuring that the project objectives align with the organization’s strategic goals."
+        category: "Planning",
+        question: "Activity List",
+        answer: "A detailed list of all project activities required to complete the deliverables.",
+        example: "An activity list for a course launch includes content writing, video recording, editing, and uploading."
     },
     {
-      "category": "Initiation",
-      "question": "Risk Identification",
-      "answer": "The process of determining potential risks during project initiation."
+        category: "Planning",
+        question: "Activity Sequencing",
+        answer: "The process of arranging project activities in a logical order based on dependencies.",
+        example: "In an LMS development project, 'Design UI' must happen before 'Develop Frontend', ensuring a logical sequence."
     },
     {
-      "category": "Initiation",
-      "question": "Project Assumptions",
-      "answer": "Things considered to be true for the purpose of planning, which may affect the project if incorrect."
+        category: "Planning",
+        question: "Network Diagram",
+        answer: "A visual representation of task dependencies and project flow to determine sequencing.",
+        example: "A network diagram for an Agile sprint shows feature development, testing, and deployment in sequential order."
     },
     {
-      "category": "Initiation",
-      "question": "Constraints",
-      "answer": "Limitations or restrictions on project work, such as budget, time, or resources."
+        category: "Planning",
+        question: "Critical Path Method (CPM)",
+        answer: "Identifies the longest sequence of dependent tasks to determine the shortest project duration.",
+        example: "If content writing, recording, and editing are on the critical path for an e-learning course, any delay in these tasks will push the launch date."
     },
     {
-      "category": "Initiation",
-      "question": "Initial Stakeholder Engagement Plan",
-      "answer": "A plan for managing stakeholder communication and engagement early in the project."
+        category: "Planning",
+        question: "Schedule Baseline",
+        answer: "The approved version of the project schedule against which progress is measured.",
+        example: "The original LMS launch date of June 1 is the schedule baseline, with deviations tracked for project control."
     },
     {
-      "category": "Initiation",
-      "question": "Project Success Criteria",
-      "answer": "The standards by which the project’s success will be judged."
+        category: "Planning",
+        question: "Cost Baseline",
+        answer: "The approved budget, used to compare actual spending against planned costs.",
+        example: "A project's approved $50,000 budget is the cost baseline, and exceeding it triggers a review."
     },
     {
-      "category": "Initiation",
-      "question": "Organizational Process Assets",
-      "answer": "Documents, policies, templates, and other resources available from the organization to guide the project."
+        category: "Planning",
+        question: "Change Management Plan",
+        answer: "A strategy for handling change requests and project adjustments effectively.",
+        example: "A scope change request for adding AI-based student progress tracking to an LMS follows the change management process."
     },
     {
-      "category": "Initiation",
-      "question": "Enterprise Environmental Factors",
-      "answer": "External and internal factors that influence the project’s success, such as regulations or market conditions."
+        category: "Planning",
+        question: "Performance Measurement Baseline",
+        answer: "An integrated baseline of scope, schedule, and cost, used to measure performance.",
+        example: "If an LMS project’s performance baseline is 50% completion by month three, progress reports track deviations."
     },
     {
-      "category": "Initiation",
-      "question": "Benefit Realization",
-      "answer": "The process of ensuring that project outcomes deliver the expected value."
+        category: "Planning",
+        question: "Contingency Reserve",
+        answer: "A budget or time buffer allocated for known risks.",
+        example: "A 10% contingency reserve is set aside for potential unexpected content development delays."
     },
     {
-      "category": "Initiation",
-      "question": "Governance Framework",
-      "answer": "The structure for decision-making, oversight, and accountability on the project."
-    },
-    {
-      "category": "Initiation",
-      "question": "Project Funding Requirements",
-      "answer": "The monetary resources needed to start and sustain the project."
-    },
-    {
-      "category": "Initiation",
-      "question": "Key Deliverables",
-      "answer": "Major outputs or products of the project that are essential for success."
-    },
-    {
-      "category": "Initiation",
-      "question": "Initial Risk Register",
-      "answer": "A document capturing potential risks identified during initiation."
-    },
-    {
-      "category": "Initiation",
-      "question": "Lessons Learned Repository",
-      "answer": "A collection of lessons from past projects that can be applied to the current project."
-    },
-    {
-      "category": "Initiation",
-      "question": "Stakeholder Analysis",
-      "answer": "A process to identify stakeholder expectations, interests, and their potential influence on the project."
-    },
-    {
-      "category": "Initiation",
-      "question": "Decision Criteria",
-      "answer": "The standards used to evaluate and select the project based on business needs."
-    },
-    {
-      "category": "Initiation",
-      "question": "Project Objectives Statement",
-      "answer": "A formalized statement outlining the overall purpose and expected outcomes of the project."
-    },
-    {
-      "category": "Initiation",
-      "question": "Project Charter Approval",
-      "answer": "The formal sign-off by the project sponsor or client that allows the project to proceed."
-    },
-    {
-      "category": "Initiation",
-      "question": "SWOT Analysis",
-      "answer": "An evaluation of Strengths, Weaknesses, Opportunities, and Threats as part of the initiation process."
-    },
-    {
-      "category": "Initiation",
-      "question": "Gap Analysis",
-      "answer": "A method to compare the current state to the desired state, helping to define project needs."
-    },
-    {
-      "category": "Initiation",
-      "question": "Initial Schedule Estimates",
-      "answer": "Early calculations of the time needed for project activities during initiation."
-    },
-    {
-      "category": "Initiation",
-      "question": "High-Level Milestone Plan",
-      "answer": "A summary of key dates and deliverables at the beginning of the project."
-    },
-    {
-      "category": "Initiation",
-      "question": "Project Justification",
-      "answer": "A reason why the project is necessary, including benefits or market demand."
-    },
-    {
-      "category": "Initiation",
-      "question": "Preliminary Budget",
-      "answer": "An initial cost estimate for the project, subject to refinement."
-    },
-    {
-      "category": "Initiation",
-      "question": "Legal and Regulatory Requirements",
-      "answer": "The laws and regulations the project must comply with."
-    },
-    {
-      "category": "Initiation",
-      "question": "Authority Matrix (RACI)",
-      "answer": "A tool to define roles and responsibilities for project team members (Responsible, Accountable, Consulted, Informed)."
-    },
-    {
-      "category": "Initiation",
-      "question": "Project Mission Statement",
-      "answer": "A brief description of the project’s purpose and how it aligns with organizational goals."
-    },
-    {
-      "category": "Initiation",
-      "question": "Opportunity Cost",
-      "answer": "The potential benefit lost when choosing one project over another."
-    },
-    {
-      "category": "Initiation",
-      "question": "Project Charter Inputs",
-      "answer": "Inputs such as the business case, agreements, and enterprise environmental factors used to create the charter."
-    },
-    {
-      "category": "Initiation",
-      "question": "High-Level Resource Estimates",
-      "answer": "Preliminary estimates of the resources required to execute the project."
-    },
-    {
-      "category": "Initiation",
-      "question": "Preliminary Risk Assessment",
-      "answer": "An early evaluation of risks that could affect the project’s success."
-    },
-    {
-      "category": "Initiation",
-      "question": "Roles and Responsibilities Definition",
-      "answer": "A process of assigning specific tasks and duties to team members."
-    },
-    {
-      "category": "Initiation",
-      "question": "Initial Procurement Strategy",
-      "answer": "A plan for acquiring resources, products, or services needed by the project."
-    },
-    {
-      "category": "Initiation",
-      "question": "Preliminary Communication Plan",
-      "answer": "Early guidelines on how information will be shared with stakeholders."
-    },
-    {
-      "category": "Initiation",
-      "question": "Kick-Off Meeting",
-      "answer": "An initial project meeting to discuss goals, roles, and expectations with stakeholders."
-    },
-    {
-      "category": "Initiation",
-      "question": "Project Scope Statement (Preliminary)",
-      "answer": "A brief document outlining theroject’s scope, including goals, deliverables, and exclusions."
+        category: "Planning",
+        question: "Project Kickoff Meeting",
+        answer: "A formal meeting that marks the transition from planning to execution, aligning stakeholders.",
+        example: "A kickoff meeting for a virtual learning project involves instructors, developers, and marketing teams discussing the launch plan."
+    },{
+      category: "Execution",
+      question: "Execution Process Group",
+      answer: "The execution phase is where project work is performed according to the project management plan to produce deliverables.",
+      example: "In a learning management system (LMS) project, execution involves coding the platform, recording course videos, and setting up user registration."
   },
   {
-  category: "Planning",
-  question: "Project Management Plan",
-  answer: "A comprehensive document that outlines how the project will be executed, monitored, and controlled."
+      category: "Execution",
+      question: "Direct and Manage Project Work",
+      answer: "The process of leading and coordinating project activities to achieve project objectives.",
+      example: "A project manager ensures that the development team builds the new course platform according to the approved scope and schedule."
   },
   {
-  category: "Planning",
-  question: "Scope Management Plan",
-  answer: "A plan that defines how the project scope will be defined, validated, and controlled."
+      category: "Execution",
+      question: "Manage Project Knowledge",
+      answer: "The process of capturing, sharing, and using project knowledge to enhance performance and outcomes.",
+      example: "A team developing an online certification program documents best practices and lessons learned for future course development projects."
   },
   {
-  category: "Planning",
-  question: "Requirements Management Plan",
-  answer: "A plan that details how requirements will be collected, analyzed, and documented."
+      category: "Execution",
+      question: "Implement Risk Responses",
+      answer: "The process of executing planned risk response strategies to address identified risks.",
+      example: "A risk response for potential server downtime in an online exam system includes implementing cloud-based redundancy."
   },
   {
-  category: "Planning",
-  question: "Schedule Management Plan",
-  answer: "A plan that outlines how the project schedule will be developed, monitored, and controlled."
+      category: "Execution",
+      question: "Acquire Resources",
+      answer: "The process of obtaining human, physical, and material resources needed for project execution.",
+      example: "Before launching a mock exam app, the team hires content creators, developers, and UI/UX designers."
   },
   {
-  category: "Planning",
-  question: "Cost Management Plan",
-  answer: "A plan that describes how costs will be planned, structured, and controlled throughout the project."
+      category: "Execution",
+      question: "Develop Team",
+      answer: "The process of improving team competencies, interactions, and overall effectiveness.",
+      example: "A project team for a virtual workshop series attends collaboration training to improve remote teamwork."
   },
   {
-  category: "Planning",
-  question: "Quality Management Plan",
-  answer: "A plan that outlines how project quality will be managed, ensuring that deliverables meet the required standards."
+      category: "Execution",
+      question: "Manage Team",
+      answer: "The process of tracking team performance, resolving conflicts, and motivating team members.",
+      example: "A project manager mediates a conflict between designers and developers to ensure smooth execution of an LMS project."
   },
   {
-  category: "Planning",
-  question: "Resource Management Plan",
-  answer: "A plan that identifies and manages the resources needed for the project."
+      category: "Execution",
+      question: "Manage Communications",
+      answer: "The process of creating, collecting, distributing, storing, and retrieving project information.",
+      example: "A project team shares weekly progress reports with stakeholders via email and dashboards."
   },
   {
-  category: "Planning",
-  question: "Communications Management Plan",
-  answer: "A plan that outlines how project information will be distributed and managed."
+      category: "Execution",
+      question: "Manage Stakeholder Engagement",
+      answer: "The process of actively engaging stakeholders to meet their expectations and resolve concerns.",
+      example: "The product owner hosts a demo session with instructors to get feedback on an upcoming e-learning platform."
   },
   {
-  category: "Planning",
-  question: "Risk Management Plan",
-  answer: "A plan that describes how risks will be identified, analyzed, and managed."
+      category: "Execution",
+      question: "Conduct Procurements",
+      answer: "The process of selecting, contracting, and managing vendors and suppliers.",
+      example: "A project team signs a contract with a video hosting service for an online training platform."
   },
   {
-  category: "Planning",
-  question: "Procurement Management Plan",
-  answer: "A plan that details how the procurement processes will be managed."
+      category: "Execution",
+      question: "Create Deliverables",
+      answer: "The process of producing tangible and intangible outputs as per project requirements.",
+      example: "A project team delivers a fully functional mobile app for online certification exams."
   },
   {
-  category: "Planning",
-  question: "Stakeholder Engagement Plan",
-  answer: "A plan that identifies stakeholder needs and outlines how to manage stakeholder expectations."
+      category: "Execution",
+      question: "Perform Quality Assurance",
+      answer: "The process of ensuring project deliverables meet quality standards before final delivery.",
+      example: "Before launching a new PMP course, an editor reviews and validates all learning materials to ensure accuracy."
   },
   {
-  category: "Planning",
-  question: "Scope Baseline",
-  answer: "A document that defines the project scope, including the work breakdown structure (WBS), project scope statement, and WBS dictionary."
+      category: "Execution",
+      question: "Issue Management",
+      answer: "The process of identifying, tracking, and resolving project issues.",
+      example: "A bug in the exam portal's time tracking feature is logged and assigned to the development team for resolution."
   },
   {
-  category: "Planning",
-  question: "Schedule Baseline",
-  answer: "The approved version of the project schedule that is used to track progress."
+      category: "Execution",
+      question: "Manage Work Performance Data",
+      answer: "The process of gathering and analyzing work performance information to ensure project health.",
+      example: "A project manager tracks student enrollment numbers and engagement levels to assess the success of an e-learning platform."
   },
   {
-  category: "Planning",
-  question: "Cost Baseline",
-  answer: "The approved version of the project budget used to monitor costs."
+      category: "Execution",
+      question: "Hold Daily Standups (Agile Projects)",
+      answer: "A short, daily meeting where the team discusses progress, roadblocks, and next steps.",
+      example: "In a scrum-based software development project, the team meets every morning to review sprint tasks and blockers."
   },
   {
-  category: "Planning",
-  question: "Work Breakdown Structure (WBS)",
-  answer: "A hierarchical decomposition of the total scope of work to be carried out by the project team."
+      category: "Execution",
+      question: "Manage Change Requests",
+      answer: "The process of reviewing and approving modifications to project scope, schedule, or cost.",
+      example: "A change request is submitted to add a new discussion forum feature to an online learning platform."
   },
   {
-  category: "Planning",
-  question: "Requirements Documentation",
-  answer: "A detailed description of the project's functional and non-functional requirements."
+      category: "Execution",
+      question: "Monitor Contractor Performance",
+      answer: "The process of evaluating vendor work to ensure compliance with contract terms.",
+      example: "A company reviews the progress of an outsourced UI/UX design team to confirm milestones are met."
   },
   {
-  category: "Planning",
-  question: "Requirements Traceability Matrix",
-  answer: "A document that links requirements to their origins and traces them throughout the project lifecycle."
+      category: "Execution",
+      question: "Conduct Pilot Testing",
+      answer: "The process of testing a deliverable in a controlled environment before full rollout.",
+      example: "A beta version of an online mock exam is tested with a small group of students before the public launch."
   },
   {
-  category: "Planning",
-  question: "Milestone List",
-  answer: "A list of significant points or events in the project."
+      category: "Execution",
+      question: "Conduct Training Sessions",
+      answer: "The process of educating end-users on how to use new systems or products.",
+      example: "Before launching a new learning portal, administrators are trained on course upload and student management features."
   },
   {
-  category: "Planning",
-  question: "Project Schedule",
-  answer: "A timeline that details the planned start and finish dates for project activities."
-  },
-  {
-  category: "Planning",
-  question: "Activity List",
-  answer: "A list of all activities that must be performed to produce project deliverables."
-  },
-  {
-  category: "Planning",
-  question: "Activity Attributes",
-  answer: "Information that provides more detail about each activity, such as duration, resource requirements, and constraints."
-  },
-  {
-  category: "Planning",
-  question: "Network Diagram",
-  answer: "A visual representation of the project’s activities and the dependencies between them."
-  },
-  {
-  category: "Planning",
-  question: "Critical Path Method (CPM)",
-  answer: "A technique used to predict project duration by identifying the longest path of dependent activities."
-  },
-  {
-  category: "Planning",
-  question: "Gantt Chart",
-  answer: "A type of bar chart used to illustrate a project schedule."
-  },
-  {
-  category: "Planning",
-  question: "Resource Breakdown Structure (RBS)",
-  answer: "A hierarchical breakdown of project resources categorized by type and function."
-  },
-  {
-  category: "Planning",
-  question: "Resource Calendar",
-  answer: "A calendar that shows the availability of project resources during the project."
-  },
-  {
-  category: "Planning",
-  question: "Cost Estimates",
-  answer: "An approximation of the costs required to complete project activities."
-  },
-  {
-  category: "Planning",
-  question: "Bottom-Up Estimating",
-  answer: "A method of estimating project costs by aggregating the costs of individual activities or work packages."
-  },
-  {
-  category: "Planning",
-  question: "Cost Aggregation",
-  answer: "The process of summing estimated costs by work package to establish the project budget."
-  },
-  {
-  category: "Planning",
-  question: "Contingency Reserve",
-  answer: "Funds set aside to address identified risks that may occur during the project."
-  },
-  {
-  category: "Planning",
-  question: "Management Reserve",
-  answer: "A reserve fund for unforeseen work within the scope of the project."
-  },
-  {
-  category: "Planning",
-  question: "Earned Value Management (EVM)",
-  answer: "A method of performance measurement that integrates project scope, cost, and schedule."
-  },
-  {
-  category: "Planning",
-  question: "Risk Register",
-  answer: "A document that lists identified risks, their potential impacts, and mitigation strategies."
-  },
-  {
-  category: "Planning",
-  question: "Qualitative Risk Analysis",
-  answer: "A process of prioritizing risks based on their probability and impact."
-  },
-  {
-  category: "Planning",
-  question: "Quantitative Risk Analysis",
-  answer: "A process of numerically analyzing the impact of risks on project objectives."
-  },
-  {
-  category: "Planning",
-  question: "Risk Response Planning",
-  answer: "A process of developing strategies to address risks, including mitigation, acceptance, and avoidance."
-  },
-  {
-  category: "Planning",
-  question: "Procurement Statement of Work (SOW)",
-  answer: "A document that describes the procurement work to be done and the deliverables expected."
-  },
-  {
-  category: "Planning",
-  question: "Make-or-Buy Analysis",
-  answer: "A technique to decide whether to produce a product internally or purchase it from an external supplier."
-  },
-  {
-  category: "Planning",
-  question: "Vendor Bid Analysis",
-  answer: "A process of comparing bids from vendors to select the best offer for the project."
-  },
-  {
-  category: "Planning",
-  question: "Contracts",
-  answer: "Legally binding agreements between the buyer and seller that outline deliverables, payment terms, and responsibilities."
-  },
-  {
-  category: "Planning",
-  question: "Stakeholder Register (Updated)",
-  answer: "A document that contains updated information about stakeholders, including their influence and engagement levels."
-  },
-  {
-  category: "Planning",
-  question: "Stakeholder Analysis (Updated)",
-  answer: "An analysis to further understand stakeholder expectations, needs, and their influence on the project."
-  },
-  {
-  category: "Planning",
-  question: "Communication Channels",
-  answer: "The methods and tools used to communicate with project stakeholders."
-  },
-  {
-  category: "Planning",
-  question: "Performance Reporting",
-  answer: "The process of collecting and distributing performance information, such as progress reports and earned value metrics."
-  },
-  {
-  category: "Planning",
-  question: "Quality Metrics",
-  answer: "Specific measures used to determine the quality of project deliverables."
-  },
-  {
-  category: "Planning",
-  question: "Control Limits",
-  answer: "The boundaries of acceptable variation in project performance."
-  },
-  {
-  category: "Planning",
-  question: "Change Management Plan",
-  answer: "A plan that outlines how changes to the project will be managed and controlled."
-  },
-  {
-  category: "Planning",
-  question: "Baseline Approval",
-  answer: "The process of formally approving scope, schedule, and cost baselines."
-  },
-  {
-  category: "Planning",
-  question: "Kick-Off Meeting (Planning Phase)",
-  answer: "A meeting to communicate the approved project plan and establish team roles and responsibilities."
-  },
-  {
-  category: "Planning",
-  question: "Rolling Wave Planning",
-  answer: "An iterative planning technique where work to be accomplished in the near term is planned in detail, while work farther in the future is planned at a higher level."
-  },
-      {
-        "category": "Execution",
-        "question": "Direct and Manage Project Work",
-        "answer": "The process of leading and performing the work defined in the project management plan."
-      },
-      {
-        "category": "Execution",
-        "question": "Manage Project Team",
-        "answer": "The process of tracking team member performance and resolving issues to optimize project performance."
-      },
-      {
-        "category": "Execution",
-        "question": "Manage Communications",
-        "answer": "Ensuring timely and appropriate generation, collection, dissemination, and management of project information."
-      },
-      {
-        "category": "Execution",
-        "question": "Manage Stakeholder Engagement",
-        "answer": "Actively engaging stakeholders to meet their needs and expectations."
-      },
-      {
-        "category": "Execution",
-        "question": "Implement Risk Responses",
-        "answer": "The process of implementing agreed-upon risk response plans."
-      },
-      {
-        "category": "Execution",
-        "question": "Acquire Resources",
-        "answer": "Obtaining the team members, equipment, materials, and other resources necessary for project work."
-      },
-      {
-        "category": "Execution",
-        "question": "Develop Team",
-        "answer": "Improving team members' competencies, interaction, and overall team environment to enhance project performance."
-      },
-      {
-        "category": "Execution",
-        "question": "Conduct Procurements",
-        "answer": "Obtaining seller responses, selecting sellers, and awarding contracts."
-      },
-      {
-        "category": "Execution",
-        "question": "Manage Quality",
-        "answer": "Translating the quality management plan into actionable quality activities."
-      },
-      {
-        "category": "Execution",
-        "question": "Perform Quality Audits",
-        "answer": "A structured review to ensure project processes comply with organizational policies and standards."
-      },
-      {
-        "category": "Execution",
-        "question": "Leadership",
-        "answer": "Providing vision, direction, and motivation to the project team."
-      },
-      {
-        "category": "Execution",
-        "question": "Teamwork",
-        "answer": "Collaborative effort by the team to achieve project goals."
-      },
-      {
-        "category": "Execution",
-        "question": "Project Charter Updates",
-        "answer": "Revisions made to the project charter during execution based on approved changes."
-      },
-      {
-        "category": "Execution",
-        "question": "Deliverables",
-        "answer": "Any unique and verifiable product, result, or capability produced as part of a project."
-      },
-      {
-        "category": "Execution",
-        "question": "Approved Change Requests",
-        "answer": "Change requests that have been approved and are implemented during project execution."
-      },
-      {
-        "category": "Execution",
-        "question": "Work Performance Data",
-        "answer": "Raw data on project work, such as status reports, used to monitor project progress."
-      },
-      {
-        "category": "Execution",
-        "question": "Work Performance Reports",
-        "answer": "Reports generated based on work performance data and used for decision-making."
-      },
-      {
-        "category": "Execution",
-        "question": "Issue Log",
-        "answer": "A document used to track project issues and their resolution."
-      },
-      {
-        "category": "Execution",
-        "question": "Change Log",
-        "answer": "A document that tracks all changes and their status throughout the project."
-      },
-      {
-        "category": "Execution",
-        "question": "Team Performance Assessments",
-        "answer": "Evaluations of team performance to identify improvements or corrections."
-      },
-      {
-        "category": "Execution",
-        "question": "Project Team Assignments",
-        "answer": "Assigning specific roles and responsibilities to project team members."
-      },
-      {
-        "category": "Execution",
-        "question": "Resource Calendars",
-        "answer": "A schedule that outlines when and where project resources will be used."
-      },
-      {
-        "category": "Execution",
-        "question": "Conflict Management",
-        "answer": "Resolving conflicts within the team to maintain productivity."
-      },
-      {
-        "category": "Execution",
-        "question": "Motivation",
-        "answer": "Encouraging team members to complete tasks effectively and meet project goals."
-      },
-      {
-        "category": "Execution",
-        "question": "Negotiation",
-        "answer": "Engaging with stakeholders and team members to resolve differences and agree on project decisions."
-      },
-      {
-        "category": "Execution",
-        "question": "Interpersonal Skills",
-        "answer": "Using communication, leadership, and negotiation to manage team performance and stakeholder engagement."
-      },
-      {
-        "category": "Execution",
-        "question": "Status Meetings",
-        "answer": "Regular meetings to review project progress and identify any issues or changes."
-      },
-      {
-        "category": "Execution",
-        "question": "Progress Reports",
-        "answer": "Reports summarizing the current state of the project, including accomplishments and risks."
-      },
-      {
-        "category": "Execution",
-        "question": "Performance Reviews",
-        "answer": "Evaluating team members or vendors based on their contributions to the project."
-      },
-      {
-        "category": "Execution",
-        "question": "Information Management Systems",
-        "answer": "Systems used to store and distribute project information."
-      },
-      {
-        "category": "Execution",
-        "question": "Communication Channels",
-        "answer": "The paths through which information is shared with stakeholders."
-      },
-      {
-        "category": "Execution",
-        "question": "Kick-Off Meeting (Execution Phase)",
-        "answer": "A meeting to start the execution of the project and set expectations."
-      },
-      {
-        "category": "Execution",
-        "question": "Task Assignment",
-        "answer": "Allocating specific tasks to team members based on their skills and workload."
-      },
-      {
-        "category": "Execution",
-        "question": "Corrective Actions",
-        "answer": "Steps taken to bring project performance back in line with the plan."
-      },
-      {
-        "category": "Execution",
-        "question": "Preventive Actions",
-        "answer": "Steps taken to ensure future project activities do not deviate from the plan."
-      },
-      {
-        "category": "Execution",
-        "question": "Procurement Agreements",
-        "answer": "Formal agreements between the buyer and seller outlining the terms of the project procurement."
-      },
-      {
-        "category": "Execution",
-        "question": "Performance Measurement Baseline",
-        "answer": "The scope, schedule, and cost baselines used to compare project performance."
-      },
-      {
-        "category": "Execution",
-        "question": "Supplier Performance Review",
-        "answer": "Evaluating the performance of vendors or contractors to ensure they meet project needs."
-      },
-      {
-        "category": "Execution",
-        "question": "Technical Performance Measurement",
-        "answer": "Comparing technical achievements with the project plan to assess progress."
-      },
-      {
-        "category": "Execution",
-        "question": "Knowledge Management",
-        "answer": "Capturing, distributing, and effectively using project knowledge to enhance decision-making."
-      },
-      {
-        "category": "Execution",
-        "question": "Benchmarking",
-        "answer": "Comparing project performance with that of other similar projects or industry standards."
-      },
-      {
-        "category": "Execution",
-        "question": "Team Building Activities",
-        "answer": "Activities aimed at fostering team cooperation and cohesion."
-      },
-      {
-        "category": "Execution",
-        "question": "Variance Analysis",
-        "answer": "Comparing actual project results with planned performance."
-      },
-      {
-        "category": "Execution",
-        "question": "Change Control Board (CCB)",
-        "answer": "A group of stakeholders responsible for reviewing and approving change requests."
-      },
-      {
-        "category": "Execution",
-        "question": "Training",
-        "answer": "Providing education or practice to the project team to develop required skills and knowledge."
-      },
-      {
-        "category": "Execution",
-        "question": "Stakeholder Feedback",
-        "answer": "Gathering feedback from stakeholders on project deliverables and progress."
-      },
-      {
-        "category": "Execution",
-        "question": "Supplier Contracts",
-        "answer": "Legally binding agreements between the project team and external suppliers."
-      },
-      {
-        "category": "Execution",
-        "question": "Scope Validation",
-        "answer": "Ensuring that deliverables meet the requirements outlined in the scope statement."
-      },
-      {
-        "category": "Execution",
-        "question": "Monitoring Project Work",
-        "answer": "Keeping track of project progress and making adjustments as necessary to stay on track."
-      },
-      {
-        "category": "Execution",
-        "question": "Risk Mitigation",
-        "answer": "Implementing strategies to reduce the probability or impact of identified risks."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Monitor and Control Project Work",
-        "answer": "Tracking, reviewing, and reporting project progress to meet performance objectives."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Perform Integrated Change Control",
-        "answer": "Reviewing all change requests, approving changes, and managing changes to deliverables and project documents."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Validate Scope",
-        "answer": "Formalizing acceptance of the completed project deliverables."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Control Scope",
-        "answer": "Monitoring the project’s scope and managing scope changes."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Control Schedule",
-        "answer": "Monitoring the status of the project schedule and managing changes to the schedule baseline."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Control Costs",
-        "answer": "Monitoring the status of the project budget and managing changes to the cost baseline."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Control Quality",
-        "answer": "Monitoring and recording results of quality activities to ensure compliance with quality standards."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Control Resources",
-        "answer": "Ensuring that the physical resources assigned and allocated to the project are available as planned."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Monitor Communications",
-        "answer": "Ensuring timely and appropriate collection, creation, distribution, storage, and retrieval of project information."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Monitor Risks",
-        "answer": "Monitoring identified risks, implementing risk response plans, and tracking new risks."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Control Procurement",
-        "answer": "Managing procurement relationships, monitoring contract performance, and making changes as needed."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Monitor Stakeholder Engagement",
-        "answer": "Monitoring stakeholder relationships and adjusting engagement strategies as necessary."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Change Requests",
-        "answer": "Formal proposals for modifications to project scope, schedule, or cost."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Corrective Actions",
-        "answer": "Actions taken to realign project performance with the project management plan."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Preventive Actions",
-        "answer": "Steps to avoid potential future issues that could negatively impact the project."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Work Performance Information",
-        "answer": "Performance data collected from various controlling processes, analyzed in the context of the project."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Work Performance Reports",
-        "answer": "Compiled status reports, memos, and dashboards shared with stakeholders to communicate project performance."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Variance Analysis",
-        "answer": "Comparing planned project performance to actual results to identify differences and their causes."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Earned Value Management (EVM)",
-        "answer": "A technique for measuring project performance and progress in an objective manner."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Schedule Variance (SV)",
-        "answer": "The difference between the work performed and work planned (SV = EV – PV)."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Cost Variance (CV)",
-        "answer": "The difference between the earned value and the actual cost (CV = EV – AC)."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Schedule Performance Index (SPI)",
-        "answer": "A measure of schedule efficiency (SPI = EV ÷ PV)."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Cost Performance Index (CPI)",
-        "answer": "A measure of cost efficiency (CPI = EV ÷ AC)."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Estimate to Complete (ETC)",
-        "answer": "The expected cost needed to complete all remaining project work."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Estimate at Completion (EAC)",
-        "answer": "The expected total cost of completing all work, based on performance to date."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "To-Complete Performance Index (TCPI)",
-        "answer": "A measure of the cost performance needed to complete the remaining work within the budget."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Forecasting",
-        "answer": "Estimating future project performance based on current data."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Risk Reassessment",
-        "answer": "Periodic review of risks to evaluate the project’s risk exposure."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Trend Analysis",
-        "answer": "Using historical project data to identify patterns and predict future performance."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Technical Performance Measurement",
-        "answer": "Comparing technical achievements to the performance baseline."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Control Charts",
-        "answer": "Graphical tools used to determine if a process is within acceptable limits."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Root Cause Analysis",
-        "answer": "Identifying the underlying causes of a problem or issue in the project."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Inspection",
-        "answer": "A review activity to ensure deliverables meet required standards."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Performance Reviews",
-        "answer": "Assessing the team’s work performance to evaluate progress toward project objectives."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Configuration Management Plan",
-        "answer": "Managing changes to the project’s deliverables and ensuring consistency throughout the project."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Status Review Meetings",
-        "answer": "Regularly scheduled meetings to discuss project progress and performance."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Quality Control Measurements",
-        "answer": "Documented results of control quality activities that are used to verify quality standards."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Integrated Change Control",
-        "answer": "Managing change requests and ensuring they are incorporated into project baselines."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Work Authorization System",
-        "answer": "A formal system to ensure work is performed at the right time by the right resources."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Regression Analysis",
-        "answer": "A statistical method to estimate relationships between variables for forecasting project trends."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Schedule Baseline",
-        "answer": "The approved version of the project schedule used as a reference to monitor progress."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Cost Baseline",
-        "answer": "The approved version of the budget used as a basis for measuring performance."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Requirements Traceability Matrix",
-        "answer": "A document that links requirements throughout the project lifecycle to ensure they are met."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Scope Creep",
-        "answer": "The uncontrolled expansion of project scope without adjustments to time, cost, and resources."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Audit",
-        "answer": "A formal examination of project work to ensure compliance with standards and policies."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Key Performance Indicators (KPIs)",
-        "answer": "Specific metrics used to measure the performance of the project."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Milestone List",
-        "answer": "A list of significant points or events in the project timeline."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Stakeholder Feedback",
-        "answer": "Input from stakeholders used to monitor engagement and manage expectations."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Resource Optimization",
-        "answer": "Techniques used to adjust the availability and assignment of resources to optimize performance."
-      },
-      {
-        "category": "Monitoring and Controlling",
-        "question": "Risk Register Updates",
-        "answer": "Documenting changes in risk conditions and mitigation strategies throughout the project."
-      },
-          
-      
-        {
-          "category": "Closing",
-          "question": "Project Closure",
-          "answer": "The formal process of completing and concluding all project activities."
-        },
-        {
-          category: "Closing",
-          question: "Project Closure",
-          answer: "The formal process of completing and concluding all project activities."
-        },
-        {
-          category: "Closing",
-          question: "Final Product, Service, or Result Transition",
-          answer: "Transferring the final product or service to the client or operational team."
-        },
-        {
-          category: "Closing",
-          question: "Close Project or Phase",
-          answer: "The process of finalizing all activities for the project, phase, or contract."
-        },
-        {
-          category: "Closing",
-          question: "Lessons Learned",
-          answer: "Documenting what worked well and what didn’t during the project."
-        },
-        {
-          category: "Closing",
-          question: "Final Performance Reporting",
-          answer: "Providing a report on the project’s performance regarding scope, cost, schedule, and quality."
-        },
-        {
-          category: "Closing",
-          question: "Contract Closure",
-          answer: "Ensuring all contracts are completed, terms are met, and documentation is archived."
-        },
-        {
-          category: "Closing",
-          question: "Post-Project Evaluation",
-          answer: "Conducting an evaluation to assess the project’s success and effectiveness."
-        },
-        {
-          category: "Closing",
-          question: "Stakeholder Feedback",
-          answer: "Gathering input from stakeholders to evaluate project satisfaction."
-        },
-        {
-          category: "Closing",
-          question: "Final Risk Review",
-          answer: "Reviewing and documenting how risks were managed throughout the project."
-        },
-        {
-          category: "Closing",
-          question: "Project Archiving",
-          answer: "Safely storing all project-related documents and files for future reference."
-        },
-        {
-          category: "Closing",
-          question: "Project Audit",
-          answer: "A formal review of project performance and adherence to processes."
-        },
-        {
-          category: "Closing",
-          question: "Financial Closure",
-          answer: "Ensuring all project financials are reconciled and closed."
-        },
-        {
-          category: "Closing",
-          question: "Scope Verification",
-          answer: "Ensuring that all deliverables have been completed and meet the defined scope."
-        },
-        {
-          category: "Closing",
-          question: "Procurement Closure",
-          answer: "Ensuring all procurement activities are finalized and contracts are closed."
-        },
-        {
-          category: "Closing",
-          question: "Change Management Review",
-          answer: "Reviewing all approved and implemented changes to ensure they are documented."
-        },
-        {
-          category: "Closing",
-          question: "Operational Handover",
-          answer: "Transferring project deliverables to operations or maintenance teams."
-        },
-        {
-          category: "Closing",
-          question: "Compliance Audit",
-          answer: "A review to ensure the project followed organizational and legal standards."
-        },
-        {
-          category: "Closing",
-          question: "Stakeholder Satisfaction",
-          answer: "Ensuring that the project has met stakeholder expectations."
-        },
-        {
-          category: "Closing",
-          question: "Final Quality Review",
-          answer: "A final check to ensure all quality standards were met."
-        },
-        {
-          category: "Closing",
-          question: "Team Release",
-          answer: "Releasing team members from the project to return to their functional roles."
-        },
-        {
-          category: "Closing",
-          question: "Project Manager’s Final Report",
-          answer: "The project manager’s final evaluation and summary of project success."
-        },
-        {
-          category: "Closing",
-          question: "Issue Log Closure",
-          answer: "Ensuring all project issues have been resolved and the log is closed."
-        },
-        {
-          category: "Closing",
-          question: "Customer Acceptance",
-          answer: "Formal sign-off by the customer acknowledging that the project meets their requirements."
-        },
-        {
-          category: "Closing",
-          question: "Project Success Criteria Evaluation",
-          answer: "Comparing actual outcomes with the predefined success criteria."
-        },
-        {
-          category: "Closing",
-          question: "Final Stakeholder Meeting",
-          answer: "Conducting a meeting to formally close the project and discuss lessons learned."
-        },
-        {
-          category: "Closing",
-          question: "Knowledge Transfer",
-          answer: "Sharing lessons and insights gained with future project teams or departments."
-        },
-        {
-          category: "Closing",
-          question: "Project Endorsement",
-          answer: "Official approval from the project sponsor to close the project."
-        },
-        {
-          category: "Closing",
-          question: "Final Budget Review",
-          answer: "Ensuring the project stayed within budget and closing out any financial obligations."
-        },
-        {
-          category: "Closing",
-          question: "Formal Handover",
-          answer: "Completing the formal transfer of project deliverables to the customer or operations."
-        },
-        {
-          category: "Closing",
-          question: "Project Closeout Checklist",
-          answer: "A detailed checklist ensuring all closure activities are completed."
-        },
-        {
-          category: "Closing",
-          question: "End-of-Project Review Meeting",
-          answer: "A meeting to review project outcomes and finalize documentation."
-        },
-        {
-          category: "Closing",
-          question: "Document Retention",
-          answer: "Storing key project documents according to legal and organizational requirements."
-        },
-        {
-          category: "Closing",
-          question: "Team Debriefing",
-          answer: "A final meeting with the project team to discuss performance and lessons learned."
-        },
-       
-        {
-          category: "Closing",
-          question: "Closeout Documentation",
-          answer: "Creating and storing all documents related to the project closure."
-        },
-        {
-          category: "Closing",
-          question: "Customer Handoff",
-          answer: "Delivering the final product or service to the customer with complete documentation."
-        },
-        {
-          category: "Closing",
-          question: "Project Deliverables Acceptance",
-          answer: "Formal acceptance of all deliverables by the customer or project sponsor."
-        },
-        {
-          category: "Closing",
-          question: "Archiving Contracts",
-          answer: "Ensuring that all contracts are stored securely for future reference."
-        },
-        {
-          category: "Closing",
-          question: "Release of Project Resources",
-          answer: "Releasing all project resources, including personnel, equipment, and materials."
-        },
-        {
-          category: "Closing",
-          question: "Final Stakeholder Communication",
-          answer: "Sending a final communication to all stakeholders regarding project closure."
-        },
-        {
-          category: "Closing",
-          question: "End-of-Project Financial Reporting",
-          answer: "Providing a final financial report detailing expenses, revenues, and variances."
-        },
-        {
-          category: "Closing",
-          question: "Audit Report",
-          answer: "A formal report detailing the findings of the project audit."
-        },
-        {
-          category: "Closing",
-          question: "Supplier Evaluations",
-          answer: "Conducting evaluations of suppliers and vendors used during the project."
-        },
-        {
-          category: "Closing",
-          question: "Contractor Release",
-          answer: "Ensuring all contractors have completed their work and are released from the project."
-        },
-        {
-          category: "Closing",
-          question: "Risk Closure",
-          answer: "Ensuring that all risks are closed and documented."
-        },
-        {
-          category: "Closing",
-          question: "Final Approval from Sponsor",
-          answer: "Receiving final approval from the sponsor to officially close the project."
-        },
-        {
-          category: "Closing",
-          question: "Final Status Report",
-          answer: "A report detailing the overall status of the project at closure."
-        },
-        {
-          category: "Closing",
-          question: "Project Success Celebration",
-          answer: "Recognizing the efforts of the project team and celebrating the project’s success."
-        },
-        {
-          category: "Closing",
-          question: "Post-Implementation Review",
-          answer: "A review conducted after the project is closed to assess its long-term benefits."
-        },
-        {
-          category: "Closing",
-          question: "Close Project Documentation",
-          answer: "Ensuring all closure documents are complete, accurate, and archived."
-        },
-        
-    ];
+      category: "Execution",
+      question: "Celebrate Achievements (Motivation & Recognition)",
+      answer: "Recognizing and rewarding team members for their contributions to project success.",
+      example: "After successfully launching a new certification program, the project team receives bonuses and recognition in a company-wide meeting."
+  },{
+    category: "Monitoring & Controlling",
+    question: "Monitoring & Controlling Process Group",
+    answer: "The process of tracking, reviewing, and regulating project progress to meet objectives and performance baselines.",
+    example: "A project manager reviews a budget report to ensure that costs for developing a mock exam platform remain within the approved limits."
+},
+{
+    category: "Monitoring & Controlling",
+    question: "Monitor and Control Project Work",
+    answer: "The process of tracking performance, identifying variances, and recommending corrective actions.",
+    example: "A team compares the actual development progress of an LMS against the project schedule to spot delays."
+},
+{
+    category: "Monitoring & Controlling",
+    question: "Perform Integrated Change Control",
+    answer: "The process of reviewing, approving, and managing changes to scope, schedule, and cost.",
+    example: "A sponsor requests adding live chat support to an online learning platform, requiring approval through change control."
+},
+{
+    category: "Monitoring & Controlling",
+    question: "Validate Scope",
+    answer: "The process of formally accepting completed project deliverables.",
+    example: "Before launching an LMS, stakeholders review the course modules and approve them based on requirements."
+},
+{
+    category: "Monitoring & Controlling",
+    question: "Control Scope",
+    answer: "The process of managing scope changes and preventing unauthorized additions.",
+    example: "A project manager rejects an unapproved request to add a mobile quiz feature to an LMS to prevent scope creep."
+},
+{
+    category: "Monitoring & Controlling",
+    question: "Control Schedule",
+    answer: "The process of monitoring project timeline performance and making adjustments to stay on track.",
+    example: "A project team fast-tracks testing by performing it parallel to development to compensate for delays."
+},
+{
+    category: "Monitoring & Controlling",
+    question: "Control Costs",
+    answer: "The process of monitoring expenditures, ensuring cost adherence, and preventing budget overruns.",
+    example: "The finance team tracks LMS development expenses to ensure they do not exceed the allocated $50,000 budget."
+},
+{
+    category: "Monitoring & Controlling",
+    question: "Control Quality",
+    answer: "The process of reviewing work performance and deliverables to ensure compliance with quality standards.",
+    example: "A quality assurance team checks that all e-learning videos meet HD resolution and audio clarity standards."
+},
+{
+    category: "Monitoring & Controlling",
+    question: "Control Resources",
+    answer: "The process of ensuring project resources are allocated properly and used efficiently.",
+    example: "A project manager shifts developers to a critical task when a delay occurs in an LMS feature implementation."
+},
+{
+    category: "Monitoring & Controlling",
+    question: "Monitor Communications",
+    answer: "The process of ensuring project communications are timely, clear, and effective.",
+    example: "A project manager reviews stakeholder email response times and adjusts reporting frequency for better engagement."
+},
+{
+    category: "Monitoring & Controlling",
+    question: "Monitor Risks",
+    answer: "The process of tracking identified risks, reassessing risks, and implementing response strategies.",
+    example: "A development team monitors for potential server crashes in an online mock exam system and adds redundancy measures."
+},
+{
+    category: "Monitoring & Controlling",
+    question: "Control Procurement",
+    answer: "The process of monitoring vendor performance and contract adherence.",
+    example: "A project manager reviews vendor progress reports to ensure an outsourced LMS module is delivered on time."
+},
+{
+    category: "Monitoring & Controlling",
+    question: "Monitor Stakeholder Engagement",
+    answer: "The process of ensuring stakeholders remain engaged and their needs are addressed.",
+    example: "A feedback survey is sent to instructors to gauge their satisfaction with the LMS development progress."
+},
+{
+    category: "Monitoring & Controlling",
+    question: "Earned Value Management (EVM)",
+    answer: "A performance measurement technique that compares planned vs. actual cost and schedule progress.",
+    example: "If the Earned Value (EV) of an LMS project is lower than the Planned Value (PV), it indicates schedule delays."
+},
+{
+    category: "Monitoring & Controlling",
+    question: "Schedule Variance (SV)",
+    answer: "A measure of whether a project is ahead or behind schedule (SV = EV - PV).",
+    example: "If an LMS project was planned to be 50% complete but is only 40% done, it has a negative Schedule Variance."
+},
+{
+    category: "Monitoring & Controlling",
+    question: "Cost Variance (CV)",
+    answer: "A measure of whether a project is over or under budget (CV = EV - AC).",
+    example: "If a project has spent more money than planned without completing the expected work, it has a negative CV."
+},
+{
+    category: "Monitoring & Controlling",
+    question: "Schedule Performance Index (SPI)",
+    answer: "A ratio that indicates schedule efficiency (SPI = EV / PV).",
+    example: "An SPI below 1.0 means the LMS development is behind schedule."
+},
+{
+    category: "Monitoring & Controlling",
+    question: "Cost Performance Index (CPI)",
+    answer: "A ratio that indicates cost efficiency (CPI = EV / AC).",
+    example: "If a project has a CPI greater than 1.0, it is under budget and using resources efficiently."
+},
+{
+    category: "Monitoring & Controlling",
+    question: "Trend Analysis",
+    answer: "A technique for analyzing project data trends to predict future performance.",
+    example: "If LMS enrollment rates increase consistently, trend analysis suggests demand will continue growing."
+},
+{
+    category: "Monitoring & Controlling",
+    question: "Variance Analysis",
+    answer: "The process of comparing actual project performance against baselines to identify deviations.",
+    example: "If a project's planned cost was $100,000 but the actual cost is $120,000, variance analysis is performed to find causes."
+},
+{
+    category: "Monitoring & Controlling",
+    question: "Root Cause Analysis (RCA)",
+    answer: "A problem-solving technique that identifies the underlying causes of project issues.",
+    example: "If students drop out of an online course, RCA might reveal poor engagement due to unstructured content."
+},
+{
+    category: "Monitoring & Controlling",
+    question: "Lessons Learned Register",
+    answer: "A document capturing project successes, failures, and improvement recommendations for future reference.",
+    example: "After launching an LMS, the project team documents what worked well and what challenges arose during development."
+},
+{
+    category: "Monitoring & Controlling",
+    question: "Corrective Action",
+    answer: "A planned response to bring project performance back in line with the plan.",
+    example: "To fix delays in an Agile sprint, the team adds extra development resources to meet the deadline."
+},
+{
+    category: "Monitoring & Controlling",
+    question: "Preventive Action",
+    answer: "A proactive step taken to prevent potential project issues before they occur.",
+    example: "Installing an automatic data backup system to prevent potential LMS content loss."
+},
+{
+    category: "Monitoring & Controlling",
+    question: "Defect Repair",
+    answer: "A process of fixing a non-conforming deliverable to meet project quality standards.",
+    example: "After an LMS test run, developers fix a bug where students' progress isn't saved correctly."
+},
+{
+  category: "Closing",
+  question: "Closing Process Group",
+  answer: "The phase in project management where all activities across all process groups are finalized to formally close a project or phase.",
+  example: "After delivering an online course platform, the project manager ensures all project tasks are completed, deliverables are accepted, and resources are released."
+},
+{
+  category: "Closing",
+  question: "Close Project or Phase",
+  answer: "The process of finalizing all activities to formally complete the project or phase.",
+  example: "Upon completing the development phase of an LMS, the project manager conducts a phase-end review and obtains formal acceptance before moving to the next phase."
+},
+{
+  category: "Closing",
+  question: "Final Product Transition",
+  answer: "The process of handing over the completed project deliverables to the client or operational team.",
+  example: "The project team transfers the newly developed e-learning platform to the client's IT department for ongoing maintenance and support."
+},
+{
+  category: "Closing",
+  question: "Final Report",
+  answer: "A comprehensive document summarizing project performance, including objectives achieved, scope, quality, cost, and schedule performance.",
+  example: "The project manager prepares a final report detailing the successful launch of a certification program, highlighting adherence to timelines and budgets."
+},
+{
+  category: "Closing",
+  question: "Lessons Learned Documentation",
+  answer: "A record of knowledge gained during the project, capturing what went well and areas for improvement.",
+  example: "The team documents that early stakeholder engagement led to better requirement gathering, a practice to be applied in future projects."
+},
+{
+  category: "Closing",
+  question: "Administrative Closure",
+  answer: "The process of completing all project records, archiving documents, and updating organizational process assets.",
+  example: "After project completion, all contracts, agreements, and project documents are archived in the company's project management system for future reference."
+},
+{
+  category: "Closing",
+  question: "Contract Closure",
+  answer: "The process of completing and settling the terms of any contracts and resolving any open items.",
+  example: "The project manager ensures that all deliverables from a third-party content provider are received and approved, and final payments are processed."
+},
+{
+  category: "Closing",
+  question: "Post-Implementation Review",
+  answer: "An evaluation conducted after project completion to assess the project's success and identify lessons learned.",
+  example: "Following the deployment of a new LMS, a review is held to evaluate user satisfaction and system performance, providing insights for future improvements."
+},
+{
+  category: "Closing",
+  question: "Release of Resources",
+  answer: "The process of reassigning project team members and releasing project resources upon completion.",
+  example: "After project closure, team members are reassigned to new projects, and equipment is returned to the resource pool."
+},
+{
+  category: "Closing",
+  question: "Stakeholder Satisfaction Assessment",
+  answer: "The process of evaluating stakeholder satisfaction with the project's outcomes.",
+  example: "Surveys are distributed to course instructors and students to gather feedback on the new e-learning platform's effectiveness and usability."
+},
+{
+  category: "Closing",
+  question: "Archiving Project Documents",
+  answer: "The process of storing project documents, reports, and key artifacts for future reference and audits.",
+  example: "All design documents, requirement specifications, and project reports for an LMS project are archived in the company's knowledge repository."
+},
+{
+  category: "Closing",
+  question: "Legal and Compliance Closure",
+  answer: "Ensuring all project activities adhere to legal and regulatory requirements before project closure.",
+  example: "A data security compliance audit is conducted before closing an LMS project to ensure GDPR compliance."
+},
+{
+  category: "Closing",
+  question: "Operational Handover",
+  answer: "Transferring the project deliverables to the operations or maintenance team for ongoing support.",
+  example: "The development team hands over an LMS to the IT support team, who will maintain and update the platform post-launch."
+},
+{
+  category: "Closing",
+  question: "Client Acceptance Sign-Off",
+  answer: "Formal acknowledgment from the client or sponsor that the project deliverables meet their expectations.",
+  example: "The client signs off on the new e-learning platform after reviewing all agreed-upon features and functionalities."
+},
+{
+  category: "Closing",
+  question: "Final Budget Reconciliation",
+  answer: "Reviewing and finalizing all financial transactions to ensure project expenses match the allocated budget.",
+  example: "A financial audit is conducted to confirm that all vendor invoices for the LMS development project have been paid."
+},
+{
+  category: "Closing",
+  question: "Measuring Project Benefits",
+  answer: "Assessing whether the intended benefits of the project have been realized post-completion.",
+  example: "After implementing an AI-based student progress tracker, the team evaluates improvements in course completion rates."
+},
+{
+  category: "Closing",
+  question: "Project Closure Checklist",
+  answer: "A structured list of tasks that need to be completed before formally closing the project.",
+  example: "A project closure checklist for a corporate training program includes deliverable validation, budget reconciliation, and stakeholder feedback collection."
+},
+{
+  category: "Closing",
+  question: "Celebrating Project Completion",
+  answer: "Recognizing and appreciating the contributions of the project team to boost morale and encourage future success.",
+  example: "After a successful LMS launch, the project team holds a celebration event and recognizes key contributors with awards."
+}
+    ]
     
     export default processData;
     
