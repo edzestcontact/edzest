@@ -74,9 +74,9 @@ const Navbar = () => {
                     </Link>
 
                     {/* Added Drag & Drop Quiz Link */}
-                     <Link to="/drag-and-drop" onClick={() => handleNavClick("/drag-and-drop")} className="text-dark text-decoration-none py-2 px-3 rounded hover-bg-light">
+                     {/* <Link to="/drag-and-drop" onClick={() => handleNavClick("/drag-and-drop")} className="text-dark text-decoration-none py-2 px-3 rounded hover-bg-light">
                       Drag & Drop Quiz
-                    </Link> 
+                    </Link>  */}
                   </Col>
                 </Row>
               </Container>
