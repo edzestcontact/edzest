@@ -64,19 +64,19 @@ const Navbar = () => {
                     <Link to="/docs" onClick={() => handleNavClick("/docs")} className="text-dark text-decoration-none py-2 px-3 rounded hover-bg-light">
                       Project Docs
                     </Link>
-
+{/* 
                     <Link to="/flashcards" onClick={() => handleNavClick("/flashcards")} className="text-dark text-decoration-none py-2 px-3 rounded hover-bg-light">
                       Flashcards
-                    </Link>
+                    </Link> */}
 
                     <Link to="/career-development" onClick={() => handleNavClick("/career-development")} className="text-dark text-decoration-none py-2 px-3 rounded hover-bg-light">
                       Career Development
                     </Link>
 
                     {/* Added Drag & Drop Quiz Link */}
-                    {/* <Link to="/drag-and-drop" onClick={() => handleNavClick("/drag-and-drop")} className="text-dark text-decoration-none py-2 px-3 rounded hover-bg-light">
+                     <Link to="/drag-and-drop" onClick={() => handleNavClick("/drag-and-drop")} className="text-dark text-decoration-none py-2 px-3 rounded hover-bg-light">
                       Drag & Drop Quiz
-                    </Link> */}
+                    </Link> 
                   </Col>
                 </Row>
               </Container>
@@ -131,9 +131,9 @@ const Navbar = () => {
                       Project Docs
                     </Link>
 
-                    <Link to="/flashcards" onClick={() => handleNavClick("/flashcards")} className="text-gray-700 text-center py-2 text-decoration-none hover:bg-[#4748ac] hover:text-white">
+                    {/* <Link to="/flashcards" onClick={() => handleNavClick("/flashcards")} className="text-gray-700 text-center py-2 text-decoration-none hover:bg-[#4748ac] hover:text-white">
                       Flashcards
-                    </Link>
+                    </Link> */}
 
                     <Link to="/career-development" onClick={() => handleNavClick("/career-development")} className="text-gray-700 text-center py-2 text-decoration-none hover:bg-[#4748ac] hover:text-white">
                       Career Development

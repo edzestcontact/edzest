@@ -340,24 +340,12 @@ const FlashMain = () => {
   const location = useLocation();
   const [isFlipped, setIsFlipped] = useState(false);
 
-  const [selectedCategory, setSelectedCategory] = useState(
-    localStorage.getItem("selectedCategory") || null
-  );
-  const [currentCardIndex, setCurrentCardIndex] = useState(
-    parseInt(localStorage.getItem("currentCardIndex")) || 0
-  );
-  const [answeredCards, setAnsweredCards] = useState(
-    JSON.parse(localStorage.getItem("answeredCards")) || {}
-  );
-  const [score, setScore] = useState(
-    parseInt(localStorage.getItem("score")) || 0
-  );
-  const [progress, setProgress] = useState(
-    parseFloat(localStorage.getItem("progress")) || 0
-  );
-  const [selectedType, setSelectedType] = useState(
-    localStorage.getItem("selectedType") || null
-  );
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedType, setSelectedType] = useState(null);
+  const [currentCardIndex, setCurrentCardIndex] = useState(0);
+  const [answeredCards, setAnsweredCards] = useState({});
+  const [score, setScore] = useState(0);
+  const [progress, setProgress] = useState(0);
 
   const agileCategories = [...new Set(agileData.map((item) => item.category))];
   const domainCategories = [
@@ -375,6 +363,22 @@ const FlashMain = () => {
   const performanceDomainCategories = [
     ...new Set(PerformanceDomainData.map((item) => item.category)),
   ];
+  useEffect(() => {
+    const savedCategory = localStorage.getItem("selectedCategory");
+    const savedType = localStorage.getItem("selectedType");
+    const savedIndex = parseInt(localStorage.getItem("currentCardIndex")) || 0;
+    const savedScore = parseInt(localStorage.getItem("score")) || 0;
+    const savedProgress = parseFloat(localStorage.getItem("progress")) || 0;
+    const savedAnsweredCards =
+      JSON.parse(localStorage.getItem("answeredCards")) || {};
+
+    setSelectedCategory(savedCategory);
+    setSelectedType(savedType);
+    setCurrentCardIndex(savedIndex);
+    setScore(savedScore);
+    setProgress(savedProgress);
+    setAnsweredCards(savedAnsweredCards);
+  }, []);
 
   const filteredFlashcards =
     selectedType === "Agile"
@@ -454,19 +458,12 @@ const FlashMain = () => {
   // ✅ Save to localStorage whenever state changes
   useEffect(() => {
     localStorage.setItem("selectedCategory", selectedCategory);
+    localStorage.setItem("selectedType", selectedType);
     localStorage.setItem("currentCardIndex", currentCardIndex);
     localStorage.setItem("answeredCards", JSON.stringify(answeredCards));
     localStorage.setItem("score", score);
     localStorage.setItem("progress", progress);
-    localStorage.setItem("selectedType", selectedType);
-  }, [
-    selectedCategory,
-    currentCardIndex,
-    answeredCards,
-    score,
-    progress,
-    selectedType,
-  ]);
+  }, [selectedCategory, selectedType, currentCardIndex, answeredCards, score, progress]);
 
   // ✅ Progress Calculation
   useEffect(() => {
@@ -589,12 +586,12 @@ const FlashMain = () => {
         </Nav>
 
         {selectedCategory && (
-          <ProgressBar
-            progress={progress}
-            score={score}
-            totalCards={filteredFlashcards.length}
-          />
-        )}
+  <ProgressBar
+    progress={progress}
+    score={score}
+    totalCards={filteredFlashcards.length}
+  />
+)}
 
         {/* ✅ Show Main Category Cards */}
         {!selectedType && (
@@ -846,3 +843,6 @@ const FlashMain = () => {
 };
 
 export default FlashMain;
+
+
+
