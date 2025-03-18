@@ -125,23 +125,13 @@ function App() {
           <Route path="/drag-and-drop/set2" element={<DragAndDropQuiz2 />} />
           <Route path="/drag-and-drop/set3" element={<DragAndDropQuiz3 />} />
 
-          {/* ✅ Documentation Pages */}
+
+
+          {/* ✅ Project Documentation Pages */}
           <Route path="/docs/*" element={<Docs />} />
-          <Route path="/docs/:chapterId" element={<Docs />} />
-          <Route path="/content/:subChapterId" element={<Content />} />
-          <Route path="/content/:chapterId" element={<DocsWrapper />} />
-          <Route
-            path="/content/:chapterId/:subChapterId"
-            element={<DocsWrapper />}
-          />
-          <Route
-            path="/content/:chapterId/:subChapterId/:sectionId"
-            element={<DocsWrapper />}
-          />
-          <Route
-            path="/docs/:chapterId/:subChapterId/:sectionId"
-            element={<Docs />}
-          />
+          <Route path="/docs/:chapterId/:subChapterId" element={<Docs />} />
+          
+
 
           {/* ✅ Catch-All Redirect */}
           <Route path="*" element={<Hero />} />

@@ -122,41 +122,35 @@ const Flashcard = ({
   currentCardIndex,
   setCurrentCardIndex,
   totalCards,
-  isFlipped, // ✅ Controlled flip state from parent
-  setIsFlipped, // ✅ Flip handler from parent
+  isFlipped,
+  setIsFlipped,
 }) => {
-  const [flipped, setFlipped] = useState(false); // ✅ Local flip state for manual flipping
+  const [flipped, setFlipped] = useState(false);
 
-  // ✅ Sync local flipped state with the parent flip state
   useEffect(() => {
-    setFlipped(isFlipped); // When isFlipped changes, update flipped state
+    setFlipped(isFlipped);
   }, [isFlipped]);
 
-  // ✅ Handle card flip when clicked
   const handleFlip = () => {
-    setFlipped((prev) => !prev); // Toggle local flip
-    setIsFlipped((prev) => !prev); // Sync with parent
+    setFlipped((prev) => !prev);
+    setIsFlipped((prev) => !prev);
   };
 
-  // ✅ Load saved index & flip state from localStorage on initial render
   useEffect(() => {
     const savedIndex = localStorage.getItem("currentCardIndex");
     const savedFlipped = localStorage.getItem("flipped");
-
     const index = Number(savedIndex);
     if (!isNaN(index) && index >= 0 && index < totalCards) {
       setCurrentCardIndex(index);
     } else {
       setCurrentCardIndex(0);
     }
-
     if (savedFlipped !== null) {
       setFlipped(savedFlipped === "true");
-      setIsFlipped(savedFlipped === "true"); // ✅ Sync with parent state
+      setIsFlipped(savedFlipped === "true");
     }
   }, [setCurrentCardIndex, setIsFlipped, totalCards]);
 
-  // ✅ Save the current index & flip state to localStorage whenever they change
   useEffect(() => {
     localStorage.setItem("currentCardIndex", currentCardIndex.toString());
     localStorage.setItem("flipped", flipped.toString());
@@ -167,13 +161,7 @@ const Flashcard = ({
   }
 
   return (
-    <div
-      className="flashcard-container d-flex justify-content-center align-items-center"
-      style={{
-        width: "100%",
-        padding: "20px",
-      }}
-    >
+    <div className="flashcard-container d-flex justify-content-center align-items-center" style={{ width: "100%", padding: "20px" }}>
       <div
         className="card text-center shadow-lg rounded-4 p-3 bg-grey-500"
         style={{
@@ -184,11 +172,10 @@ const Flashcard = ({
           transition: "transform 0.6s",
           transformStyle: "preserve-3d",
           position: "relative",
-          transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)", // ✅ Flip effect
+          transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
         }}
-        onClick={handleFlip} // ✅ Trigger flip on click
+        onClick={handleFlip}
       >
-        {/* ✅ Front Side (Question) */}
         <div
           className="card-body d-flex flex-column justify-content-center align-items-center"
           style={{
@@ -199,14 +186,16 @@ const Flashcard = ({
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
+            overflow: "hidden",
+            wordWrap: "break-word",
+            padding: "10px",
           }}
         >
-          <h3 className="card-text text-dark">
+          <h3 className="card-text text-dark" style={{ fontSize: "1.2rem", textAlign: "center" }}>
             {currentCard.question || "No Question Available"}
           </h3>
         </div>
 
-        {/* ✅ Back Side (Answer & Example) */}
         <div
           className="card-body d-flex flex-column justify-content-center align-items-center rounded-4"
           style={{
@@ -217,15 +206,17 @@ const Flashcard = ({
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%) rotateY(180deg)",
+            overflowY: "auto",
+            wordWrap: "break-word",
+            padding: "10px",
+            textAlign: "center",
           }}
         >
-          <p className="card-text text-dark">
+          <p className="card-text text-dark" style={{ fontSize: "1rem" }}>
             {currentCard.answer || "No Answer Available"}
           </p>
-
-          {/* ✅ Display example if available */}
           {currentCard.example && (
-            <p className="card-text text-muted">
+            <p className="card-text text-muted" style={{ fontSize: "0.9rem" }}>
               <strong>Example:</strong> {currentCard.example}
             </p>
           )}

@@ -9,18 +9,27 @@ const Chapter1= [
       sections: [
         {
           id: "what_is_project",
-          title: "What is a Project",
-          content: `Projects are temporary endeavours that are undertaken to achieve a specific goal or outcome.  
-  They are usually unique, non-routine activities that are designed to create a product, service, or result that is not part of an organization’s usual operations. Projects can range from small, simple tasks that take a few hours to complete, to large, complex initiatives that take years to finish. `,
-  
-          image: "/docs/images/o2doyowf.png"
+          title: "What is a Project?",
+          content: `A project is a temporary endeavor undertaken to create a unique product, service, or result. It has a clear start and end date, specific objectives, and is executed within defined constraints such as budget, time, and resources.`,  
+          // image: "/docs/images/o2doyowf.png"
         },
         {
-          id: "construction_project",
-          title: "Example: Construction Project",
-          content: `
-  One example of a project is the construction of a new building. This type of project is typically large and complex, involving many different stakeholders, such as architects, engineers, contractors, and construction workers. Such projects may take several years to complete, and involves the coordination of many different tasks, such as site preparation, foundation work, framing, electrical and plumbing work, and finishing work. The project team will have a specific budget, timeline, and set of deliverables that must be met for the project to be considered a success.
-          `
+          id: "characteristics_of_a_project",
+          title: "Characteristics of a Project",
+          content: `•	Temporary: Every project has a defined beginning and end.
+
+•	Unique Outcome: The deliverables differ from routine operations.
+
+•	Progressive Elaboration: The project scope evolves as more information becomes available.
+
+•	Constraints: Projects operate within limitations of time, cost, and resources.
+
+**Example of a Project:**
+A construction company building a bridge is a project because:
+•	It has a start and end date.
+•	The goal is to deliver a unique structure.
+•	It requires defined resources, planning, and execution.
+`
         },
         {
           id: "development_of_new_software",
