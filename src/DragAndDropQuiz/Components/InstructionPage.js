@@ -138,13 +138,7 @@ const InstructionPage = ({ startQuiz }) => {
             <strong>only if all matches are correct.</strong>
           </span>
         </div>
-        <div className="instruction-item">
-          <FaCheckCircle className="icon" />
-          <span>
-            Use the <strong>Previous</strong> button to go back to previous
-            questions.
-          </span>
-        </div>
+        
         <div className="instruction-item">
           <FaCheckCircle className="icon" />
           <span>
@@ -154,7 +148,7 @@ const InstructionPage = ({ startQuiz }) => {
         <div className="instruction-item">
           <FaCheckCircle className="icon" />
           <span>
-            Use the <strong>Refresh</strong> button to reset the current
+            Use the <strong>Refresh</strong> icon to reset the current
             question.
             <br /> <small>(Only works if you've attempted the question.)</small>
           </span>
