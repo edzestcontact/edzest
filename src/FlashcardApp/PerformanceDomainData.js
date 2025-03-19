@@ -115,145 +115,145 @@ const PerformanceDomainData = [
             example: "After a major product launch, the team documents lessons about improving cross-departmental communication."
         },
         {
-            category: "Development Approach & Life Cycle",
-            question: "Development Approach & Life Cycle Performance Domain",
+            category: "Development Approach and Life Cycle",
+            question: "Development Approach and Life Cycle Performance Domain",
             answer: "The domain that focuses on choosing and managing the project life cycle and development approach to align with project goals.",
             example: "A project manager selects an Agile development approach for a rapidly evolving SaaS platform to allow continuous iterations."
         },
         {
-            category: "Development Approach & Life Cycle",
+            category: "Development Approach and Life Cycle",
             question: "Project Life Cycle",
             answer: "The phases a project goes through from initiation to closure, regardless of the development approach.",
             example: "A traditional construction project follows a linear life cycle from design, planning, construction, and handover."
         },
         {
-            category: "Development Approach & Life Cycle",
+            category: "Development Approach and Life Cycle",
             question: "Predictive (Waterfall) Life Cycle",
             answer: "A structured, sequential development approach where phases are planned upfront and completed one at a time.",
             example: "A government infrastructure project follows a predictive life cycle because requirements are well-defined and changes are costly."
         },
         {
-            category: "Development Approach & Life Cycle",
+            category: "Development Approach and Life Cycle",
             question: "Iterative Life Cycle",
             answer: "A development approach where the project progresses through repeated cycles, refining the solution with each iteration.",
             example: "A software company develops an LMS in multiple iterations, improving usability based on user feedback before final release."
         },
         {
-            category: "Development Approach & Life Cycle",
+            category: "Development Approach and Life Cycle",
             question: "Incremental Life Cycle",
             answer: "A project development approach where the product is delivered in small usable increments rather than as a whole.",
             example: "A mobile banking app releases basic functionalities first and gradually adds more features like bill payments and budgeting tools."
         },
         {
-            category: "Development Approach & Life Cycle",
+            category: "Development Approach and Life Cycle",
             question: "Adaptive (Agile) Life Cycle",
             answer: "A flexible, iterative approach that allows teams to respond to changes and continuously refine deliverables.",
             example: "A startup uses Agile sprints to build a prototype, gather user feedback, and adjust features accordingly."
         },
         {
-            category: "Development Approach & Life Cycle",
+            category: "Development Approach and Life Cycle",
             question: "Hybrid Life Cycle",
             answer: "A combination of predictive and adaptive methodologies, balancing structured planning with flexibility.",
             example: "A company uses a predictive approach for hardware design and an Agile approach for software development in a smart home device project."
         },
         {
-            category: "Development Approach & Life Cycle",
+            category: "Development Approach and Life Cycle",
             question: "Agile Development Approach",
             answer: "A framework that emphasizes collaboration, customer feedback, and incremental delivery over rigid planning.",
             example: "A software team uses Agile to develop an e-commerce platform, releasing new features in biweekly sprints."
         },
         {
-            category: "Development Approach & Life Cycle",
+            category: "Development Approach and Life Cycle",
             question: "Scrum Framework",
             answer: "An Agile methodology that focuses on sprints, iterative development, and daily stand-ups.",
             example: "A project team works in two-week sprints to build and test new LMS features."
         },
         {
-            category: "Development Approach & Life Cycle",
+            category: "Development Approach and Life Cycle",
             question: "Kanban Framework",
             answer: "A visual workflow management system that focuses on limiting work in progress (WIP) and continuous delivery.",
             example: "A content development team uses a Kanban board to track video scripting, editing, and publishing stages."
         },
         {
-            category: "Development Approach & Life Cycle",
+            category: "Development Approach and Life Cycle",
             question: "Lean Development",
             answer: "A development approach focused on maximizing customer value while minimizing waste.",
             example: "A startup develops a minimum viable product (MVP) to test demand before full-scale production."
         },
         {
-            category: "Development Approach & Life Cycle",
+            category: "Development Approach and Life Cycle",
             question: "DevOps Approach",
             answer: "A combination of development and operations that integrates continuous development, testing, and deployment.",
             example: "A software team automates testing and deployment to release updates faster."
         },
         {
-            category: "Development Approach & Life Cycle",
+            category: "Development Approach and Life Cycle",
             question: "Phased Development",
             answer: "A life cycle where a project is divided into distinct, manageable phases.",
             example: "A university builds an online learning platform in phases—starting with user registration, then adding course modules, and finally launching live classes."
         },
         {
-            category: "Development Approach & Life Cycle",
+            category: "Development Approach and Life Cycle",
             question: "Spiral Model",
             answer: "A risk-driven model that combines iterative and waterfall approaches, emphasizing risk analysis.",
             example: "A defense contractor uses the Spiral Model to develop secure communication systems, ensuring thorough testing at each iteration."
         },
         {
-            category: "Development Approach & Life Cycle",
+            category: "Development Approach and Life Cycle",
             question: "V-Model (Verification & Validation Model)",
             answer: "A development approach that ensures each development phase has a corresponding testing phase.",
             example: "A pharmaceutical company uses the V-Model to validate software for drug trials, ensuring regulatory compliance."
         },
         {
-            category: "Development Approach & Life Cycle",
+            category: "Development Approach and Life Cycle",
             question: "Minimum Viable Product (MVP)",
             answer: "A basic version of a product that includes only essential features to test market viability.",
             example: "A team launches an MVP of an AI-driven tutoring platform with just one subject before scaling to multiple topics."
         },
         {
-            category: "Development Approach & Life Cycle",
+            category: "Development Approach and Life Cycle",
             question: "Rapid Application Development (RAD)",
             answer: "A methodology that prioritizes quick prototyping and user feedback over extensive planning.",
             example: "A mobile app is developed using RAD, allowing early adopters to test features before full deployment."
         },
         {
-            category: "Development Approach & Life Cycle",
+            category: "Development Approach and Life Cycle",
             question: "Test-Driven Development (TDD)",
             answer: "A software development approach where tests are written before the actual code to ensure correctness.",
             example: "Developers write test cases for an LMS login feature before coding the authentication system."
         },
         {
-            category: "Development Approach & Life Cycle",
+            category: "Development Approach and Life Cycle",
             question: "Continuous Integration / Continuous Deployment (CI/CD)",
             answer: "A DevOps practice that automates code integration, testing, and deployment for faster releases.",
             example: "A company uses CI/CD pipelines to push LMS updates to production without manual intervention."
         },
         {
-            category: "Development Approach & Life Cycle",
+            category: "Development Approach and Life Cycle",
             question: "Gated Development Process",
             answer: "A project life cycle where each phase must be reviewed and approved before moving forward.",
             example: "A government IT project requires formal approvals before transitioning from the design phase to development."
         },
         {
-            category: "Development Approach & Life Cycle",
+            category: "Development Approach and Life Cycle",
             question: "Agile Release Train (ART)",
             answer: "A concept in SAFe (Scaled Agile Framework) where teams align their deliverables into a synchronized release schedule.",
             example: "A large software company coordinates multiple Agile teams to release updates every quarter in a structured manner."
         },
         {
-            category: "Development Approach & Life Cycle",
+            category: "Development Approach and Life Cycle",
             question: "Feature-Driven Development (FDD)",
             answer: "An Agile methodology that focuses on designing and building project features in small iterations.",
             example: "An e-learning app prioritizes features like quiz creation, progress tracking, and user analytics based on student demand."
         },
         {
-            category: "Development Approach & Life Cycle",
+            category: "Development Approach and Life Cycle",
             question: "Adaptive Planning",
             answer: "The ability to modify plans dynamically based on changing project needs and stakeholder feedback.",
             example: "A project team adjusts its sprint backlog mid-cycle after receiving critical user feedback."
         },
         {
-            category: "Development Approach & Life Cycle",
+            category: "Development Approach and Life Cycle",
             question: "Value-Driven Development",
             answer: "A development strategy that prioritizes high-value features to maximize business impact.",
             example: "A startup focuses on adding AI-based personalized learning before cosmetic UI changes."

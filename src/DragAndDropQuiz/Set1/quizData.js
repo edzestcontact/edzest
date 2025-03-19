@@ -3,7 +3,7 @@
 const quizData = [
   {
       id: 1,
-      question:  " Set1 Match the process group to its description.",
+      question:  "Match the process group to its description.",
       terms: ["Initiating", "Planning", "Executing", "Monitoring & Controlling", "Closing"],
       definitions: [
           { text: "Define a new project or phase, securing authorization and stakeholders' agreement.", match: "Initiating" },

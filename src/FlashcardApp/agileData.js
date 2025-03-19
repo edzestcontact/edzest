@@ -378,301 +378,301 @@ const agileData = [
   example: "A development team halts work on a new course format after leadership shifts to AI-driven tutoring."
 },
 {
-  category: "Agile Metrics & Reporting",
+  category: "Agile Metrics and Reporting",
   question: "Sprint Velocity",
   answer: "A measure of how much work (in story points) a team completes in a sprint.",
   example: "If a team completes 30 story points per sprint, they can use this metric for future sprint planning."
 },
 {
-  category: "Agile Metrics & Reporting",
+  category: "Agile Metrics and Reporting",
   question: "Lead Time",
   answer: "The total time taken from when a request is made to when it is delivered.",
   example: "A bug fix request takes 10 days from submission to deployment, making the lead time 10 days."
 },
 {
-  category: "Agile Metrics & Reporting",
+  category: "Agile Metrics and Reporting",
   question: "Lead Time",
   answer: "The total time taken from when a request is made to when it is delivered.",
   example: "A bug fix request takes 10 days from submission to deployment, making the lead time 10 days."
 },
 {
-  category: "Agile Metrics & Reporting",
+  category: "Agile Metrics and Reporting",
   question: "Cycle Time",
   answer: "The time taken from when work starts on a task to when it is completed.",
   example: "A feature takes 3 days to develop, test, and release, making the cycle time 3 days."
 },
 {
-  category: "Agile Metrics & Reporting",
+  category: "Agile Metrics and Reporting",
   question: "Cumulative Flow Diagram (CFD)",
   answer: "A visual representation of work progress across different workflow stages.",
   example: "A CFD helps a team identify if work is piling up in 'Testing,' causing a bottleneck."
 },
 {
-  category: "Agile Metrics & Reporting",
+  category: "Agile Metrics and Reporting",
   question: "Burnup Chart",
   answer: "A chart that shows completed work over time, tracking progress toward the project goal.",
   example: "A burnup chart shows that 70% of LMS development is complete, with 30% remaining."
 },
 {
-  category: "Agile Metrics & Reporting",
+  category: "Agile Metrics and Reporting",
   question: "Burndown Chart",
   answer: "A chart that tracks the remaining work against time, aiming for zero at the sprint's end.",
   example: "A Scrum team sees their burndown chart flattening, indicating a delay in sprint completion."
 },
 {
-  category: "Agile Metrics & Reporting",
+  category: "Agile Metrics and Reporting",
   question: "Work in Progress (WIP) Limits",
   answer: "A Kanban practice that restricts the number of ongoing tasks to improve efficiency.",
   example: "A team limits WIP to 3 tasks per developer to prevent overloading."
 },
 {
-  category: "Agile Metrics & Reporting",
+  category: "Agile Metrics and Reporting",
   question: "Throughput",
   answer: "The number of tasks or work items completed in a given timeframe.",
   example: "A team delivers 15 user stories in a sprint, giving them a throughput of 15."
 },
 {
-  category: "Agile Metrics & Reporting",
+  category: "Agile Metrics and Reporting",
   question: "Defect Density",
   answer: "A measure of the number of defects per unit of code or work item.",
   example: "A testing team reports 5 defects per 1,000 lines of code in the latest LMS release."
 },
 {
-  category: "Agile Metrics & Reporting",
+  category: "Agile Metrics and Reporting",
   question: "Code Coverage",
   answer: "A measure of how much of the codebase is covered by automated tests.",
   example: "If 60% of the LMS code is covered by unit tests, the team aims to increase it to 80%."
 },
 {
-  category: "Agile Metrics & Reporting",
+  category: "Agile Metrics and Reporting",
   question: "Escaped Defects",
   answer: "Bugs or issues that reach production instead of being caught in testing.",
   example: "If 5 critical bugs are found after a release, escaped defects are too high, requiring better testing."
 },
 {
-  category: "Agile Metrics & Reporting",
+  category: "Agile Metrics and Reporting",
   question: "Team Happiness Index",
   answer: "A qualitative metric that measures team satisfaction and morale.",
   example: "A Scrum Master uses anonymous surveys to assess team happiness after each sprint."
 },
 {
-  category: "Agile Metrics & Reporting",
+  category: "Agile Metrics and Reporting",
   question: "Net Promoter Score (NPS)",
   answer: "A metric that measures customer satisfaction and likelihood to recommend the product.",
   example: "An LMS platform receives an NPS of 8.5, indicating strong user satisfaction."
 },
 {
-  category: "Agile Metrics & Reporting",
+  category: "Agile Metrics and Reporting",
   question: "Agile Maturity Index",
   answer: "A measure of how well a team or organization has adopted Agile practices.",
   example: "A company assesses Agile adoption across teams using surveys and performance data."
 },
 {
-  category: "Agile Metrics & Reporting",
+  category: "Agile Metrics and Reporting",
   question: "Story Completion Ratio",
   answer: "The percentage of planned user stories completed within a sprint.",
   example: "If a team planned 10 stories and completed 8, the ratio is 80%."
 },
 {
-  category: "Agile Metrics & Reporting",
+  category: "Agile Metrics and Reporting",
   question: "Time Spent on Rework",
   answer: "A measure of how much effort is spent on fixing or redoing work.",
   example: "If 20% of a sprint is spent on bug fixes, rework is too high, indicating quality issues."
 },
 {
-  category: "Agile Metrics & Reporting",
+  category: "Agile Metrics and Reporting",
   question: "Release Readiness Index",
   answer: "A checklist-based metric to evaluate if a product is ready for release.",
   example: "A development team ensures all security tests, documentation, and user approvals are completed before release."
 },
 {
-  category: "Agile Metrics & Reporting",
+  category: "Agile Metrics and Reporting",
   question: "Cumulative Velocity",
   answer: "A trend analysis metric that tracks velocity over multiple sprints to predict long-term performance.",
   example: "A team sees an increasing cumulative velocity, indicating improved efficiency."
 },
 {
-  category: "Agile Metrics & Reporting",
+  category: "Agile Metrics and Reporting",
   question: "Blocker Resolution Time",
   answer: "The average time taken to resolve critical blockers that hinder team progress.",
   example: "If high-priority bugs take 2 days to resolve, efforts should be made to reduce this time."
 },
 {
-  category: "Agile Metrics & Reporting",
+  category: "Agile Metrics and Reporting",
   question: "Test Automation Coverage",
   answer: "A metric that measures how many tests are automated vs. manual.",
   example: "A team aims to automate 80% of regression tests to speed up deployments."
 },
 {
-  category: "Agile Metrics & Reporting",
+  category: "Agile Metrics and Reporting",
   question: "Sprint Goal Success Rate",
   answer: "The percentage of sprints where teams meet their planned sprint goals.",
   example: "If 5 out of 6 sprints met their goals, the success rate is 83%."
 },
 {
-  category: "Agile Metrics & Reporting",
+  category: "Agile Metrics and Reporting",
   question: "Technical Debt Ratio",
   answer: "The amount of unaddressed technical debt compared to new development.",
 example: "A company allocates one sprint every quarter to reduce technical debt."
 },
 {
-  category: "Agile Metrics & Reporting",
+  category: "Agile Metrics and Reporting",
   question: "Kanban Flow Efficiency",
   answer: "A metric that measures the ratio of time spent actively working vs. time spent waiting.",
   example: "If only 50% of a story's time is spent in active development, workflow improvements are needed."
 },
 {
-  category: "Agile Metrics & Reporting",
+  category: "Agile Metrics and Reporting",
   question: "Predictability Index",
   answer: "A measure of how accurately a team meets its sprint commitments.",
   example: "If a team consistently delivers 90% of their committed sprint work, their predictability is high."
 },
 {
-  category: "Agile Tools & Techniques",
-  question: "Agile Tools & Techniques",
+  category: "Agile Tools and Techniques",
+  question: "Agile Tools and Techniques",
   answer: "A collection of practices, frameworks, and software tools that help teams implement Agile principles efficiently.",
   example: "A software team uses JIRA to manage sprints and track work items."
 },
 {
-  category: "Agile Tools & Techniques",
+  category: "Agile Tools and Techniques",
   question: "User Stories",
   answer: "Short, simple descriptions of a feature from the user’s perspective following the format: 'As a [user], I want [feature], so that [benefit].'",
   example: "As a student, I want to track my progress so that I can see my improvement over time."
 },
 {
-  category: "Agile Tools & Techniques",
+  category: "Agile Tools and Techniques",
   question: "Story Mapping",
   answer: "A technique to visually organize user stories based on workflows and dependencies.",
   example: "A team uses story mapping to prioritize LMS onboarding features before moving to advanced analytics."
 },
 {
-  category: "Agile Tools & Techniques",
+  category: "Agile Tools and Techniques",
   question: "Personas",
   answer: "Fictional representations of user types, based on research and behaviors, to guide development.",
   example: "Sophia, a busy professional, takes courses on the LMS at night, so she needs mobile-friendly content."
 },
 {
-  category: "Agile Tools & Techniques",
+  category: "Agile Tools and Techniques",
   question: "Definition of Ready (DoR)",
   answer: "A checklist that ensures a user story is fully defined and ready for development.",
   example: "A story is considered 'Ready' only if acceptance criteria, dependencies, and estimated effort are clear."
 },
 {
-  category: "Agile Tools & Techniques",
+  category: "Agile Tools and Techniques",
   question: "Definition of Done (DoD)",
   answer: "A set of criteria a task must meet before it is considered complete.",
   example: "A user authentication feature is 'Done' when it is coded, tested, reviewed, and deployed."
 },
 {
-  category: "Agile Tools & Techniques",
+  category: "Agile Tools and Techniques",
   question: "Acceptance Criteria",
   answer: "Specific conditions that must be met for a user story to be accepted.",
   example: "A new login feature must support social media sign-ins and validate email formats."
 },
 {
-  category: "Agile Tools & Techniques",
+  category: "Agile Tools and Techniques",
   question: "Backlog Prioritization",
   answer: "The process of ordering product backlog items based on importance, dependencies, and business value.",
   example: "A team prioritizes fixing a major payment bug over adding a new quiz feature in the LMS."
 },
 {
-  category: "Agile Tools & Techniques",
+  category: "Agile Tools and Techniques",
   question: "MoSCoW Prioritization",
   answer: "A technique that categorizes backlog items into: Must Have, Should Have, Could Have, and Would Have.",
   example: "A payment gateway is a 'Must Have,' but AI recommendations are a 'Could Have.'"
 },
 {
-  category: "Agile Tools & Techniques",
+  category: "Agile Tools and Techniques",
   question: "Fibonacci Estimation (Story Points)",
   answer: "A technique for estimating effort using Fibonacci numbers (1, 2, 3, 5, 8, etc.) to reflect complexity.",
   example: "A simple login screen is estimated as 2 story points, while a complex reporting dashboard is 8 story points."
 },
 {
-  category: "Agile Tools & Techniques",
+  category: "Agile Tools and Techniques",
   question: "Planning Poker",
   answer: "A collaborative estimation technique where team members assign story points to user stories.",
   example: "A development team uses planning poker to align on how complex a new search feature is."
 },
 {
-  category: "Agile Tools & Techniques",
+  category: "Agile Tools and Techniques",
   question: "Timeboxing",
   answer: "Allocating fixed time limits for activities to maintain focus and efficiency.",
   example: "Daily stand-ups are limited to 15 minutes to ensure efficiency."
 },
 {
-  category: "Agile Tools & Techniques",
+  category: "Agile Tools and Techniques",
   question: "Velocity",
   answer: "A metric that measures how many story points a team completes per sprint.",
   example: "A Scrum team completes an average of 30 story points per sprint, helping forecast future capacity."
 },
 {
-  category: "Agile Tools & Techniques",
+  category: "Agile Tools and Techniques",
   question: "Lead Time",
   answer: "Time from request to delivery.",
   example: "A user requests a new quiz feature, and it takes 15 days (Lead Time) but only 5 days of actual development (Cycle Time)."
 },
 {
-  category: "Agile Tools & Techniques",
+  category: "Agile Tools and Techniques",
   question: "Cycle Time",
   answer: "Time taken to complete a task once started.",
   example: "A user requests a new quiz feature, and it takes 15 days (Lead Time) but only 5 days of actual development (Cycle Time)."
 },
 {
-  category: "Agile Tools & Techniques",
+  category: "Agile Tools and Techniques",
   question: "Work In Progress (WIP) Limits",
   answer: "A Kanban technique that restricts the number of tasks in progress to avoid overload.",
   example: "A content team sets a WIP limit of 3 for course editing tasks to maintain focus."
 },
 {
-  category: "Agile Tools & Techniques",
+  category: "Agile Tools and Techniques",
   question: "Burnup & Burndown Charts",
   answer: "Burnup Chart: Shows work completed over time. Burndown Chart: Shows remaining work vs. time.",
   example: "A Scrum team uses a burndown chart to track progress toward completing sprint tasks."
 },
 {
-  category: "Agile Tools & Techniques",
+  category: "Agile Tools and Techniques",
   question: "Continuous Integration / Continuous Deployment (CI/CD)",
   answer: "A DevOps practice that automates testing and deployment of code to improve delivery speed.",
   example: "A company deploys LMS updates seamlessly every week without manual intervention."
 },
 {
-  category: "Agile Tools & Techniques",
+  category: "Agile Tools and Techniques",
   question: "Test-Driven Development (TDD)",
   answer: "A practice where tests are written before the actual code to ensure correctness.",
   example: "A developer writes unit tests before implementing a new dashboard feature."
 },
 {
-  category: "Agile Tools & Techniques",
+  category: "Agile Tools and Techniques",
   question: "Pair Programming",
   answer: "A technique where two developers work together, one writing code and the other reviewing.",
   example: "A junior developer pairs with a senior developer to improve efficiency and learn best practices."
 },
 {
-  category: "Agile Tools & Techniques",
+  category: "Agile Tools and Techniques",
   question: "Swarming (Agile Collaboration)",
   answer: "A technique where multiple team members work together to quickly complete a critical task.",
   example: "Developers, testers, and designers collaborate intensely to fix a production bug."
 },
 {
-  category: "Agile Tools & Techniques",
+  category: "Agile Tools and Techniques",
   question: "Spikes",
   answer: "Time-boxed research tasks used to explore unknowns and reduce uncertainty before implementation.",
   example: "A team spends a sprint on a security spike to test encryption methods before integrating them."
 },
 {
-  category: "Agile Tools & Techniques",
+  category: "Agile Tools and Techniques",
   question: "Agile Roadmap",
   answer: "A flexible, high-level plan that aligns Agile development with business goals and timelines.",
   example: "A product roadmap outlines LMS enhancements like mobile support, AI recommendations, and gamification."
 },
 {
-  category: "Agile Tools & Techniques",
+  category: "Agile Tools and Techniques",
   question: "Agile Dashboards & Reporting",
   answer: "Visual tools that track project progress, bottlenecks, and team efficiency.",
   example: "A team uses a JIRA dashboard to monitor sprint velocity and backlog status."
 },
 {
-  category: "Agile Tools & Techniques",
+  category: "Agile Tools and Techniques",
   question: "Agile Retrospective Tools",
   answer: "Digital or physical tools that facilitate team retrospectives and feedback collection.",
   example: "A team uses Miro to run a remote retrospective and collect team feedback on sprint performance."

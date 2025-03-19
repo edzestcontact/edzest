@@ -376,152 +376,153 @@ const processData = [
       question: "Celebrate Achievements (Motivation & Recognition)",
       answer: "Recognizing and rewarding team members for their contributions to project success.",
       example: "After successfully launching a new certification program, the project team receives bonuses and recognition in a company-wide meeting."
-  },{
-    category: "Monitoring & Controlling",
-    question: "Monitoring & Controlling Process Group",
+  },  
+  {
+    category: "Monitoring and Controlling",
+    question: "Monitoring and Controlling Process Group",
     answer: "The process of tracking, reviewing, and regulating project progress to meet objectives and performance baselines.",
     example: "A project manager reviews a budget report to ensure that costs for developing a mock exam platform remain within the approved limits."
 },
 {
-    category: "Monitoring & Controlling",
+    category: "Monitoring and Controlling",
     question: "Monitor and Control Project Work",
     answer: "The process of tracking performance, identifying variances, and recommending corrective actions.",
     example: "A team compares the actual development progress of an LMS against the project schedule to spot delays."
 },
 {
-    category: "Monitoring & Controlling",
+    category: "Monitoring and Controlling",
     question: "Perform Integrated Change Control",
     answer: "The process of reviewing, approving, and managing changes to scope, schedule, and cost.",
     example: "A sponsor requests adding live chat support to an online learning platform, requiring approval through change control."
 },
 {
-    category: "Monitoring & Controlling",
+    category: "Monitoring and Controlling",
     question: "Validate Scope",
     answer: "The process of formally accepting completed project deliverables.",
     example: "Before launching an LMS, stakeholders review the course modules and approve them based on requirements."
 },
 {
-    category: "Monitoring & Controlling",
+    category: "Monitoring and Controlling",
     question: "Control Scope",
     answer: "The process of managing scope changes and preventing unauthorized additions.",
     example: "A project manager rejects an unapproved request to add a mobile quiz feature to an LMS to prevent scope creep."
 },
 {
-    category: "Monitoring & Controlling",
+    category: "Monitoring and Controlling",
     question: "Control Schedule",
     answer: "The process of monitoring project timeline performance and making adjustments to stay on track.",
     example: "A project team fast-tracks testing by performing it parallel to development to compensate for delays."
 },
 {
-    category: "Monitoring & Controlling",
+    category: "Monitoring and Controlling",
     question: "Control Costs",
     answer: "The process of monitoring expenditures, ensuring cost adherence, and preventing budget overruns.",
     example: "The finance team tracks LMS development expenses to ensure they do not exceed the allocated $50,000 budget."
 },
 {
-    category: "Monitoring & Controlling",
+    category: "Monitoring and Controlling",
     question: "Control Quality",
     answer: "The process of reviewing work performance and deliverables to ensure compliance with quality standards.",
     example: "A quality assurance team checks that all e-learning videos meet HD resolution and audio clarity standards."
 },
 {
-    category: "Monitoring & Controlling",
+    category: "Monitoring and Controlling",
     question: "Control Resources",
     answer: "The process of ensuring project resources are allocated properly and used efficiently.",
     example: "A project manager shifts developers to a critical task when a delay occurs in an LMS feature implementation."
 },
 {
-    category: "Monitoring & Controlling",
+    category: "Monitoring and Controlling",
     question: "Monitor Communications",
     answer: "The process of ensuring project communications are timely, clear, and effective.",
     example: "A project manager reviews stakeholder email response times and adjusts reporting frequency for better engagement."
 },
 {
-    category: "Monitoring & Controlling",
+    category: "Monitoring and Controlling",
     question: "Monitor Risks",
     answer: "The process of tracking identified risks, reassessing risks, and implementing response strategies.",
     example: "A development team monitors for potential server crashes in an online mock exam system and adds redundancy measures."
 },
 {
-    category: "Monitoring & Controlling",
+    category: "Monitoring and Controlling",
     question: "Control Procurement",
     answer: "The process of monitoring vendor performance and contract adherence.",
     example: "A project manager reviews vendor progress reports to ensure an outsourced LMS module is delivered on time."
 },
 {
-    category: "Monitoring & Controlling",
+    category: "Monitoring and Controlling",
     question: "Monitor Stakeholder Engagement",
     answer: "The process of ensuring stakeholders remain engaged and their needs are addressed.",
     example: "A feedback survey is sent to instructors to gauge their satisfaction with the LMS development progress."
 },
 {
-    category: "Monitoring & Controlling",
+    category: "Monitoring and Controlling",
     question: "Earned Value Management (EVM)",
     answer: "A performance measurement technique that compares planned vs. actual cost and schedule progress.",
     example: "If the Earned Value (EV) of an LMS project is lower than the Planned Value (PV), it indicates schedule delays."
 },
 {
-    category: "Monitoring & Controlling",
+    category: "Monitoring and Controlling",
     question: "Schedule Variance (SV)",
     answer: "A measure of whether a project is ahead or behind schedule (SV = EV - PV).",
     example: "If an LMS project was planned to be 50% complete but is only 40% done, it has a negative Schedule Variance."
 },
 {
-    category: "Monitoring & Controlling",
+    category: "Monitoring and Controlling",
     question: "Cost Variance (CV)",
     answer: "A measure of whether a project is over or under budget (CV = EV - AC).",
     example: "If a project has spent more money than planned without completing the expected work, it has a negative CV."
 },
 {
-    category: "Monitoring & Controlling",
+    category: "Monitoring and Controlling",
     question: "Schedule Performance Index (SPI)",
     answer: "A ratio that indicates schedule efficiency (SPI = EV / PV).",
     example: "An SPI below 1.0 means the LMS development is behind schedule."
 },
 {
-    category: "Monitoring & Controlling",
+    category: "Monitoring and Controlling",
     question: "Cost Performance Index (CPI)",
     answer: "A ratio that indicates cost efficiency (CPI = EV / AC).",
     example: "If a project has a CPI greater than 1.0, it is under budget and using resources efficiently."
 },
 {
-    category: "Monitoring & Controlling",
+    category: "Monitoring and Controlling",
     question: "Trend Analysis",
     answer: "A technique for analyzing project data trends to predict future performance.",
     example: "If LMS enrollment rates increase consistently, trend analysis suggests demand will continue growing."
 },
 {
-    category: "Monitoring & Controlling",
+    category: "Monitoring and Controlling",
     question: "Variance Analysis",
     answer: "The process of comparing actual project performance against baselines to identify deviations.",
     example: "If a project's planned cost was $100,000 but the actual cost is $120,000, variance analysis is performed to find causes."
 },
 {
-    category: "Monitoring & Controlling",
+    category: "Monitoring and Controlling",
     question: "Root Cause Analysis (RCA)",
     answer: "A problem-solving technique that identifies the underlying causes of project issues.",
     example: "If students drop out of an online course, RCA might reveal poor engagement due to unstructured content."
 },
 {
-    category: "Monitoring & Controlling",
+    category: "Monitoring and Controlling",
     question: "Lessons Learned Register",
     answer: "A document capturing project successes, failures, and improvement recommendations for future reference.",
     example: "After launching an LMS, the project team documents what worked well and what challenges arose during development."
 },
 {
-    category: "Monitoring & Controlling",
+    category: "Monitoring and Controlling",
     question: "Corrective Action",
     answer: "A planned response to bring project performance back in line with the plan.",
     example: "To fix delays in an Agile sprint, the team adds extra development resources to meet the deadline."
 },
 {
-    category: "Monitoring & Controlling",
+    category: "Monitoring and Controlling",
     question: "Preventive Action",
     answer: "A proactive step taken to prevent potential project issues before they occur.",
     example: "Installing an automatic data backup system to prevent potential LMS content loss."
 },
 {
-    category: "Monitoring & Controlling",
+    category: "Monitoring and Controlling",
     question: "Defect Repair",
     answer: "A process of fixing a non-conforming deliverable to meet project quality standards.",
     example: "After an LMS test run, developers fix a bug where students' progress isn't saved correctly."
