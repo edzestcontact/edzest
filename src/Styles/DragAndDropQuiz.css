@@ -106,6 +106,13 @@
   .drop-zone:hover {
     background-color: #bdbdbd;
   }
+
+  @media (max-width: 768px) {
+    .drop-zone {
+      width: 90%; /* Increase width for mobile view */
+      max-width: none; /* Remove max width if needed */
+    }
+  }
   
   /* BUTTON */
   button {
