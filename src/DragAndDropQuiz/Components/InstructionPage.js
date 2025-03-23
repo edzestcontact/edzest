@@ -109,7 +109,7 @@ const InstructionPage = ({ startQuiz }) => {
       </p>
       <p className="instruction-text">
         Go ahead and practice now. Please try on bigger screens for seamless
-        attempt
+        attempt.
       </p>
 
       <hr className="divider" />
@@ -138,7 +138,6 @@ const InstructionPage = ({ startQuiz }) => {
             <strong>only if all matches are correct.</strong>
           </span>
         </div>
-       
         <div className="instruction-item">
           <FaCheckCircle className="icon" />
           <span>
