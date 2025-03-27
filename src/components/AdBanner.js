@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { X } from "lucide-react"; // Close icon
 
 const AdBanner = () => {
-  let date = "5th April"; // Dynamic date
+  let date = "12th April"; // Dynamic date
   const [ads, setAds] = useState([
     { id: 1, text: `📢 New PMP® Exam Batch Starts on ${date}`, link: "/training" },
   ]);

@@ -75,7 +75,7 @@ const Hero = () => {
           <li>Weekly group revision sessions</li>
           <li>1:1 guidance till your certification</li>
         </ul>
-        <a href="https://exams.edzest.org/learn/PMP-training-Apr-25-batch" target="_blank" rel="noopener noreferrer" className="mt-auto text-center">
+        <a href="https://exams.edzest.org/learn/PMP-training-Apr-batch" target="_blank" rel="noopener noreferrer" className="mt-auto text-center">
           <button className="bg-[#4748ac] hover:bg-[#3737ac] text-white font-semibold py-2 px-6 rounded mt-6">
             Learn More
           </button>
