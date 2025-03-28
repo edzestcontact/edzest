@@ -86,10 +86,10 @@
 // };
 
 // export default Footer;
-
 import React from "react";
 import { FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import './footer.css'; // Correctly import the CSS file
 
 const Footer = () => {
   return (
@@ -100,7 +100,7 @@ const Footer = () => {
           <div className="col-span-2">
             <h4 className="text-lg font-semibold mb-3">Edzest Education Services (OPC) Pvt. Ltd.</h4>
             <p className="text-sm leading-relaxed">
-              SY no. 42, Near J R Layout Haralur,<br/>  
+              SY no. 42, Near J R Layout Haralur,<br/>
               Bengaluru- 560102, Karnataka, India
             </p>            
 
@@ -175,3 +175,5 @@ const Footer = () => {
 };
 
 export default Footer;
+
+
