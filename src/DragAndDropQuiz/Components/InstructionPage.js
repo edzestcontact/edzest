@@ -88,6 +88,7 @@ const InstructionPage = ({ startQuiz }) => {
       startQuiz(); // ✅ Ensuring it runs without error
     }
     navigate(setPath); // ✅ Navigate to selected set
+    window.scrollTo(0, 0);
   };
 
   return (

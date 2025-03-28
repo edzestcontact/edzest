@@ -322,16 +322,12 @@ const DragAndDropQuiz1 = () => {
   };
 
   const handleRefresh = () => {
-    // Reset all the states to allow the user to restart the quiz
-    setCurrentQuestion(0);
-    setScore(0);
-    setUserMatches([]);
-    setSolutions(Array(quizData.length).fill([]));
-    setQuizCompleted(false);
-    setPlacedItems({});
-    setShowSolution(false);
+    // Reset only the states for the current question, keeping the current question index intact
+    setUserMatches([]);  // Reset user matches for the current question
+    setPlacedItems({});   // Reset placed items for the current question
+    setShuffledDefinitions(shuffleArray(quizData[currentQuestion]?.definitions));  // Re-shuffle definitions for the current question
+    setShowSolution(false);  // Hide solution if it's visible
   };
-
   return (
     <div className="quiz-container">
       {showSolution ? (
