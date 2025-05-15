@@ -29,7 +29,7 @@ const AdBanner = () => {
        
         <div className="w-full sm:w-auto flex sm:inline-flex justify-center sm:justify-start">
   <a
-    href="https://exams.edzest.org/learn/PMP-training-Apr-25-batch"
+    href="https://exams.edzest.org/learn/PMP-training-14thJune"
     target="_blank"
     rel="noopener noreferrer"
     className="bg-white text-[#4748ac] font-bold py-2 px-4 rounded-lg text-sm sm:text-base 
