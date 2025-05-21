@@ -1,88 +1,140 @@
 import React from "react";
-
+import { motion } from "framer-motion"; // ✅ Add this import
+import TestimonialHeading from "./TestimonialHeading";
+import { FaStar } from "react-icons/fa"; // Import the star icon
+ 
 const testimonials = [
-    {
-      name: "Jawed Ahmad",
-      
-      feedback:
-        "I am thrilled to share my successful journey of passing the PMP exam with Above Target in all three domains, and it wouldn’t have been possible without the incredible support of Mr. Amit",
-      image: "/assets/Jawed Ahmad.png", // Correct path from public folder
-    },
-    {
-      name: "Bhavani Ramaswamy",      
-      feedback:
-        "I saw some of Amits youtube videos when i started my preparation for PMP on September 2022 and very much impressed with the clear explanations. I wrote to Amit through Linkedin. He immediately responded and provided all the materials.",
-      image: "/assets/bhavani.png", // Correct path from public folder
-    },
-    {
-      name: "Junaid Amid Khan",
-      
-      feedback:
-        "PMP & ACP courses provided a lot of valuable insights and advanced techniques that I was looking for. The instructor is clearly knowledgeable and passionate about the subject, which made the lessons .",
-      image: "/assets/junaid Amid khan.png", // Correct path from public folder
-    },
-    {
-      name: "Kalesh Nair",
-      
-      feedback:
-        "I had a fantastic experience learning and training for my PMP Certification with Amit at Edzest. Amit’s approach is exceptional—he not only shifts your mindset to think like a project manager but also provides comprehensive support to help .",
-      image: "/assets/Kalesh Nair.png", // Correct path from public folder
-    },
-    {
-      name: "Kishore kumar chelikhani",
-      
-      feedback:
-        "On behalf of AI Infinity Holdings Ltd, I am pleased to share our enthusiastic endorsement of Amit, founder of Edzest Education Services. Amit recently conducted a comprehensive project management .",
-      image: "/assets/Kishore kumar chelikhani.png", // Correct path from public folder
-    },
-    {
-      name: "Lakmal jeewananda",
-      
-      feedback:
-        "Thanks, Amith. The course is really good, especially because the questions in the MOC exams are clearly structured and resemble the actual exam. It has helped me prepare effectively for the PMP exam, giving me much more confidence..",
-      image: "/assets/Lakmal jeewananda.png", // Correct path from public folder
-    },
+  {
+    name: "Jawed Ahmad",
+    feedback:
+      "I am thrilled to share my successful journey of passing the PMP exam with Above Target in all three domains, and it wouldn’t have been possible without the incredible support of Mr. Amit",
+    image: "/assets/Jawed Ahmad.png",
+    rating: 5, // 5-star rating
+  },
+  {
+    name: "Bhavani Ramaswamy",
+    feedback:
+      "I saw some of Amit's YouTube videos when I started my PMP preparation and was impressed with the clarity. He immediately responded on LinkedIn and shared all the materials.",
+    image: "/assets/bhavani.png",
+    rating: 5, // 4-star rating
+  },
+  {
+    name: "Junaid Amid Khan",
+    feedback:
+      "PMP & ACP courses provided a lot of valuable insights and techniques. The instructor is knowledgeable and passionate, which made the lessons impactful.",
+    image: "/assets/junaid Amid khan.png",
+    rating: 5, // 5-star rating
+  },
+  {
+    name: "Kalesh Nair",
+    feedback:
+      "Learning with Amit at Edzest was exceptional. He shifts your mindset to think like a PM and supports you comprehensively.",
+    image: "/assets/Kalesh Nair.png",
+    rating: 5, // 4-star rating
+  },
+  {
+    name: "Kishore kumar chelikhani",
+    feedback:
+      "Amit conducted a comprehensive project management program for our company that added immense value to our team’s knowledge and skills.",
+    image: "/assets/Kishore kumar chelikhani.png",
+    rating: 5, // 5-star rating
+  },
+  {
+    name: "Lakmal jeewananda",
+    feedback:
+      "The course is excellent. MOC questions are structured just like the real exam. Helped me build confidence for PMP.",
+    image: "/assets/Lakmal jeewananda.png",
+    rating: 5, // 4-star rating
+  },
 ];
-
+ 
 const Testimonials = () => {
-    return (
-<section className="container mx-auto px-6 py-16">
-  <h2 className="text-4xl font-bold text-center text-gray-900 mb-8">
-    Testimonials
-  </h2>
-  <div className="flex overflow-x-auto space-x-6">
-    {testimonials.map((testimonial, index) => (
-      <div
-        key={index}
-        className="flex flex-col items-center justify-between flex-shrink-0 w-64 bg-white p-6 rounded-lg shadow-lg border border-gray-200 min-h-[350px]"
+  return (
+    <section className="relative overflow-hidden py-16 bg-white">
+      {/* ✅ Animated Heading */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
       >
-        <img
-          src={testimonial.image} // Correct public path
-          alt={testimonial.name}
-          className="rounded-full w-24 h-24 object-cover mb-4"
-        />
-        <h3 className="text-xl font-semibold text-gray-800 text-center">
-          {testimonial.name}
-        </h3>
-        <p className="text-gray-600 italic text-center">{testimonial.role}</p>
-        <div className="flex-grow">
-          <p className="text-gray-600 mt-4 text-center"style={{fontFamily:"sans-serif", fontSize:"17px"}}>{testimonial.feedback}</p>
-        </div>
-        {/* Read more button with link */}
-        <a
-          href="https://www.google.com/search?q=edzest+education+services&rlz=1C1ONGR_enIN998IN998&oq=&gs_lcrp=EgZjaHJvbWUqCQgAECMYJxjqAjIJCAAQIxgnGOoCMgkIARAjGCcY6gIyCQgCECMYJxjqAjIJCAMQIxgnGOoCMgkIBBAjGCcY6gIyCQgFECMYJxjqAjIJCAYQIxgnGOoCMgkIBxAjGCcY6gLSAQkxNTUzajBqMTWoAgiwAgE&sourceid=chrome&ie=UTF-8" 
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-auto w-full px-4 py-2 bg-[#4748ac] text-decoration-none text-white rounded hover:bg-[#37378c] text-center"
+        <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">
+          <TestimonialHeading />
+        </h2>
+      </motion.div>
+ 
+      {/* Sliding Wrapper */}
+      <div className="w-full overflow-hidden relative group">
+        <div
+          className="flex animate-slide gap-8 px-6 w-max"
+          style={{ animationDuration: "30s" }}
         >
-          Read more
-        </a>
+          {testimonials.concat(testimonials).map((testimonial, index) => (
+            <div
+              key={index}
+              className="flex flex-col items-center justify-between w-72 bg-white p-6 rounded-2xl shadow-xl border border-gray-200 min-h-[360px] hover:shadow-2xl transition-all duration-300"
+            >
+              <img
+                src={testimonial.image}
+                alt={testimonial.name}
+                className="rounded-full w-24 h-24 object-cover mb-4"
+              />
+              <h3 className="text-xl font-semibold text-gray-800 text-center">
+                {testimonial.name}
+              </h3>
+              <div className="flex mb-4">
+                {/* Render 5-star rating */}
+                {Array.from({ length: 5 }, (_, i) => (
+                  <FaStar
+                    key={i}
+                    color={i < testimonial.rating ? "#FFD700" : "#E0E0E0"} // Gold for filled, gray for empty
+                    className="mr-1"
+                  />
+                ))}
+              </div>
+              <div className="flex-grow">
+                <p
+                  className="text-gray-600 mt-4 text-center"
+                  style={{ fontFamily: "sans-serif", fontSize: "17px" }}
+                >
+                  {testimonial.feedback}
+                </p>
+              </div>
+              <a
+                href="https://www.google.com/search?q=edzest+education+services"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 w-full px-4 py-2 bg-[#4748ac] text-white rounded-lg hover:bg-[#37378c] text-center"
+              >
+                Read more
+              </a>
+            </div>
+          ))}
+        </div>
       </div>
-    ))}
-  </div>
-</section>
-
-    );
+ 
+      {/* Animation Keyframes */}
+      <style>
+        {`
+          @keyframes slide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+ 
+          .animate-slide {
+            animation-name: slide;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-play-state: running;
+          }
+ 
+          .group:hover .animate-slide {
+            animation-play-state: paused;
+          }
+        `}
+      </style>
+    </section>
+  );
 };
-
+ 
 export default Testimonials;

@@ -1,328 +1,191 @@
-
-import React from "react";
+import React, { useState, useEffect } from "react";
 import trainingpageimageimg from "../Assets/Trainingpageimage.png";
-import pmilogoimg from "../Assets/pmilogo.png";
 import liveTrainingImg from "../Assets/Livetraining.png";
 import recordedVideosImg from "../Assets/recordedvideos.png";
 import flashcardsImg from "../Assets/flashcard.png";
 import personalizedsupportimg from "../Assets/personalizedsupport.png";
 import mockExamImg from "../Assets/mockexam.png";
 import applicationSupportImg from "../Assets/Applicationsupport.png";
-import FAQ from "./FAQ"; 
-import Contact from "./Contact"; 
-import Footer  from "./Footer";
- 
-
+import FAQ from "./FAQ";
+import Contact from "./Contact";
+import Footer from "./Footer";
+import heroImage from '../Assets/YourImage.png'; // ✅ Replace with your actual image
+import AdBanner from '../components/AdBanner';
 
 const Hero = () => {
+  const [country, setCountry] = useState("India");
+  const [price, setPrice] = useState("₹16500 + 18% GST");
+
+  useEffect(() => {
+    const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    if (timezone.includes("Asia/Kolkata")) {
+      setCountry("India");
+      setPrice("₹16500 + 18% GST");
+    } else {
+      setCountry("Other");
+      setPrice("INR 19,470 / USD 249");
+    }
+  }, []);
+
   return (
     <>
-      {/* Section 1: Hero Section */}
-      <section className="bg-gray-100 w-full" style={{fontFamily:"sans-serif", fontSize:"17px"}}>
-        <div className="container mx-auto flex flex-col-reverse lg:flex-row items-center px-6 md:px-12 lg:px-24">
-          {/* Left Content */}
+      <AdBanner />
+      {/* Hero Section */}
+      <section className="w-full bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 py-20" style={{ fontFamily: "sans-serif" }}>
+        <div className="container mx-auto flex flex-col-reverse lg:flex-row items-center px-4 md:px-10">
+          {/* Left */}
           <div className="w-full lg:w-1/2 space-y-6 text-center lg:text-left">
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight text-gray-800">
-              PMP<span className="text-gray-900">®</span> Exam Prep <br />
+            <h1 className="text-5xl font-extrabold text-gray-800 leading-tight mb-4 animate-fade-in-up">
+              PMP<span className="text-gray-900">®</span> Exam Prep<br />
               by <span className="text-[#4748ac]">edzest</span>
             </h1>
-            <p className="text-gray-600 text-lg leading-relaxed">
-            Prepare for your PMP® certification exam with our expert-led training courses that get you ready to pass the exam on your first attempt.
+            <p className="text-lg text-gray-700 leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.5s", animationFillMode: "both" }}>
+              Prepare for your PMP certification exam with expert-led training to pass in your first attempt!
             </p>
-            <div>
-            <a
-  href="https://exams.edzest.org/learn/PMP-training-Apr-25-batch
-"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-block bg-[#4748ac] hover:bg-[3636ac] text-white font-semibold py-3 px-6 rounded-lg transition text-decoration-none duration-300"
->
-  Enroll Now
-</a>
-
+            <div className="mt-6">
+              <a href="https://exams.edzest.org/learn/PMP-Training-Bundle-14th-June" target="_blank" rel="noopener noreferrer"
+                className="btn btn-primary rounded-pill px-4 py-2 text-white bg-[#4748ac] hover:bg-[#3636ac] transition-all duration-300">
+                Enroll Now
+              </a>
+            </div>
+            <div className="mt-4">
+              <p className="text-gray-600 text-sm">Current Pricing ({country}):</p>
+              <h2 className="text-2xl font-bold text-[#4748ac]">{price}</h2>
             </div>
           </div>
 
-          {/* Right Image */}
+          {/* Right */}
           <div className="w-full lg:w-1/2 flex justify-center">
-            <img
-              src={trainingpageimageimg}
-              alt="Instructor presenting online"
-              className="w-full max-w-md md:max-w-lg lg:max-w-full object-cover rounded-md shadow-md"
-            />
+            <img src={heroImage} alt="Training" />
+          </div>
+        </div>
+
+        {/* Animations */}
+        <style>
+          {`
+            @keyframes floatImage {
+              0% { transform: translateY(0px) rotateY(0deg); }
+              50% { transform: translateY(-10px) rotateY(5deg); }
+              100% { transform: translateY(0px) rotateY(0deg); }
+            }
+
+            @keyframes fadeInUp {
+              0% {
+                opacity: 0;
+                transform: translateY(20px);
+              }
+              100% {
+                opacity: 1;
+                transform: translateY(0);
+              }
+            }
+
+            .animate-float {
+              animation: floatImage 4s ease-in-out infinite;
+            }
+
+            .animate-fade-in-up {
+              animation: fadeInUp 1s ease-out both;
+            }
+          `}
+        </style>
+      </section>
+
+      {/* Live Online Training and Self-paced Online Training Cards */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center text-gray-800 mb-10">Training Options</h2>
+          <div className="flex flex-wrap justify-between gap-10">
+
+            {/* Card 1: Live Online Training */}
+            <div className="animated-card bg-gradient-to-br from-purple-200 via-indigo-100 to-white rounded-3xl shadow-lg p-8 max-w-md w-full text-center flex flex-col items-center justify-between transition-transform duration-500 hover:scale-105 hover:shadow-purple-400">
+              <h2 className="text-3xl font-extrabold text-gray-800 mb-5 tracking-wide animate-title">
+                Live Online Training
+              </h2>
+              <ul className="text-gray-700 text-left text-base sm:text-lg list-disc mb-6 space-y-2 px-4 animate-fade">
+                <li>Live, Online, Zoom (Sat & Sun)</li>
+                <li>7 weeks (6 hrs/week) – 42 hrs (35 contact hours)</li>
+                <li>Practical Project Practitioner course (48 hrs recorded)</li>
+                <li>Weekly Tests (7 × 60) = 420 questions</li>
+                <li>Mock Exam Simulators (5 × 180) = 900 questions</li>
+                <li>1:1 Discussion Support till your exam</li>
+              </ul>
+              <div className="flex flex-col sm:flex-row justify-center gap-4 mt-auto w-full animate-fade">
+                <a href="https://exams.edzest.org/learn/PMP-Training-Bundle-14th-June" target="_blank" rel="noopener noreferrer" className="w-full sm:w-1/2">
+                  <button className="bg-[#4748ac] hover:bg-[#3737ac] transition-all duration-300 text-white font-semibold py-3 rounded-lg w-full">
+                    Learn More
+                  </button>
+                </a>
+              </div>
+            </div>
+
+            {/* Card 2: Self-paced Online Training */}
+            <div className="animated-card bg-gradient-to-br from-green-200 via-teal-100 to-white rounded-3xl shadow-lg p-8 max-w-md w-full text-center flex flex-col items-center justify-between transition-transform duration-500 hover:scale-105 hover:shadow-teal-400">
+              <h2 className="text-3xl font-extrabold text-gray-800 mb-5 tracking-wide animate-title">
+                Self-paced Online Training
+              </h2>
+              <ul className="text-gray-700 text-left text-base sm:text-lg list-disc mb-6 space-y-2 px-4 animate-fade">
+                <li>48 hrs. of recorded video lessons</li>
+                <li>6 months access to course content</li>
+                <li>Practical hands-on exercises and quizzes</li>
+                <li>Mock Exams to test your progress</li>
+              </ul>
+              <div className="flex flex-col sm:flex-row justify-center gap-4 mt-auto w-full animate-fade">
+                <a href="https://exams.edzest.org/learn/PMP-Training-Self-study-bundle" target="_blank" rel="noopener noreferrer" className="w-full sm:w-1/2">
+                  <button className="bg-[#4748ac] hover:bg-[#3737ac] transition-all duration-300 text-white font-semibold py-3 rounded-lg w-full">
+                    Learn More
+                  </button>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Section 2: Banner Section */}
-      <section className="bg-gray-100 py-12" style={{ fontFamily: "sans-serif", fontSize: "17px" }}>
-  <div className="max-w-6xl mx-auto px-6 text-center">
-    <h2 className="text-4xl font-bold text-gray-900">Training options</h2>
-    <p className="text-gray-600 text-xl mt-4">
-      Whether you want to attend online instructor-led sessions or study at your own pace, we have the training options available to meet all your needs. Choose from below options to prepare for your exam.
-    </p>
+      {/* Practical Practitioner Course */}
+      <section className="py-16 bg-gradient-to-r from-pink-100 via-indigo-100 to-purple-100">
+        <div className="container mx-auto text-center px-6">
+          <h2 className="text-4xl font-bold text-gray-800 mb-4">Practical Project Practitioner Course</h2>
+          <p className="text-gray-600 text-lg mb-2">Self-paced recorded videos of <strong>48+ hours</strong>.</p>
+          <p className="text-gray-500 text-sm">Continuously updated with real-world case studies and examples.</p>
+        </div>
+      </section>
 
-    <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
-      {/* PMP Live Online Training */}
-      <div className="bg-gray-300 p-6 rounded-lg shadow-md flex flex-col h-full">
-        <h3 className="text-xl font-semibold text-gray-900 text-center">PMP Live Online Training</h3>
-        <ul className="text-gray-700 text-base space-y-2 list-disc pl-5 mt-4 flex-grow">
-          <li>40 hrs. of instructor-led sessions</li>
-          <li>Complementary recorded videos course</li>
-          <li>Access to Mock exam simulators</li>
-          <li>Free e-book to study in detail</li>
-          <li>Application support</li>
-          <li>Weekly group revision sessions</li>
-          <li>1:1 guidance till your certification</li>
-        </ul>
-        <a href="https://exams.edzest.org/learn/PMP-training-Apr-batch" target="_blank" rel="noopener noreferrer" className="mt-auto text-center">
-          <button className="bg-[#4748ac] hover:bg-[#3737ac] text-white font-semibold py-2 px-6 rounded mt-6">
-            Learn More
-          </button>
-        </a>
-      </div>
+      {/* One-on-One Mentorship */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto text-center px-6">
+          <h2 className="text-4xl font-bold text-gray-800 mb-6">One-on-One Mentorship</h2>
+          <p className="text-gray-700 text-lg">
+            Book 1:1 mentoring sessions with trainers after each weekly session!
+          </p>
+        </div>
+      </section>
 
-      {/* PMP Recorded Videos */}
-      <div className="bg-gray-300 p-6 rounded-lg shadow-md flex flex-col h-full">
-        <h3 className="text-xl font-semibold text-gray-900 text-center">PMP Recorded Videos</h3>
-        <ul className="text-gray-700 text-base space-y-2 list-disc pl-5 mt-4 flex-grow">
-          <li>40+ hrs. of pre-recorded videos</li>
-          <li>Access to Mock exam simulators</li>
-          <li>Free e-book to study in detail</li>
-          <li>Application support</li>
-          <li>Weekly group revision sessions</li>
-          <li>Access to study resources</li>
-        </ul>
-        <a href="https://exams.edzest.org/learn/PMP-selfstudy" target="_blank" rel="noopener noreferrer" className="mt-auto text-center">
-          <button className="bg-[#4748ac] hover:bg-[#3737ac] text-white font-semibold py-2 px-6 rounded mt-6">
-            Learn More
-          </button>
-        </a>
-      </div>
-
-      {/* PMP Mock Exams */}
-      <div className="bg-gray-300 p-6 rounded-lg shadow-md flex flex-col h-full">
-        <h3 className="text-xl font-semibold text-gray-900 text-center">PMP Mock Exams</h3>
-        <ul className="text-gray-700 text-base space-y-2 list-disc pl-5 mt-4 flex-grow">
-          <li>8 topic-wise mini mock exams (60 questions each)</li>
-          <li>3 ECO domain-wise mocks</li>
-          <li>5 Full-length mock exams</li>
-          <li>Free revision course</li>
-          <li>Exercises to improve your scores</li>
-        </ul>
-        <a href="https://exams.edzest.org/learn/PMP-mock-exams-by-edzest" target="_blank" rel="noopener noreferrer" className="mt-auto text-center">
-          <button className="bg-[#4748ac] hover:bg-[#3737ac] text-white font-semibold py-2 px-6 rounded mt-6">
-            Learn More
-          </button>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-      {/* Section 3: Why Choose Us */}
-      <section className="bg-white py-16" style={{fontFamily:"sans-serif", fontSize:"17px"}}>
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">
-            Why choose our training program?
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            <div className="flex items-center space-x-6">
-              <img
-                src={liveTrainingImg}
-                alt="Live Training"
-                className="w-16 h-16 object-contain"
-              />
-              <div>
-                <h3 className="text-xl font-semibold text-gray-800">
-                  40 hrs. of live training
-                </h3>
-                <p className="text-gray-600 mt-2">
-                  Learn directly from PMI Authorized Instructors of PMP® in
-                  interactive live sessions.
-                </p>
+      {/* Weekly Tests and Mock Simulators */}
+      <section className="py-16 bg-indigo-50">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold text-center text-gray-800 mb-10">Weekly Tests and Mock Exams</h2>
+          <div className="row g-4">
+            <div className="col-md-6">
+              <div className="card shadow-md p-5 bg-white hover:scale-105 transition">
+                <h4 className="text-2xl text-[#4748ac] font-semibold">Weekly Tests</h4>
+                <p className="text-gray-600 mt-2">Topic-based quizzes every week to sharpen your skills.</p>
               </div>
             </div>
-            <div className="flex items-center space-x-6">
-              <img
-                src={recordedVideosImg}
-                alt="Recorded Videos"
-                className="w-16 h-16 object-contain"
-              />
-              <div>
-                <h3 className="text-xl font-semibold text-gray-800">
-                  40+ hrs. of Recorded Videos
-                </h3>
-                <p className="text-gray-600 mt-2">
-                  Access recorded versions of live classes anytime.
-                </p>
+            <div className="col-md-6">
+              <div className="card shadow-md p-5 bg-white hover:scale-105 transition">
+                <h4 className="text-2xl text-[#4748ac] font-semibold">Mock Exam Simulators</h4>
+                <p className="text-gray-600 mt-2">Practice full PMP® style mock exams with explanations.</p>
               </div>
             </div>
-            <div className="flex items-center space-x-6">
-              <img
-                src={flashcardsImg}
-                alt="Flashcards"
-                className="w-16 h-16 object-contain"
-              />
-              <div>
-                <h3 className="text-xl font-semibold text-gray-800">
-                  Flashcards and E-Book
-                </h3>
-                <p className="text-gray-600 mt-2">
-                  Get access to PMP® flashcards and an e-book for quick and easy revision.
-                </p>
-              </div>
-            </div>
-            <div className="flex items-center space-x-6">
-              <img
-                src={personalizedsupportimg}
-                alt="Personalized Support"
-                className="w-16 h-16 object-contain"
-              />
-              <div>
-                <h3 className="text-xl font-semibold text-gray-800">
-                  Personalized Support
-                </h3>
-                <p className="text-gray-600 mt-2">
-                  Receive individualized guidance and support to ensure success.
-                </p>
-              </div>
-            </div>
-            <div className="flex items-center space-x-6">
-              <img
-                src={mockExamImg}
-                alt="Mock Exams"
-                className="w-16 h-16 object-contain"
-              />
-              <div>
-                <h3 className="text-xl font-semibold text-gray-800">
-                  Mock Exams
-                </h3>
-                <p className="text-gray-600 mt-2">
-                  Practice with PMP® mock exams to boost your confidence and exam readiness.
-                </p>
-              </div>
-            </div>
-            <div className="flex items-center space-x-6">
-              <img
-                src={applicationSupportImg}
-                alt="Application Support"
-                className="w-16 h-16 object-contain"
-              />
-              <div>
-                <h3 className="text-xl font-semibold text-gray-800">
-                  Application Support
-                </h3>
-                <p className="text-gray-600 mt-2">
-                  Get help with your PMP® application to make the process seamless.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="col-span-1 md:col-span-2 lg:col-span-3 flex justify-center my-8">
-          <a
-              href="https://exams.edzest.org/learn/PMP-training-Apr-25-batch"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-[#4748ac] hover:bg-[#3737ac] text-white font-semibold py-3 px-6 rounded-lg text-decoration-none transition duration-300"
-            >
-              Enroll Now
-            </a>
           </div>
         </div>
       </section>
-      {/* Training Overview Section */}
-<section className="py-12 bg-purple-50" style={{fontFamily:"sans-serif", fontSize:"17px"}}>
-  <div className="container mx-auto px-4 bg-red shadow-lg rounded-lg p-8">
-    <h2 className="text-3xl font-bold text-center text-black-800 mb-12">
-Training content</h2>
-    <p className="text-gray-700 text-lg mb-6 leading-relaxed">
-    The content of the training is designed to help you understand the flow of
-activities in Project Management. Over the course of 4 weeks (32 sessions), we
-will help you learn about Project Management from starting to closure.
-Throughout the training program, we have highlighted the important
-scenarios, concepts, and mindset that will help you answer the exam
-questions with ease.
-    </p>
 
-    <section className="bg-gray-100 py-12" style={{ fontFamily: "sans-serif", fontSize: "17px" }}>
-  <div className="max-w-6xl mx-auto px-6">
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch"> 
-      
-      {/* Pre-training (Left - Narrower) */}
-      <div className="flex justify-center items-center text-center h-full">
-        <div className="bg-indigo-100 p-6 rounded-xl shadow-md max-w-[180px] sm:max-w-[200px] w-full flex justify-center items-center text-center h-full">
-          <h3 className="text-lg  text-gray-900">Pre-training</h3>
-        </div>
-      </div>
-      <div className="flex justify-center h-full">
-        <div className="bg-indigo-100 p-6 rounded-xl shadow-md max-w-sm sm:max-w-md w-full h-full flex items-center">
-          <p className="text-gray-900 text-lg" style={{ fontFamily: "sans-serif", fontSize: "14px" }}>
-            Pre-training conceptual knowledge test on Traditional and Agile approach.<br />
-            Discovery call to discuss your experience and plans for PMP certification.
-          </p>
-        </div>
-      </div>
-
-      {/* Training (Left - Narrower) */}
-      <div className="flex justify-center items-center text-center h-full">
-        <div className="bg-indigo-100 p-6 rounded-xl shadow-md max-w-[180px] sm:max-w-[200px] w-full flex justify-center items-center text-center h-full">
-          <h3 className="text-lg text-gray-900">Training</h3>
-        </div>
-      </div>
-      <div className="flex justify-center h-full">
-        <div className="bg-indigo-100 p-6 rounded-xl shadow-md max-w-sm sm:max-w-md w-full h-full flex items-center">
-          <ul className="text-gray-900 text-lg space-y-1 "style={{marginLeft:"-30px",  fontFamily: "sans-serif", fontSize: "14px" }}>
-            <li>Week 1: Starting a Project</li>
-            <li>Week 2: Planning in Projects</li>
-            <li>Week 3: Leading the work</li>
-            <li>Week 4: Delivering project successfully</li>
-          </ul>
-        </div>
-      </div>
-
-      {/* Post-training (Left - Narrower) */}
-      <div className="flex justify-center items-center text-center h-full">
-        <div className="bg-indigo-100 p-6 rounded-xl shadow-md max-w-[180px] sm:max-w-[200px] w-full flex justify-center items-center text-center h-full">
-          <h3 className="text-base text-gray-900">Post-training</h3>
-        </div>
-      </div>
-      <div className="flex justify-center h-full">
-        <div className="bg-indigo-100 p-6 rounded-xl shadow-md max-w-sm sm:max-w-md w-full h-full flex items-center">
-          <p className="text-gray-900 text-lg" style={{ fontFamily: "sans-serif", fontSize: "14px" }}>
-            Full-length mock exams to test and identify gaps.<br />
-            1:1 discussion with trainers for guidance and plan for the exam.
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<div className="text-center mt-6">
-<a
-  href="/PMP exam prep by edzest.pdf"
-  download
-  className="text-[#4748ac] font-semibold underline text-sm lg:text-base"
->
-  Download Curriculum
-</a>
-
-</div>
-
-
-  </div>
-
-
-</section>
-{/* FAQ Section */}
-<FAQ />
-{/* Contact Section */}
-<Contact />
-<Footer />
+      {/* FAQs, Contact and Footer */}
+      <FAQ />
+      <Contact />
+      <Footer />
     </>
   );
 };

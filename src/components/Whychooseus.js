@@ -5,13 +5,13 @@ import elearningImg from '../Assets/elearningImg.jpg';
 import personalisedsupportImg from '../Assets/personalisedsupportImg.jpg';
 import flexibleImg from '../Assets/flexibleImg.jpg';
 import applicationImg from '../Assets/applicationImg.jpg';
-
+ 
 const benefits = [
   {
     title: "Expert Trainers",
     description:
       "Our trainers are qualified and experienced project professionals hence they help you learn the nitty-gritties of Project Management in a real world setting.",
-    imgSrc: trainerImg, // Assuming you have imported or defined these images
+    imgSrc: trainerImg,
   },
   {
     title: "Personalised Support",
@@ -38,17 +38,24 @@ const benefits = [
     imgSrc: applicationImg,
   },
 ];
-
+ 
 const WhyChooseUs = () => {
   return (
     <div className="hero-container">
-      <h1 className="section-header">Why learn with Edzest?</h1>
+      <h1 className="section-header" data-aos="fade-up">Why learn with Edzest?</h1>
       {benefits.map((benefit, index) => (
-        <div key={index} className="hero-item">
+        <div
+          key={index}
+          className="hero-item"
+          data-aos={index % 4 === 0 ? 'fade-right' : 'fade-left'}
+          data-aos-duration="1000"
+        >
           <div className="text-section">
             <h2>{String(index + 1).padStart(2, "0")}</h2>
             <h3>{benefit.title}</h3>
-            <p style={{fontFamily:"sans-serif", fontSize:"17px"}}>{benefit.description}</p>
+            <p style={{ fontFamily: "sans-serif", fontSize: "17px" }}>
+              {benefit.description}
+            </p>
           </div>
           <div className="image-section">
             <img
@@ -62,5 +69,5 @@ const WhyChooseUs = () => {
     </div>
   );
 };
-
+ 
 export default WhyChooseUs;

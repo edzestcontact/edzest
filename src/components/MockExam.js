@@ -1,140 +1,164 @@
-import mockphotoImg from "../Assets/mockphoto.png"; // Importing an image for use in the hero section.
-import fulllengthImg from "../Assets/fulllength.png"; // Importing an image for full-length mock exams.
-import minimockImg from "../Assets/minimock.png"; // Importing an image for mini mock exams.
-import PersonalizedImg from "../Assets/personalized.png"; // Importing an image for personalized support.
-import Contact from "./Contact"; // Importing the Contact component for the contact section.
-import Footer from "./Footer"; // Importing the Footer component for the footer section.
-
-const PMPPracticeMockExams = () => { // Defining a functional React component named PMPPracticeMockExams.
+import React from 'react';
+import mockphotoImg from "../Assets/mockphoto.png";
+import Contact from "./Contact";
+import Footer from "./Footer";
+import heroImage from '../Assets/mock exam img.png';
+import AdBanner from '../components/AdBanner';
+ 
+// Keyframes for animation
+const styles = `
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  .animate-fade-in-up {
+    animation: fade-in-up 1s ease-out;
+  }
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+`;
+ 
+const PMPPracticeMockExams = () => {
   return (
-    <div> {/* Wrapper div for the entire component content */}
-    
+    <div>
+      <style>{styles}</style>
+      <AdBanner />
       {/* Hero Section */}
-      <div className="flex flex-col md:flex-row items-center justify-between h-[70vh] px-6 md:px-16" style={{fontFamily:"sans-serif", fontSize:"17px"}}>
-        {/* Hero section: Styling for layout and responsiveness */}
-        <div className="max-w-lg"> {/* Container for text content in the hero section */}
-          <h1 className="text-4xl md:text-5xl font-bold text-black-600">
+      <div className="flex flex-col md:flex-row items-center justify-between h-auto md:h-[70vh] px-6 md:px-16 py-12 md:py-0" style={{ fontFamily: "sans-serif", fontSize: "17px" }}>
+        <div className="max-w-lg">
+          <h1 className="text-4xl md:text-5xl font-bold text-black-600 animate-fade-in-up">
             PMP® Practice <br />
-            Mock Exams by{" "}
-            <span className="text-[#4748ac]">Edzest</span> {/* Highlighting the brand name */}
+            Mock Exams by <span className="text-[#4748ac]">Edzest</span>
           </h1>
-          <p className="text-gray-500 mt-4">
-            Get Real Exam-Like Questions and Expert Insight {/* Hero description */}
+          <p className="text-gray-500 mt-4 animate-fade-in-up" style={{ animationDelay: "0.5s", animationFillMode: "both" }}>
+            Get Real Exam-Like Questions and Expert Insight
           </p>
-          <a href="https://exams.edzest.org/learn/PMP-mock-exams-by-edzest" target="_blank" rel="noopener noreferrer">
-  <button className="bg-[#4748ac] text-white px-6 py-3 rounded-lg mt-4 hover:bg-[#3737ac] transition">
-    Buy Now {/* Call-to-action button */}
-  </button>
-</a>
+          <a href="https://exams.edzest.org/learn/PMP-Mock-Exams" target="_blank" rel="noopener noreferrer">
+            <button className="bg-[#4748ac] text-white px-6 py-3 rounded-lg mt-4 hover:bg-[#3737ac] transition">
+              Buy Now
+            </button>
+          </a>
         </div>
-        <div className="mt-8 ml: md:mt-0"> {/* Container for the image in the hero section */}
+        <div className="mt-8 md:mt-0">
           <img
-            src={mockphotoImg} // Displaying the imported hero image.
-            alt="PMP Training" // Alternative text for accessibility.
-            className="rounded-lg  max-h-96" // Styling for the image.
+            src={heroImage}
+            alt="PMP Training"
+            className="w-full max-w-[600px] h-auto object-contain animate-float"
           />
         </div>
       </div>
-
+ 
       {/* What's Included Section */}
-      <div className="bg-purple-100 py-12" style={{fontFamily:"sans-serif", fontSize:"17px"}}> {/* Background and padding for the section */}
-        <div className="max-w-7xl mx-auto px-6"> {/* Container with maximum width */}
-          <h1 className="text-3xl font-bold text-gray-800 text-center mb-10">
-            What's Included: {/* Section heading */}
-          </h1>
-
-          {/* Section 1: Mini Mock Exams */}
-          <div className="flex flex-col md:flex-row items-center mb-12">
-            <div className="flex-1"> {/* Text content for Mini Mock Exams */}
-              <h2 className="text-2xl font-semibold text-gray-800 mb-3">
-                Mini Mock Exams {/* Subheading */}
-              </h2>
-              <ul className="list-disc pl-5 text-gray-600 space-y-2">
-                <li>
-                  Shorter, targeted exams to evaluate your understanding of
-                  specific topics. {/* Feature description */}
-                </li>
-                <li>Perfect for pinpointing areas that need further revision.</li>
-              </ul>
+      <div className="bg-purple-100 py-12" style={{ fontFamily: "sans-serif", fontSize: "17px" }}>
+        <div className="max-w-7xl mx-auto px-6">
+          <h1 className="text-3xl font-bold text-gray-800 text-center mb-10 animate-fade-in-up">What's Included:</h1>
+ 
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Card 1 */}
+            <div className="bg-white rounded-2xl shadow-2xl p-8 flex flex-col items-center hover:scale-105 transition-transform duration-300 animate-fade-in-up">
+              <lord-icon
+                src="https://cdn.lordicon.com/vfczflna.json"
+                trigger="hover"
+                colors="primary:#f97316,secondary:#f43f1a"
+                style={{ width: "80px", height: "80px" }}
+              ></lord-icon>
+              <h2 className="text-xl font-bold text-[#4748ac] mt-4 mb-2">ECO Domain-wise Mini Tests</h2>
+              <p className="text-gray-600 text-center">
+                Practice mini tests focused on People, Process, and Business Environment domains.
+              </p>
             </div>
-            <div className="flex-1 flex justify-center mt-4 md:mt-0"> {/* Image container */}
-              <img
-                src={minimockImg} // Displaying the Mini Mock Exams image.
-                alt="Mini Mock Exams" // Alternative text for accessibility.
-                className="max-w-[250px]" // Styling for the image.
-              />
+ 
+            {/* Card 2 */}
+            <div className="bg-white rounded-2xl shadow-2xl p-8 flex flex-col items-center hover:scale-105 transition-transform duration-300 animate-fade-in-up">
+              <lord-icon
+                src="https://cdn.lordicon.com/igpbsrza.json"
+                trigger="hover"
+                colors="primary:#f97316,secondary:#f43f1a"
+                style={{ width: "80px", height: "80px" }}
+              ></lord-icon>
+              <h2 className="text-xl font-bold text-[#4748ac] mt-4 mb-2">Full-Length Mock Simulators</h2>
+              <p className="text-gray-600 text-center">
+                5 complete full-length simulations with 180 questions each — total 900 real exam-like questions.
+              </p>
             </div>
-          </div>
-
-          {/* Section 2: Full-Length Mock Exams */}
-          <div className="flex flex-col md:flex-row-reverse items-center mb-12">
-            <div className="flex-1"> {/* Text content for Full-Length Mock Exams */}
-              <h2 className="text-2xl font-semibold text-gray-800 mb-3">
-                Full-Length Mock Exams {/* Subheading */}
-              </h2>
-              <ul className="list-disc pl-5 text-gray-600 space-y-2">
-                <li>
-                  A complete, real exam-like simulation with 1200+ questions
-                  covering all PMP® domains. {/* Feature description */}
-                </li>
-                <li>
-                  Experience the pressure of the actual exam and refine your
-                  time management skills. {/* Benefit description */}
-                </li>
-              </ul>
+ 
+            {/* Card 3 */}
+            <div className="bg-white rounded-2xl shadow-2xl p-8 flex flex-col items-center hover:scale-105 transition-transform duration-300 animate-fade-in-up">
+              <lord-icon
+                src="https://cdn.lordicon.com/nocovwne.json"
+                trigger="hover"
+                colors="primary:#f97316,secondary:#f43f1a"
+                style={{ width: "80px", height: "80px" }}
+              ></lord-icon>
+              <h2 className="text-xl font-bold text-[#4748ac] mt-4 mb-2">Detailed Video Explanations</h2>
+              <p className="text-gray-600 text-center">
+                Every answer explained clearly via recorded expert video solutions.
+              </p>
             </div>
-            <div className="flex-1 flex justify-center mt-4 md:mt-0"> {/* Image container */}
-              <img
-                src={fulllengthImg} // Displaying the Full-Length Mock Exams image.
-                alt="Full-Length Mock Exams" // Alternative text for accessibility.
-                className="max-w-[250px]" // Styling for the image.
-              />
+ 
+            {/* Card 4 */}
+            <div className="bg-white rounded-2xl shadow-2xl p-8 flex flex-col items-center hover:scale-105 transition-transform duration-300 animate-fade-in-up">
+              <lord-icon
+                src="https://cdn.lordicon.com/abfverha.json"
+                trigger="hover"
+                colors="primary:#f97316,secondary:#f43f1a"
+                style={{ width: "80px", height: "80px" }}
+              ></lord-icon>
+              <h2 className="text-xl font-bold text-[#4748ac] mt-4 mb-2">Analytics & Reports</h2>
+              <p className="text-gray-600 text-center">
+                Track your performance with detailed analytics and personalized reports after each test.
+              </p>
             </div>
-          </div>
-
-          {/* Section 3: Personalized Support */}
-          <div className="flex flex-col md:flex-row items-center">
-            <div className="flex-1"> {/* Text content for Personalized Support */}
-              <h2 className="text-2xl font-semibold text-gray-800 mb-3">
-                1:1 Personalized Support {/* Subheading */}
-              </h2>
-              <ul className="list-disc pl-5 text-gray-600 space-y-2">
-                <li>
-                  After each mock exam, you’ll receive one-on-one support from
-                  our expert trainers. {/* Feature description */}
-                </li>
-                <li>
-                  Get tailored feedback and strategies to improve your
-                  performance and tackle areas of difficulty. {/* Benefit description */}
-                </li>
-              </ul>
-            </div>
-            <div className="flex-1 flex justify-center mt-4 md:mt-0"> {/* Image container */}
-              <img
-                src={PersonalizedImg} // Displaying the Personalized Support image.
-                alt="Personalized Support" // Alternative text for accessibility.
-                className="max-w-[250px]" // Styling for the image.
-              />
+ 
+            {/* Card 5 */}
+            <div className="bg-white rounded-2xl shadow-2xl p-8 flex flex-col items-center hover:scale-105 transition-transform duration-300 animate-fade-in-up">
+              <lord-icon
+                src="https://cdn.lordicon.com/ajkxzzfb.json"
+                trigger="hover"
+                colors="primary:#f97316,secondary:#f43f1a"
+                style={{ width: "80px", height: "80px" }}
+              ></lord-icon>
+              <h2 className="text-xl font-bold text-[#4748ac] mt-4 mb-2">Group Revision Seminars</h2>
+              <p className="text-gray-600 text-center">
+                Free access to group-based doubt clearing and live revision webinars.
+              </p>
             </div>
           </div>
-
-          {/* Buy Now Button */}
-          <div className="text-center mt-10"> {/* Container for the Buy Now button */}
-            <button className="bg-[#4748ac] text-white px-6 py-3 rounded-lg text-lg hover:bg-[#4748ac]transition">
-              Buy Now {/* Call-to-action button */}
-            </button>
+ 
+          {/* CTA Button */}
+          <div className="flex justify-center gap-4 mt-12">
+            <a href="https://exams.edzest.org/learn/PMP-mock-exams" target="_blank" rel="noopener noreferrer">
+              <button className="bg-[#4748ac] hover:bg-[#3737ac] text-white font-semibold py-3 px-8 rounded-lg text-lg transition">
+                Enroll Now
+              </button>
+            </a>
           </div>
         </div>
       </div>
-
-      {/* Contact Section */}
-      <Contact /> {/* Rendering the imported Contact component */}
-
-      {/* Footer Section */}
-      <Footer /> {/* Rendering the imported Footer component */}
-
+ 
+      {/* Contact & Footer */}
+      <Contact />
+      <Footer />
     </div>
   );
 };
-
-export default PMPPracticeMockExams; // Exporting the component for use in other parts of the application.
+ 
+export default PMPPracticeMockExams;

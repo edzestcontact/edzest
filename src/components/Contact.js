@@ -10,7 +10,7 @@ const Contact = () => {
   });
 
   const [status, setStatus] = useState("");
-  const [isSent, setIsSent] = useState(false); // Track if form is sent
+  const [isSent, setIsSent] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -18,107 +18,127 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus("Form Sent!"); // Show instant feedback
-    setIsSent(true); // Disable form after submission
+    setStatus("Sending...");
+    setIsSent(true);
 
     try {
-      await axios.post("https://full-stack-project-1-vwwb.onrender.com/api/contact", formData);
-      setStatus("Thank you! We will get back to you soon.");
+ await axios.post("https://full-stack-web-2.onrender.com/api/contact", formData);
+      setStatus("✅ Thank you! We will get back to you soon.");
       setFormData({ fullName: "", email: "", phoneNumber: "", message: "" });
-      setIsSent(false); // Re-enable form for future submissions
     } catch (err) {
       console.error(err);
-      setStatus("Error submitting the form. Please try again.");
+      setStatus("❌ Error submitting the form. Please try again.");
+    } finally {
       setIsSent(false);
     }
   };
 
   return (
-    <div className="flex items-center justify-center bg-gray-100 min-h-screen p-4">
-      <div className="bg-white p-5 w-full max-w-lg rounded-lg shadow-md">
-        <h2 className="text-3xl font-bold text-center mb-6">Get In Touch</h2>
-        <h6 className="text-center" style={{marginTop:"-10px", marginBottom:"30px"}}>Contact Us +91 9673332684 </h6>
-        <form onSubmit={handleSubmit} className="space-y-4">
+    <div className="flex items-center justify-center bg-gradient-to-r from-[#f8f9fc] to-[#e4e6f8] min-h-screen p-4">
+      <div className="bg-white p-8 w-full max-w-lg rounded-2xl shadow-xl">
+        <h2 className="text-4xl font-bold text-center text-[#4748ac] mb-2">Get In Touch</h2>
+        <p className="text-center text-gray-600 text-sm mb-6">📞 +91 9673332684 | ✉️ contact@edzest.org</p>
+
+        <form onSubmit={handleSubmit} className="space-y-5">
+          {/* Full Name */}
           <div>
-            <label htmlFor="fullName" className="block text-base font-medium text-gray-700">
-              Full Name:
+            <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-1">
+              Full Name
             </label>
             <input
               type="text"
-              id="fullName"
               name="fullName"
               value={formData.fullName}
               onChange={handleChange}
-              className="w-full border border-gray-300 rounded-md p-2 mt-1 focus:outline-none focus:ring-1 focus:ring-[#4748ac] text-sm"
-              placeholder="Enter your full name"
               required
               disabled={isSent}
+              className="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#4748ac] transition"
+              placeholder="Enter your full name"
             />
           </div>
+
+
+          {/* Email */}
           <div>
-            <label htmlFor="email" className="block text-base font-medium text-gray-700">
-              E-Mail:
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+              Email Address
             </label>
             <input
               type="email"
-              id="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full border border-gray-300 rounded-md p-2 mt-1 focus:outline-none focus:ring-1 focus:ring-[#4748ac] text-sm"
-              placeholder="Enter your email address"
               required
               disabled={isSent}
+              className="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#4748ac] transition"
+              placeholder="Enter your email"
             />
           </div>
+
+
+          {/* Phone */}
           <div>
-            <label htmlFor="phoneNumber" className="block text-base font-medium text-gray-700">
-              Phone Number:
+            <label htmlFor="phoneNumber" className="block text-sm font-medium text-gray-700 mb-1">
+              Phone Number
             </label>
             <input
               type="text"
-              id="phoneNumber"
               name="phoneNumber"
               value={formData.phoneNumber}
               onChange={handleChange}
-              className="w-full border border-gray-300 rounded-md p-2 mt-1 focus:outline-none focus:ring-1 focus:ring-[#4748ac] text-sm"
-              placeholder="Enter your phone number"
               required
               disabled={isSent}
+              className="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#4748ac] transition"
+              placeholder="Enter your phone number"
             />
           </div>
+
+
+
+          {/* Message */}
           <div>
-            <label htmlFor="message" className="block text-base font-medium text-gray-700">
-              Message:
+            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+              Message
             </label>
             <textarea
-              id="message"
               name="message"
               value={formData.message}
               onChange={handleChange}
               rows="4"
-              className="w-full border border-gray-300 rounded-md p-2 mt-1 focus:outline-none focus:ring-1 focus:ring-[#4748ac] text-sm"
-              placeholder="Enter your message"
               required
               disabled={isSent}
+              className="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#4748ac] transition"
+              placeholder="Your message"
             ></textarea>
           </div>
-          <div className="flex justify-center">
+
+
+
+          {/* Submit */}
+          <div className="text-center">
             <button
               type="submit"
-              className={`w-1/3 text-white font-medium py-2 rounded-md transition duration-200 text-sm ${
-                isSent ? "bg-gray-400 cursor-not-allowed" : "bg-[#4748ac] hover:bg-[#3b3d8c]"
-              }`}
               disabled={isSent}
+              className={`w-full sm:w-1/2 bg-[#4748ac] text-white py-2 rounded-lg text-sm font-semibold transition-all duration-300 ${
+                isSent ? "opacity-50 cursor-not-allowed" : "hover:bg-[#3737ac]"
+              }`}
             >
-              {isSent ? "Sent" : "Send"}
+              {isSent ? "Sending..." : "Send Message"}
             </button>
           </div>
         </form>
-        {status && <p className="mt-3 text-center text-sm">{status}</p>}
+
+        {/* Status Message */}
+        {status && (
+          <p className={`text-sm mt-4 text-center ${status.includes("Error") ? "text-red-500" : "text-green-600"}`}>
+            {status}
+          </p>
+        )}
       </div>
     </div>
   );
 };
 
 export default Contact;
+
+

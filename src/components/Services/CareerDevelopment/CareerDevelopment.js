@@ -44,7 +44,7 @@ const CareerForm = () => {
     formDataToSend.append("interviewAssistance", formData.interviewAssistance);
 
     try {
-      const response = await fetch("https://full-stack-project-1-vwwb.onrender.com/submit-career-form", {
+      const response = await fetch("https://full-stack-web-2.onrender.com/submit-career-form", {
         method: "POST",
         body: formDataToSend,
       });
