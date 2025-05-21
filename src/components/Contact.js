@@ -22,7 +22,7 @@ const Contact = () => {
     setIsSent(true);
 
     try {
- await axios.post("https://full-stack-web-2.onrender.com/api/contact", formData);
+ await axios.post("https://edzestweb.onrender.com/api/contact", formData);
       setStatus("✅ Thank you! We will get back to you soon.");
       setFormData({ fullName: "", email: "", phoneNumber: "", message: "" });
     } catch (err) {
