@@ -13,17 +13,18 @@ const app = express();
 app.use(express.json({ limit: '10mb' }));
 app.use(bodyParser.json({ limit: '10mb' }));
 
-// CORS Configuration: Enable CORS for the frontend (localhost:3000) and backend
+// ✅ Define your allowed origins
 const allowedOrigins = [
   'http://localhost:3000',
   'https://www.edzest.org',
   'https://edzestweb.vercel.app',
+  "https://full-stack-web-2.onrender.com"
 ];
 
-// ✅ Build proper options object
+// ✅ Create corsOptions function
 const corsOptions = {
   origin: function (origin, callback) {
-    console.log("🌐 Incoming origin:", origin); // for debugging
+    console.log('🌐 Incoming origin:', origin);
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
@@ -32,14 +33,17 @@ const corsOptions = {
   },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 };
 
-// ✅ Apply before all routes
+// ✅ Apply CORS middleware globally BEFORE your routes
 app.use(cors(corsOptions));
 
-// ✅ Handle preflight explicitly
+// ✅ Allow preflight across all routes
 app.options('*', cors(corsOptions));
+
+// ✅ Also parse body
+app.use(express.json());
 // Connect to MongoDB using environment variable
 mongoose
   .connect(process.env.MONGO_URI, {
