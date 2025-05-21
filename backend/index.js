@@ -15,32 +15,34 @@ app.use(bodyParser.json({ limit: '10mb' }));
 
 // ✅ Define your allowed origins
 const allowedOrigins = [
-  'http://localhost:3000',
-  'https://www.edzest.org',
-  'https://edzestweb.vercel.app',
-  "https://full-stack-web-2.onrender.com"
+  "http://localhost:3000",
+  "https://www.edzest.org",
+  "https://edzestweb.vercel.app",
+  "https://edzestweb-git-main-akanksha9033s-projects.vercel.app",
+  "https://edzestweb-igq1xo57w-akanksha9033s-projects.vercel.app"
 ];
 
-// ✅ Create corsOptions function
+// ✅ CORS Options
 const corsOptions = {
   origin: function (origin, callback) {
-    console.log('🌐 Incoming origin:', origin);
+    console.log("🌐 Incoming origin:", origin);
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
-      callback(new Error('CORS not allowed'), false);
+      callback(new Error("CORS not allowed"), false);
     }
   },
   credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
 };
 
-// ✅ Apply CORS middleware globally BEFORE your routes
+// ✅ Use CORS BEFORE all routes or body parsers
 app.use(cors(corsOptions));
+app.options("*", cors(corsOptions)); // handle preflight
 
-// ✅ Allow preflight across all routes
-app.options('*', cors(corsOptions));
+// ✅ Then use body parser and your routes
+app.use(express.json());
 
 // ✅ Also parse body
 app.use(express.json());
