@@ -17,33 +17,29 @@ app.use(bodyParser.json({ limit: '10mb' }));
 const allowedOrigins = [
   'http://localhost:3000',
   'https://www.edzest.org',
-  'https://edzestweb.vercel.app', // Replace with actual frontend URL
+  'https://edzestweb.vercel.app',
 ];
 
-app.use(cors({
+// ✅ Build proper options object
+const corsOptions = {
   origin: function (origin, callback) {
-    // Allow requests with no origin like mobile apps or curl
-    if (!origin) return callback(null, true);
-    if (allowedOrigins.includes(origin)) {
-      return callback(null, true);
+    console.log("🌐 Incoming origin:", origin); // for debugging
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
     } else {
-      return callback(new Error('CORS policy: This origin is not allowed'), false);
+      callback(new Error('CORS not allowed'), false);
     }
   },
+  credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true,
-}));
+};
 
+// ✅ Apply before all routes
+app.use(cors(corsOptions));
 
-app.use((req, res, next) => {
-  console.log("Incoming origin:", req.headers.origin);
-  next();
-});
-
-// Allow preflight requests (handle OPTIONS requests)
-app.options('*', cors());  // This will handle the OPTIONS requests for preflight checks
-
+// ✅ Handle preflight explicitly
+app.options('*', cors(corsOptions));
 // Connect to MongoDB using environment variable
 mongoose
   .connect(process.env.MONGO_URI, {
