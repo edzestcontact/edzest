@@ -16,8 +16,8 @@ app.use(bodyParser.json({ limit: '10mb' }));
 // CORS Configuration: Enable CORS for the frontend (localhost:3000) and backend
 const allowedOrigins = [
   'http://localhost:3000',
-  'http://localhost:3001',
-  'https://your-frontend-domain.com', // Replace with actual frontend URL
+  'https://www.edzest.org',
+  'https://edzestweb.vercel.app', // Replace with actual frontend URL
 ];
 
 app.use(cors({
