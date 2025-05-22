@@ -21,7 +21,7 @@ const allowedOrigins = [
 //   "https://edzestweb-git-main-akanksha9033s-projects.vercel.app",
 //   "https://edzestweb-igq1xo57w-akanksha9033s-projects.vercel.app",
 //   'https://edzestweb-ypsr.vercel.app'
-'https://edzest-event-testing.vercel.app'
+'https://edzestweb-ke10khi41-akanksha9033s-projects.vercel.app'
 ];
 
 // ✅ CORS Options
