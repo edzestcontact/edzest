@@ -108,7 +108,8 @@ const upload = multer({ storage });
 const eventRoutes = require("./routes/eventroutes");
 app.use("/api/events", eventRoutes);
 
-const registerRoutes = require('./routes/registerRoutes');
+// ✅ NEW (matches actual file name)
+const registerRoutes = require('./routes/registerRoute');
 app.use('/api/register', registerRoutes);
 
 // Nodemailer setup for sending email notifications
