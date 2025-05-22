@@ -279,11 +279,11 @@ const Events = () => {
     <div className="p-6 max-w-6xl mx-auto">
       <div className="relative mb-10 rounded-xl overflow-hidden shadow-lg">
         {/* 🔁 Image replacing the video, no logic changed */}
-        <img
+        {/* <img
           src={mainEventBanner}
           alt="Events Banner"
           className="w-full h-[20px] sm:h-[28rem] md:h-[32rem] lg:h-[36rem] object-cover rounded-xl shadow-lg hover:scale-[1.02] transition-all duration-500 ease-in-out"
-        />
+        /> */}
 
         <div className="absolute inset-0 flex items-center justify-center">
           
