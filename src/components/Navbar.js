@@ -319,13 +319,13 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <nav className="d-none d-md-flex gap-4 text-gray-700 font-medium align-items-center">
-          {/* <Link
+          <Link
             to="/events"
             onClick={() => handleNavClick("/events")}
             className="text-gray-800 text-decoration-none hover:text-[#4748ac]"
           >
             Events
-          </Link> */}
+          </Link>
 
           <Link
             to="/training"
@@ -469,13 +469,13 @@ const Navbar = () => {
             ></button>
 
             <nav className="p-4">
-              {/* <Link
+              <Link
                 to="/events"
                 onClick={() => handleNavClick("/events")}
                 className="d-block text-gray-700 text-center py-1 text-decoration-none hover:bg-[#4748ac] hover:text-white"
               >
                 Events
-              </Link> */}
+              </Link>
 
               <Link
                 to="/training"

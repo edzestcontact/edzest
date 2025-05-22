@@ -16,11 +16,12 @@ app.use(bodyParser.json({ limit: '10mb' }));
 // ✅ Define your allowed origins
 const allowedOrigins = [
   "http://localhost:3000",
-  "https://www.edzest.org",
-  "https://edzestweb.vercel.app",
-  "https://edzestweb-git-main-akanksha9033s-projects.vercel.app",
-  "https://edzestweb-igq1xo57w-akanksha9033s-projects.vercel.app",
-  'https://edzestweb-ypsr.vercel.app'
+//   "https://www.edzest.org",
+//   "https://edzestweb.vercel.app",
+//   "https://edzestweb-git-main-akanksha9033s-projects.vercel.app",
+//   "https://edzestweb-igq1xo57w-akanksha9033s-projects.vercel.app",
+//   'https://edzestweb-ypsr.vercel.app'
+'https://edzest-event-testing.vercel.app'
 ];
 
 // ✅ CORS Options

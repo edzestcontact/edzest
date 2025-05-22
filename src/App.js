@@ -196,7 +196,7 @@ import Resume from "./components/Services/CareerDevelopment/Resume";
 import Interview from "./components/Services/CareerDevelopment/Interview";
 import TrainingServices from "./components/Services/TrainingServices/TrainingServices";
 import ProjectFoundation from "./components/Services/TrainingServices/ProjectFoundation";
-// import Events from "./components/Events/Events";
+import Events from "./components/Events/Events";
 
 // ✅ Importing Documentation Components
 import Docs from "./components/ProjectDocs/pages/Docs";
@@ -277,7 +277,7 @@ function App() {
           <Route path="/refundpolicy" element={<RefundPolicy />} />
           <Route path="/join-us" element={<JoinNowForm />} />
           <Route path="/create-event" element={<CreateEvent />} />
-          {/* <Route path="/events" element={<Events />} /> */}
+           <Route path="/events" element={<Events />} />
 
           {/* ✅ PdfDocs Page for Uploading and Downloading PDFs */}
           <Route path="/pdf-docs" element={<PdfDocs />} /> {/* New Route for PdfDocs */}
