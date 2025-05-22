@@ -108,6 +108,9 @@ const upload = multer({ storage });
 const eventRoutes = require("./routes/eventroutes");
 app.use("/api/events", eventRoutes);
 
+const registerRoutes = require('./routes/registerRoutes');
+app.use('/api/register', registerRoutes);
+
 // Nodemailer setup for sending email notifications
 const transporter = nodemailer.createTransport({
   service: "gmail",
