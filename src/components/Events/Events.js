@@ -25,7 +25,7 @@
 //     const fetchEvents = async () => {
 //       try {
 //         const res = await axios.get(
-//           "https://edzestweb-2.onrender.com/api/events"
+//           "https://edzestweb-3.onrender.com/api/events"
 //         );
 //         const upcoming = res.data.filter((event) =>
 //           dayjs(event.date).isAfter(dayjs().subtract(1, "day"))
@@ -244,7 +244,7 @@ const Events = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const res = await axios.get("https://edzestweb-2.onrender.com/api/events");
+        const res = await axios.get("https://edzestweb-3.onrender.com/api/events");
         const upcoming = res.data.filter((event) =>
           dayjs(event.date).isAfter(dayjs().subtract(1, "day"))
         );

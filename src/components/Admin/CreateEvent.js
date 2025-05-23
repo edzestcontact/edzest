@@ -27,7 +27,7 @@ const CreateEvent = () => {
   const fetchEvents = async () => {
     try {
       const res = await axios.get(
-        "https://edzestweb-2.onrender.com/api/events"
+        "https://edzestweb-3.onrender.com/api/events"
       );
       console.log("📋 All Events from DB:", res.data);
       setEventsList(res.data);
@@ -92,8 +92,8 @@ const CreateEvent = () => {
     try {
       const token = localStorage.getItem("token");
       const url = isEditing
-        ? `https://edzestweb-2.onrender.com/api/events/${editingEventId}`
-        : "https://edzestweb-2.onrender.com/api/events";
+        ? `https://edzestweb-3.onrender.com/api/events/${editingEventId}`
+        : "https://edzestweb-3.onrender.com/api/events";
       const method = isEditing ? "put" : "post";
 
       const res = await axios[method](url, event, {
@@ -138,7 +138,7 @@ const CreateEvent = () => {
       try {
         const token = localStorage.getItem("token");
         await axios.delete(
-          `https://edzestweb-2.onrender.com/api/events/${id}`,
+          `https://edzestweb-3.onrender.com/api/events/${id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -284,7 +284,7 @@ const CreateEvent = () => {
 
       <div className="mt-6 flex justify-center gap-4">
         <a
-          href="https://edzestweb-2.onrender.com/api/register/download"
+          href="https://edzestweb-3.onrender.com/api/register/download"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-green-600 text-white text-sm px-2 py-3 rounded hover:bg-green-700 w-1/4 text-center no-underline"
@@ -294,7 +294,7 @@ const CreateEvent = () => {
         </a>
 
         <a
-          href="https://edzestweb-2.onrender.com/api/register/users/download"
+          href="https://edzestweb-3.onrender.com/api/register/users/download"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-[#4748ac] text-white text-sm p2-3 py-3 rounded bg-[#4748ac] w-1/4 text-center no-underline"

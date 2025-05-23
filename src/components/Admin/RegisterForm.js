@@ -36,7 +36,7 @@ const RegisterForm = ({ event, onClose }) => {
       if (imageFile) data.append("image", imageFile);
 
       await axios.post(
-        "https://edzestweb-2.onrender.com/api/register",
+        "https://edzestweb-3.onrender.com/api/register",
         data,
         {
           headers: {
