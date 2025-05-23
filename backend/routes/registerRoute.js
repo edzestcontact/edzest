@@ -1,6 +1,9 @@
 
 const express = require('express');
 const router = express.Router();
+const multer = require('multer');
+const upload = multer(); // ✅ Added to handle multipart/form-data
+
 const xlsx = require('xlsx');
 const fs = require('fs');
 const path = require('path');
@@ -34,7 +37,8 @@ const transporter = nodemailer.createTransport({
 });
 
 // POST: Register for an event
-router.post('/', async (req, res) => {
+router.post('/', upload.none(), async (req, res) => {
+
   try {
     const {
       name = '',
