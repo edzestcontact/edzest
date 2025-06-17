@@ -52,15 +52,8 @@ const Navbar = () => {
           </Link>
         </div>
 
+        {/* Desktop Navigation */}
         <nav className="d-none d-md-flex gap-4 text-gray-700 font-medium align-items-center">
-          {/* <Link
-            to="/events"
-            onClick={() => handleNavClick("/events")}
-            className="text-gray-800 text-decoration-none hover:text-[#4748ac]"
-          >
-            Events
-          </Link> */}
-
           <Link
             to="/training"
             onClick={() => handleNavClick("/training")}
@@ -179,6 +172,7 @@ const Navbar = () => {
           </a>
         </nav>
 
+        {/* Mobile Menu Toggle Button */}
         <div className="d-md-none">
           <button onClick={toggleMenu} className="btn text-gray-700">
             <svg
@@ -198,6 +192,7 @@ const Navbar = () => {
           </button>
         </div>
 
+        {/* Mobile Menu */}
         {isMenuOpen && (
           <div
             className="position-fixed top-0 pt-4 end-0 h-100 bg-light shadow-lg d-md-none"
@@ -210,14 +205,6 @@ const Navbar = () => {
             ></button>
 
             <nav className="p-4">
-              {/* <Link
-                to="/events"
-                onClick={() => handleNavClick("/events")}
-                className="d-block text-gray-700 text-center py-1 text-decoration-none hover:bg-[#4748ac] hover:text-white"
-              >
-                Events
-              </Link> */}
-
               <Link
                 to="/training"
                 onClick={() => handleNavClick("/training")}
@@ -228,7 +215,7 @@ const Navbar = () => {
 
               <Link
                 to="/mock-exam"
-                onClick={() => handleNavClick("/mock-exams")}
+                onClick={() => handleNavClick("/mock-exam")}
                 className="d-block text-gray-700 text-center py-1 text-decoration-none hover:bg-[#4748ac] hover:text-white"
               >
                 Mock Exams
