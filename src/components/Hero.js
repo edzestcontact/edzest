@@ -37,14 +37,23 @@ const Hero = () => {
 
           <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3 sm:gap-6 mt-5 sm:mt-10">
             <Link
-              to="/training"
-              className="bg-[#4748ac] hover:bg-[#37378c] text-white font-semibold 
-              py-3 px-6 sm:py-3 sm:px-6 lg:py-4 lg:px-8 
-              w-[150px] lg:w-[180px] 
-              rounded-lg transition duration-300 text-center text-lg"
-            >
-              Explore
-            </Link>
+  to="/training"
+  onClick={() => {
+    if (window.gtag) {
+      window.gtag('event', 'explore_click', {
+        event_category: 'hero_section',
+        event_label: 'Explore Button',
+      });
+    }
+  }}
+  className="bg-[#4748ac] hover:bg-[#37378c] text-white font-semibold 
+  py-3 px-6 sm:py-3 sm:px-6 lg:py-4 lg:px-8 
+  w-[150px] lg:w-[180px] 
+  rounded-lg transition duration-300 text-center text-lg"
+>
+  Explore
+</Link>
+
           </div>
         </motion.div>
 

@@ -4,25 +4,16 @@ const mongoose = require("mongoose");
 const nodemailer = require("nodemailer");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const multer = require("multer"); // Import Multer
+const multer = require("multer");
 const path = require("path");
 
 const app = express();
 
-// Middleware
-app.use(express.json({ limit: '10mb' }));
-app.use(bodyParser.json({ limit: '10mb' }));
-
-// ✅ Define your allowed origins
+// ✅ Define allowed origins
 const allowedOrigins = [
   "http://localhost:3000",
-//   "https://www.edzest.org",
-//   "https://edzestweb.vercel.app",
-//   "https://edzestweb-git-main-akanksha9033s-projects.vercel.app",
-//   "https://edzestweb-igq1xo57w-akanksha9033s-projects.vercel.app",
-//   'https://edzestweb-ypsr.vercel.app'
-'https://vercel.com/akanksha9033s-projects/edzestweb-ypsr',
-'https://www.edzest.org'
+  "https://vercel.com/akanksha9033s-projects/edzestweb-ypsr",
+  "https://www.edzest.org"
 ];
 
 // ✅ CORS Options
@@ -40,16 +31,15 @@ const corsOptions = {
   allowedHeaders: ["Content-Type", "Authorization"]
 };
 
-// ✅ Use CORS BEFORE all routes or body parsers
+// ✅ Apply CORS middleware BEFORE everything else
 app.use(cors(corsOptions));
-app.options("*", cors(corsOptions)); // handle preflight
+app.options("*", cors(corsOptions)); // Preflight handling
 
-// ✅ Then use body parser and your routes
-app.use(express.json());
+// ✅ Apply body parser
+app.use(express.json({ limit: '10mb' }));
+app.use(bodyParser.json({ limit: '10mb' }));
 
-// ✅ Also parse body
-app.use(express.json());
-// Connect to MongoDB using environment variable
+// ✅ Connect to MongoDB
 mongoose
   .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
@@ -57,6 +47,10 @@ mongoose
   })
   .then(() => console.log("✅ MongoDB Connected"))
   .catch((err) => console.error("❌ MongoDB Connection Error:", err));
+
+// ✅ Import and use analytics route
+const analyticsRoutes = require('./routes/analytics');
+app.use('/api', analyticsRoutes);
 
 // ------------------ SCHEMAS ------------------
 
@@ -89,30 +83,25 @@ const Contact = mongoose.model("Contact", ContactSchema);
 
 // ------------------ FILE UPLOAD CONFIGURATION ------------------
 
-// Multer storage configuration for file uploads
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "./uploads/");  // Store uploaded files in the "uploads" folder
+    cb(null, "./uploads/");
   },
   filename: (req, file, cb) => {
-    cb(null, `${Date.now()}_${file.originalname}`); // File naming convention with timestamp
+    cb(null, `${Date.now()}_${file.originalname}`);
   },
 });
-
-// Define the upload middleware
 const upload = multer({ storage });
 
 // ------------------ ROUTES ------------------
 
-// Example Event Route (Keep this as-is)
 const eventRoutes = require("./routes/eventroutes");
 app.use("/api/events", eventRoutes);
 
-// ✅ NEW (matches actual file name)
 const registerRoutes = require('./routes/registerRoute');
 app.use('/api/register', registerRoutes);
 
-// Nodemailer setup for sending email notifications
+// ✅ Nodemailer
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
@@ -121,7 +110,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-// Handle Career Form (with file upload)
+// ✅ Career Form with file upload
 app.post("/submit-career-form", upload.single("resume"), async (req, res) => {
   try {
     const { name, email, experience, linkedin, careerAspiration, interviewAssistance } = req.body;
@@ -169,7 +158,7 @@ app.post("/submit-career-form", upload.single("resume"), async (req, res) => {
   }
 });
 
-// Handle Contact Form (without file upload)
+// ✅ Contact Form (without file upload)
 app.post("/api/contact", async (req, res) => {
   const { fullName, email, phoneNumber, message } = req.body;
 
@@ -178,13 +167,12 @@ app.post("/api/contact", async (req, res) => {
   }
 
   try {
-    // Save the contact form data to the database
     const newContact = new Contact({ fullName, email, phoneNumber, message });
     await newContact.save().catch((err) => console.error("Error saving contact:", err));
 
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_TO, // You can use any email here for notification
+      to: process.env.EMAIL_TO,
       subject: `New Contact Form Submission from ${fullName}`,
       text: `Name: ${fullName}\nEmail: ${email}\nPhone: ${phoneNumber}\nMessage: ${message}`,
     };
@@ -201,7 +189,7 @@ app.post("/api/contact", async (req, res) => {
   }
 });
 
-// Optional: Test DB connection
+// ✅ Test DB connection
 app.get("/check-db", async (req, res) => {
   try {
     const collections = await mongoose.connection.db.listCollections().toArray();
@@ -211,6 +199,6 @@ app.get("/check-db", async (req, res) => {
   }
 });
 
-// Start the server
+// ✅ Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
