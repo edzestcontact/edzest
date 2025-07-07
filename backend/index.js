@@ -219,7 +219,7 @@ const app = express();
 const allowedOrigins = [
   "http://localhost:3000",
   "https://vercel.com/akanksha9033s-projects/edzestweb-ypsr",
-  "https://www.edzest.org"
+  "www.edzest.org"
 ];
 
 // ✅ CORS Options
