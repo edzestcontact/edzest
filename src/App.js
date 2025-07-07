@@ -1,11 +1,7 @@
 /* global gtag */
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState, useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 
 import Navbar from "./components/Navbar";
@@ -28,7 +24,6 @@ import RefundPolicy from "./components/Refund Policy";
 import JoinNowForm from "./components/Joinnow";
 import WhatsAppChat from "./components/Whatsappchat";
 import FlashMain from "./FlashcardApp/FlashMain";
-import CreateEvent from "./components/Admin/CreateEvent";
 import Acp from "./components/Acp";
 import Pmp from "./components/Pmp";
 
@@ -42,18 +37,18 @@ import Resume from "./components/Services/CareerDevelopment/Resume";
 import Interview from "./components/Services/CareerDevelopment/Interview";
 import TrainingServices from "./components/Services/TrainingServices/TrainingServices";
 import ProjectFoundation from "./components/Services/TrainingServices/ProjectFoundation";
-// import Events from "./components/Events/Events";
 
 import Docs from "./components/ProjectDocs/pages/Docs";
-import Content from "./components/ProjectDocs/pages/Content";
-import DocsWrapper from "./components/ProjectDocs/pages/ContentWrapper";
 
 import InstructionPage from "./DragAndDropQuiz/Components/InstructionPage";
 import DragAndDropQuiz1 from "./DragAndDropQuiz/Set1/DragAndDropQuiz1";
 import DragAndDropQuiz2 from "./DragAndDropQuiz/Set2/DragAndDropQuiz2";
 import DragAndDropQuiz3 from "./DragAndDropQuiz/Set3/DragAndDropQuiz3";
 
-import PdfDocs from "./components/PdfDocs";
+import CreateEvent from "./components/events/CreateEvent";
+import EventRegistrationPage from "./components/pages/EventRegistrationPage";
+import EventsPage from "./components/pages/EventsPage";
+import CreateEventPage from "./components/pages/CreateEventPage";
 
 // ✅ PowerBI Tracking
 import { trackPageView, trackBeforeUnload } from "./analyticsTracker";
@@ -155,15 +150,21 @@ function App() {
           <Route path="/termsandconditions" element={<TermsAndConditions />} />
           <Route path="/refundpolicy" element={<RefundPolicy />} />
           <Route path="/join-us" element={<JoinNowForm />} />
-          <Route path="/create-event" element={<CreateEvent />} />
-          {/* <Route path="/events" element={<Events />} /> */}
-          <Route path="/pdf-docs" element={<PdfDocs />} />
+
+          {/* ✅ Only one /events route */}
+          <Route path="/events" element={<EventsPage />} />
+
+          <Route path="/create-event" element={<CreateEventPage />} />
+          <Route path="/register/:eventId" element={<EventRegistrationPage />} />
+
           <Route path="/drag-and-drop" element={<InstructionPage startQuiz={startQuiz} />} />
           <Route path="/drag-and-drop/set1" element={<DragAndDropQuiz1 />} />
           <Route path="/drag-and-drop/set2" element={<DragAndDropQuiz2 />} />
           <Route path="/drag-and-drop/set3" element={<DragAndDropQuiz3 />} />
+
           <Route path="/docs/*" element={<Docs />} />
           <Route path="/docs/:chapterId/:subChapterId" element={<Docs />} />
+
           <Route path="*" element={<Hero />} />
         </Routes>
         <WhatsAppChat />
