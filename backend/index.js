@@ -217,9 +217,9 @@ const app = express();
 
 // ✅ Define allowed origins
 const allowedOrigins = [
-  "http://localhost:3000",
+ "http://localhost:3000",
   "https://edzestweb.vercel.app",
-  "www.edzest.org"
+  "https://www.edzest.org"
 ];
 
 // ✅ CORS Options
