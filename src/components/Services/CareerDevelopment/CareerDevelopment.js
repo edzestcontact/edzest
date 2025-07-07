@@ -44,7 +44,7 @@ const CareerForm = () => {
     formDataToSend.append("interviewAssistance", formData.interviewAssistance);
 
     try {
-      const response = await fetch("https://edzestweb-4.onrender.com/submit-career-form", {
+      const response = await fetch("https://edzestweb-5.onrender.com/submit-career-form", {
         method: "POST",
         body: formDataToSend,
       });

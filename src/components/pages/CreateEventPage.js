@@ -7,7 +7,7 @@ const CreateEventPage = () => {
 
   const fetchEvents = async () => {
     try {
-      const res = await axios.get("https://edzestweb-4.onrender.com/api/events");
+      const res = await axios.get("https://edzestweb-5.onrender.com/api/events");
       setEvents(res.data);
     } catch (err) {
       console.error("Error fetching events:", err);
@@ -16,7 +16,7 @@ const CreateEventPage = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://edzestweb-4.onrender.com/api/events/${id}`);
+      await axios.delete(`https://edzestweb-5.onrender.com/api/events/${id}`);
       fetchEvents();
     } catch (err) {
       console.error("Error deleting event:", err);
@@ -24,7 +24,7 @@ const CreateEventPage = () => {
   };
 
   const handleDownload = (id) => {
-    window.open(`https://edzest-event-testing-4.onrender.com/api/register/${id}/download`, "_blank");
+    window.open(`https://edzestweb-5.onrender.com/api/register/${id}/download`, "_blank");
   };
 
   useEffect(() => {

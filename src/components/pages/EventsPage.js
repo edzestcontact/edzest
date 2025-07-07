@@ -7,7 +7,7 @@ const EventsPage = () => {
 
   const fetchEvents = async () => {
     try {
-      const res = await axios.get("https://edzestweb-4.onrender.com/api/events");
+      const res = await axios.get("https://edzestweb-5.onrender.com/api/events");
       setEvents(res.data);
     } catch (err) {
       console.error("Failed to fetch events:", err);

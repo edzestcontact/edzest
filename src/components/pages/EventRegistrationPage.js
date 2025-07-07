@@ -18,7 +18,7 @@ const EventRegistrationPage = () => {
   useEffect(() => {
     const fetchEvent = async () => {
       try {
-        const res = await axios.get(`https://edzestweb-4.onrender.com/api/events/${eventId}`);
+        const res = await axios.get(`https://edzestweb-5.onrender.com/api/events/${eventId}`);
         setEvent(res.data);
       } catch (err) {
         console.error("Failed to fetch event:", err);
@@ -34,7 +34,7 @@ const EventRegistrationPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post("https://edzest-event-testing-4.onrender.com/api/register", {
+    await axios.post("https://edzestweb-5.onrender.com/api/register", {
       ...formData,
       eventId: event._id,
     });
