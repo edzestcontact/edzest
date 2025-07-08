@@ -47,7 +47,7 @@ import DragAndDropQuiz3 from "./DragAndDropQuiz/Set3/DragAndDropQuiz3";
 
 import CreateEvent from "./components/events/CreateEvent";
 import EventRegistrationPage from "./components/pages/EventRegistrationPage";
-import EventsPage from "./components/pages/EventsPage";
+// import EventsPage from "./components/pages/EventsPage";
 import CreateEventPage from "./components/pages/CreateEventPage";
 
 // ✅ PowerBI Tracking
@@ -152,7 +152,7 @@ function App() {
           <Route path="/join-us" element={<JoinNowForm />} />
 
           {/* ✅ Only one /events route */}
-          <Route path="/events" element={<EventsPage />} />
+          {/* <Route path="/events" element={<EventsPage />} /> */}
 
           <Route path="/create-event" element={<CreateEventPage />} />
           <Route path="/register/:eventId" element={<EventRegistrationPage />} />
