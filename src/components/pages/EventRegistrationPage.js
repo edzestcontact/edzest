@@ -1,5 +1,3 @@
-
-
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -18,7 +16,7 @@ const EventRegistrationPage = () => {
   useEffect(() => {
     const fetchEvent = async () => {
       try {
-        const res = await axios.get(`https://edzestweb-5.onrender.com/api/events/${eventId}`);
+        const res = await axios.get(`https://edzestweb-6.onrender.com/api/events/${eventId}`);
         setEvent(res.data);
       } catch (err) {
         console.error("Failed to fetch event:", err);
@@ -34,11 +32,21 @@ const EventRegistrationPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post("https://edzestweb-5.onrender.com/api/register", {
-      ...formData,
-      eventId: event._id,
-    });
-    setSubmitted(true);
+    try {
+      const res = await axios.post("https://edzestweb-6.onrender.com/api/register", {
+        ...formData,
+        eventId: event._id,
+      });
+
+      if (res.data.success) {
+        setSubmitted(true);
+      } else {
+        alert("Registration failed: " + (res.data.message || "Unknown error"));
+      }
+    } catch (err) {
+      console.error("Registration error:", err);
+      alert("An error occurred during registration. Please try again.");
+    }
   };
 
   if (!event) return <p style={{ textAlign: "center", marginTop: "100px" }}>Loading event details...</p>;

@@ -212,6 +212,7 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const multer = require("multer");
 const path = require("path");
+const registerRoute = require('./routes/register'); 
 
 const app = express();
 

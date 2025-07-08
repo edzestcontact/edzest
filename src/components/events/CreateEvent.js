@@ -46,12 +46,12 @@ const CreateEvent = () => {
       );
 
       if (editingId) {
-        await axios.put(`https://edzestweb-5.onrender.com/api/events/${editingId}`, payload, {
+        await axios.put(`https://edzestweb-6.onrender.com/api/events/${editingId}`, payload, {
           headers: { "Content-Type": "multipart/form-data" },
         });
         alert("Event updated successfully!");
       } else {
-        await axios.post("https://edzestweb-5.onrender.com/api/events", payload, {
+        await axios.post("https://edzestweb-6.onrender.com/api/events", payload, {
           headers: { "Content-Type": "multipart/form-data" },
         });
         alert("Event created successfully!");
@@ -93,7 +93,7 @@ const CreateEvent = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://edzestweb-5.onrender.com/api/events/${id}`);
+      await axios.delete(`https://edzestweb-6.onrender.com/api/events/${id}`);
       fetchEvents();
     } catch (err) {
       console.error("Error deleting event:", err);
