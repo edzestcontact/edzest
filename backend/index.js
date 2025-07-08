@@ -219,7 +219,7 @@ const app = express();
 // ✅ Define allowed origins
 const allowedOrigins = [
  "http://localhost:3000",
-  "https://edzestweb.vercel.app",
+  "https://edzestweb-ypsr.vercel.app",
   "https://www.edzest.org"
 ];
 
