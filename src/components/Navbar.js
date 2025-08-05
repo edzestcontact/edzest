@@ -313,13 +313,13 @@ const Navbar = () => {
 
 
 
-              {/* <Link
+              <Link
                 to="/events"
                 onClick={() => handleNavClick("/events")}
                 className="d-block text-gray-700 text-center py-1 text-decoration-none hover:bg-[#4748ac] hover:text-white"
               >
                 Events
-              </Link> */}
+              </Link>
                 <Link
             to="/corporate-training"
             onClick={() => handleNavClick("/corporate-training")}

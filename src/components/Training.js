@@ -6,7 +6,7 @@ import flashcardsImg from "../Assets/flashcard.png";
 import personalizedsupportimg from "../Assets/personalizedsupport.png";
 import mockExamImg from "../Assets/mockexam.png";
 import applicationSupportImg from "../Assets/Applicationsupport.png";
-import FAQ from "./FAQ"; 
+import FAQ from "./FAQ";
 import Contact from "./Contact";
 import Footer from "./Footer";
 import heroImage from '../Assets/YourImage.png'; // ✅ Replace with your actual image
