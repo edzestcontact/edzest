@@ -7,9 +7,10 @@ import { Container, Row, Col } from "react-bootstrap";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Banner from "./components/Banner";
+
 import Benefit from "./components/Benefit";
 import Preparation from "./components/Preparation";
-import Whychooseus from "./components/Whychooseus";
+// import Whychooseus from "./components/Whychooseus";
 import Testimonial from "./components/Testimonial";
 import Contact from "./components/Contact";
 import Training from "./components/Training";
@@ -18,6 +19,7 @@ import About from "./components/About";
 import Footer from "./components/Footer";
 import Login from "./components/Login";
 import Contactus from "./components/Contactus";
+import CorporateTraining from "./components/CorporateTraining";
 import PrivacyPolicy from "./components/Privacy Policy";
 import TermsAndConditions from "./components/TermsAndConditions";
 import RefundPolicy from "./components/Refund Policy";
@@ -26,6 +28,7 @@ import WhatsAppChat from "./components/Whatsappchat";
 import FlashMain from "./FlashcardApp/FlashMain";
 import Acp from "./components/Acp";
 import Pmp from "./components/Pmp";
+
 
 import PMPExamPrep from "./components/Services/TrainingServices/PMPExamPrep";
 import Workshop from "./components/Services/Workshop/Workshop";
@@ -37,8 +40,10 @@ import Resume from "./components/Services/CareerDevelopment/Resume";
 import Interview from "./components/Services/CareerDevelopment/Interview";
 import TrainingServices from "./components/Services/TrainingServices/TrainingServices";
 import ProjectFoundation from "./components/Services/TrainingServices/ProjectFoundation";
-
+import PdfDocs from "./components/PdfDocs";
 import Docs from "./components/ProjectDocs/pages/Docs";
+import PDUs from "./components/pages/PDUs"
+import EdzestBlogs from './components/pages/EdzestBlogs.js';
 
 import InstructionPage from "./DragAndDropQuiz/Components/InstructionPage";
 import DragAndDropQuiz1 from "./DragAndDropQuiz/Set1/DragAndDropQuiz1";
@@ -47,11 +52,16 @@ import DragAndDropQuiz3 from "./DragAndDropQuiz/Set3/DragAndDropQuiz3";
 
 import CreateEvent from "./components/events/CreateEvent";
 import EventRegistrationPage from "./components/pages/EventRegistrationPage";
-// import EventsPage from "./components/pages/EventsPage";
+import EventsPage from "./components/pages/EventsPage";
 import CreateEventPage from "./components/pages/CreateEventPage";
+
+
+// import AdminBlogCreate from "./components/pages/AdminBlogCreate.js"
+import AdminBlogCreate from "../src/components/pages/AdminBlogCreate.js"
 
 // ✅ PowerBI Tracking
 import { trackPageView, trackBeforeUnload } from "./analyticsTracker";
+import { Blocks } from "lucide-react";
 
 function App() {
   const [quizStarted, setQuizStarted] = useState(false);
@@ -98,7 +108,6 @@ function App() {
     window.addEventListener("beforeunload", trackBeforeUnload);
     return () => window.removeEventListener("beforeunload", trackBeforeUnload);
   }, []);
-
   const startQuiz = () => {
     setQuizStarted(true);
   };
@@ -116,7 +125,7 @@ function App() {
                 <Banner />
                 <Benefit />
                 <Preparation />
-                <Whychooseus />
+                {/* <Whychooseus /> */}
                 <Testimonial />
                 <Contact />
                 <Footer />
@@ -133,8 +142,12 @@ function App() {
           <Route path="/project-management-foundation" element={<FlashMain />} />
           <Route path="/knowledge-area" element={<FlashMain />} />
           <Route path="/performance-domain" element={<FlashMain />} />
+             <Route path ="/PDUs" element={<PDUs/>}/>
+             <Route path = "/PdfDocs" element={<PdfDocs/>}/>
+            <Route path="/blogs" element={<EdzestBlogs />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contactus />} />
+        
           <Route path="/training-services" element={<TrainingServices />} />
           <Route path="/project-foundation" element={<ProjectFoundation />} />
           <Route path="/pmp-exam-prep" element={<PMPExamPrep />} />
@@ -150,9 +163,14 @@ function App() {
           <Route path="/termsandconditions" element={<TermsAndConditions />} />
           <Route path="/refundpolicy" element={<RefundPolicy />} />
           <Route path="/join-us" element={<JoinNowForm />} />
+          <Route path="/corporate-training" element={<CorporateTraining />} />
+          <Route path="/adminblogs" element={<AdminBlogCreate/>}/>
+          
+{/* 
+          <Route path ="./adminblogs" element={<AdminBlogCreate/>}/> */}
 
           {/* ✅ Only one /events route */}
-          {/* <Route path="/events" element={<EventsPage />} /> */}
+          <Route path="/events" element={<EventsPage />} />
 
           <Route path="/create-event" element={<CreateEventPage />} />
           <Route path="/register/:eventId" element={<EventRegistrationPage />} />

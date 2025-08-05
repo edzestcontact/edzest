@@ -50,3 +50,5 @@ const RegisterForm = ({ event, onClose }) => {
 };
 
 export default RegisterForm;
+
+
