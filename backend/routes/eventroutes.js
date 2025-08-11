@@ -43,43 +43,37 @@
 
 // module.exports = router;
 
-// routes/eventRoutes.js
 
 // routes/eventRoutes.js
-const express = require("express");
-const router = express.Router();
+const router = require("express").Router();
 const multer = require("multer");
-const eventController = require("../controllers/eventController");
-const Event = require("../models/Event");
+const {
+  createEvent,
+  getAllEvents,
+  getEventById,
+  updateEvent,
+  deleteEvent,
+} = require("../controllers/eventController");
 
-// ✅ Memory storage for Cloudinary uploads (no disk usage)
-const upload = multer({ storage: multer.memoryStorage() });
-
-// Create
-router.post("/", upload.single("wallpaper"), eventController.createEvent);
-
-// List all
-router.get("/", eventController.getAllEvents);
-
-// Get one
-router.get("/:id", eventController.getEventById);
-
-// Optional: get wallpaper URL (your existing route)
-router.get("/:id/wallpaper", async (req, res) => {
-  try {
-    const ev = await Event.findById(req.params.id).select("wallpaper");
-    if (!ev || !ev.wallpaper) return res.status(404).end();
-    res.json({ wallpaperUrl: ev.wallpaper });
-  } catch (err) {
-    console.error("❌ Error serving wallpaper:", err);
-    res.status(500).end();
-  }
+// In-memory storage so req.file.buffer exists for Cloudinary
+const upload = multer({
+  storage: multer.memoryStorage(),
+  limits: { fileSize: 10 * 1024 * 1024 }, // 10MB
 });
 
-// Update
-router.put("/:id", upload.single("wallpaper"), eventController.updateEvent);
+// Create
+router.post("/", upload.single("wallpaper"), createEvent);
+
+// Read
+router.get("/", getAllEvents);
+router.get("/:id", getEventById);
+
+// Update (image optional)
+router.put("/:id", upload.single("wallpaper"), updateEvent);
 
 // Delete
-router.delete("/:id", eventController.deleteEvent);
+router.delete("/:id", deleteEvent);
+
+
 
 module.exports = router;

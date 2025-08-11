@@ -26,7 +26,7 @@ const EventCard = ({ event }) => {
       onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.03)")}
       onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1.0)")}
     >
-      {/* Event Poster */}
+      {/* Event wallpaper*/}
       <img
         src={
           event.wallpaper?.startsWith("http")

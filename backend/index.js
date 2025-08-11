@@ -39,6 +39,8 @@ app.use(cors(corsOptions));
 app.options("*", cors(corsOptions));
 app.use(express.json({ limit: '10mb' }));
 app.use(bodyParser.json({ limit: '10mb' }));
+app.use('/api/upload', require('./routes/upload'));
+
 
 // ✅ Static file serving
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
@@ -189,6 +191,18 @@ app.use((err, req, res, next) => {
   console.error("🛑 Unhandled Error:", err);
   res.status(500).json({ message: "Internal server error" });
 });
+
+app.use((req, res, next) => {
+  req.reqId = Math.random().toString(36).slice(2, 8) + "-" + Date.now().toString(36);
+  console.log(`➡️ [${req.reqId}] ${req.method} ${req.originalUrl} ct=${req.headers["content-type"] || "-"}`);
+  next();
+});
+
+app.use((err, req, res, next) => {
+  console.error(`💥 [${req.reqId}] Unhandled error:`, { name: err?.name, message: err?.message, stack: err?.stack });
+  res.status(500).json({ message: err?.message || "Server error" });
+});
+
 
 // ✅ Start server
 const PORT = process.env.PORT || 5000;
