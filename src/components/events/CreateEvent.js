@@ -249,7 +249,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const API = process.env.REACT_APP_API || "https://edzestweb-6.onrender.com";
+const API = process.env.REACT_APP_API || "https://edzestweb-7.onrender.com";
 
 const CreateEvent = () => {
   const [formData, setFormData] = useState({
