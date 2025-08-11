@@ -1,3 +1,6 @@
+
+
+
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
@@ -47,7 +50,17 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(() => console.log("✅ MongoDB Connected"))
+  .then(() => {
+    console.log("✅ MongoDB Connected");
+
+    // ✅ Start the reminder cron AFTER DB is connected (no other logic changed)
+    try {
+      require("./utils/reminderScheduler");
+      console.log("⏰ Reminder scheduler started");
+    } catch (err) {
+      console.error("❌ Failed to start reminder scheduler:", err);
+    }
+  })
   .catch((err) => console.error("❌ MongoDB Connection Error:", err));
 
 // ✅ Analytics Route

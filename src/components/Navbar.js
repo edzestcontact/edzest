@@ -98,13 +98,13 @@ const Navbar = () => {
 
 
 
-          {/* <Link
+          <Link
             to="/events"
             onClick={() => handleNavClick("/events")}
             className="text-gray-800 text-decoration-none hover:text-[#4748ac]"
           >
             Events
-          </Link> */}
+          </Link>
 
 
 

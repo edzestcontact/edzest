@@ -1,85 +1,215 @@
 
 
+// const Event = require("../models/Event");
+// const cloudinary = require("cloudinary").v2;
 
-          const Event = require("../models/Event");
+// // ✅ Configure Cloudinary
+// cloudinary.config({
+//   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+//   api_key: process.env.CLOUDINARY_API_KEY,
+//   api_secret: process.env.CLOUDINARY_API_SECRET,
+// });
 
-          // ✅ POST - Create Event
-          exports.createEvent = async (req, res) => {
-            try {
-              const {
-                title,
-                description,
-                date,
-                time,
-                type,
-                speaker,
-                link,
-                linkedin,
-              } = req.body;
+// // Create Event
+// exports.createEvent = async (req, res) => {
+//   try {
+//     let wallpaperUrl = "";
 
-              const wallpaperUrl = req.file
-                ? `${req.protocol}://${req.get("host")}/uploads/${req.file.filename}`
-                : null;
+//     if (req.file) {
+//       const uploadResult = await cloudinary.uploader.upload_stream(
+//         { folder: "events" },
+//         (error, result) => {
+//           if (error) throw error;
+//           wallpaperUrl = result.secure_url;
+//         }
+//       );
+//       await new Promise((resolve, reject) => {
+//         const stream = cloudinary.uploader.upload_stream(
+//           { folder: "events" },
+//           (error, result) => {
+//             if (error) reject(error);
+//             else {
+//               wallpaperUrl = result.secure_url;
+//               resolve();
+//             }
+//           }
+//         );
+//         stream.end(req.file.buffer);
+//       });
+//     }
 
-                console.log("🖼️ req.file = ", req.file);
-          console.log("✅ Wallpaper URL:", wallpaperUrl);
+//     const event = new Event({
+//       ...req.body,
+//       wallpaper: wallpaperUrl || "",
+//     });
 
-              const newEvent = new Event({
-                title,
-                description,
-                date,
-                time,
-                type,
-                speaker,
-                link,
-                linkedin,
-                wallpaper: wallpaperUrl, // ✅ only fix added
-              });
+//     await event.save();
+//     res.status(201).json(event);
+//   } catch (err) {
+//     console.error("❌ Error creating event:", err);
+//     res.status(500).json({ error: err.message });
+//   }
+// };
 
-              await newEvent.save();
-              console.log("✅ Event created with image:", wallpaperUrl);
-              res.status(201).json({ message: "Event created successfully" });
-            } catch (error) {
-              console.error("❌ Error creating event:", error);
-              res.status(500).json({ message: "Server Error" });
-            }
-          };
+// // Get all Events
+// exports.getAllEvents = async (req, res) => {
+//   try {
+//     const events = await Event.find();
+//     res.json(events);
+//   } catch (err) {
+//     res.status(500).json({ error: err.message });
+//   }
+// };
 
-          // ✅ GET - Fetch All Events
-          exports.getAllEvents = async (req, res) => {
-            try {
-              const events = await Event.find().sort({ createdAt: -1 });
-              res.json(events);
-            } catch (error) {
-              res.status(500).json({ message: "Failed to fetch events" });
-            }
-          };
+// // Get Event by ID
+// exports.getEventById = async (req, res) => {
+//   try {
+//     const event = await Event.findById(req.params.id);
+//     if (!event) return res.status(404).json({ error: "Event not found" });
+//     res.json(event);
+//   } catch (err) {
+//     res.status(500).json({ error: err.message });
+//   }
+// };
 
-          // ✅ PUT - Update Event
-          exports.updateEvent = async (req, res) => {
-            try {
-              const updateFields = { ...req.body };
+// // Update Event
+// exports.updateEvent = async (req, res) => {
+//   try {
+//     let updateData = { ...req.body };
 
-              // ✅ If a new wallpaper file is uploaded, handle it
-              if (req.file) {
-                const wallpaperUrl = `${req.protocol}://${req.get("host")}/uploads/${req.file.filename}`;
-                updateFields.wallpaper = wallpaperUrl;
-              }
+//     if (req.file) {
+//       let wallpaperUrl = "";
+//       await new Promise((resolve, reject) => {
+//         const stream = cloudinary.uploader.upload_stream(
+//           { folder: "events" },
+//           (error, result) => {
+//             if (error) reject(error);
+//             else {
+//               wallpaperUrl = result.secure_url;
+//               resolve();
+//             }
+//           }
+//         );
+//         stream.end(req.file.buffer);
+//       });
+//       updateData.wallpaper = wallpaperUrl;
+//     }
 
-              const updated = await Event.findByIdAndUpdate(req.params.id, updateFields, { new: true });
-              res.json(updated);
-            } catch (error) {
-              console.error("❌ Error updating event:", error);
-              res.status(500).json({ message: "Update failed" });
-            }
-          };
+//     const updatedEvent = await Event.findByIdAndUpdate(
+//       req.params.id,
+//       updateData,
+//       { new: true }
+//     );
 
-          // ✅ DELETE - Delete Event
-          exports.deleteEvent = async (req, res) => {
-            try {
-              await Event.findByIdAndDelete(req.params.id);
-              res.json({ message: "Deleted successfully" });
-            } catch (error) {
-              res.status(500).json({ message: "Deletion failed" });
-            }
-          };
+//     if (!updatedEvent) return res.status(404).json({ error: "Event not found" });
+//     res.json(updatedEvent);
+//   } catch (err) {
+//     res.status(500).json({ error: err.message });
+//   }
+// };
+
+// // Delete Event
+// exports.deleteEvent = async (req, res) => {
+//   try {
+//     const deletedEvent = await Event.findByIdAndDelete(req.params.id);
+//     if (!deletedEvent) return res.status(404).json({ error: "Event not found" });
+//     res.json({ message: "Event deleted successfully" });
+//   } catch (err) {
+//     res.status(500).json({ error: err.message });
+//   }
+// };
+
+// controllers/eventController.js
+const Event = require("../models/Event");
+const cloudinary = require("../config/cloudinary"); // ✅ use centralized config
+
+// helper: upload a memory buffer to Cloudinary and return result
+const uploadBufferToCloudinary = (buffer, folder = "events") =>
+  new Promise((resolve, reject) => {
+    const stream = cloudinary.uploader.upload_stream(
+      { folder, resource_type: "image" },
+      (error, result) => {
+        if (error) return reject(error);
+        resolve(result);
+      }
+    );
+    stream.end(buffer);
+  });
+
+// Create Event
+exports.createEvent = async (req, res) => {
+  try {
+    let wallpaperUrl = "";
+
+    if (req.file && req.file.buffer) {
+      const result = await uploadBufferToCloudinary(req.file.buffer, "events");
+      wallpaperUrl = result.secure_url; // ✅ permanent Cloudinary URL
+    }
+
+    const event = new Event({
+      ...req.body,
+      wallpaper: wallpaperUrl || "", // ✅ matches your schema field
+    });
+
+    await event.save();
+    res.status(201).json(event);
+  } catch (err) {
+    console.error("❌ Error creating event:", err);
+    res.status(500).json({ error: err.message });
+  }
+};
+
+// Get all Events
+exports.getAllEvents = async (req, res) => {
+  try {
+    const events = await Event.find();
+    res.json(events);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
+// Get Event by ID
+exports.getEventById = async (req, res) => {
+  try {
+    const event = await Event.findById(req.params.id);
+    if (!event) return res.status(404).json({ error: "Event not found" });
+    res.json(event);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
+// Update Event
+exports.updateEvent = async (req, res) => {
+  try {
+    const updateData = { ...req.body };
+
+    if (req.file && req.file.buffer) {
+      const result = await uploadBufferToCloudinary(req.file.buffer, "events");
+      updateData.wallpaper = result.secure_url; // ✅ replace URL if new file
+    }
+
+    const updatedEvent = await Event.findByIdAndUpdate(
+      req.params.id,
+      updateData,
+      { new: true }
+    );
+
+    if (!updatedEvent) return res.status(404).json({ error: "Event not found" });
+    res.json(updatedEvent);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
+// Delete Event
+exports.deleteEvent = async (req, res) => {
+  try {
+    const deletedEvent = await Event.findByIdAndDelete(req.params.id);
+    if (!deletedEvent) return res.status(404).json({ error: "Event not found" });
+    res.json({ message: "Event deleted successfully" });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
