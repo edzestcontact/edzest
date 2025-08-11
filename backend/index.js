@@ -13,11 +13,18 @@ const path = require("path");
 const app = express();
 
 // ✅ Allowed origins
+// const allowedOrigins = [
+//   "http://localhost:3000",
+//   // "https://edzestweb-ypsr.vercel.app",
+//   "https://edzestweb-pjbjjjsr6-akanksha9033s-projects.vercel.app",
+//   "https://www.edzest.org"
+// ];
+
 const allowedOrigins = [
   "http://localhost:3000",
-  // "https://edzestweb-ypsr.vercel.app",
-  "https://edzestweb-pjbjjjsr6-akanksha9033s-projects.vercel.app",
-  "https://www.edzest.org"
+  "https://edzest.org",
+  "https://www.edzest.org",
+  "https://edzestweb-pjbjjjsr6-akanksha9033s-projects.vercel.app"
 ];
 
 // ✅ CORS Options
