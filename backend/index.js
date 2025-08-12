@@ -13,7 +13,10 @@ const app = express();
 const allowedOrigins = [
   "http://localhost:3000",
   "https://edzestweb-ypsr.vercel.app",
-  "https://www.edzest.org"
+  "https://www.edzest.org",
+  "http://localhost:5000/api/blogs/create"
+
+  
 ];
 
 // ✅ CORS Options
@@ -41,6 +44,13 @@ app.use(bodyParser.json({ limit: '10mb' }));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/data", express.static(path.join(__dirname, "data")));
 
+
+
+
+app.set('trust proxy', true);
+app.use('/uploads', express.static(path.resolve(process.cwd(), 'uploads')));
+
+
 // ✅ MongoDB Connection
 mongoose
   .connect(process.env.MONGO_URI, {
@@ -57,6 +67,11 @@ app.use('/api', analyticsRoutes);
 // ✅ Event Routes
 const eventRoutes = require("./routes/eventroutes");
 app.use("/api/events", eventRoutes);
+
+
+const blogRoutes = require("./routes/blogRoutes");
+app.use("/api/blogs", blogRoutes);
+
 
 // ✅ Registration Routes (✅ SINGLE declaration)
 const registerRoutes = require('./routes/registrationRoutes');

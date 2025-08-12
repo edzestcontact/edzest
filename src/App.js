@@ -43,7 +43,7 @@ import ProjectFoundation from "./components/Services/TrainingServices/ProjectFou
 import PdfDocs from "./components/PdfDocs";
 import Docs from "./components/ProjectDocs/pages/Docs";
 import PDUs from "./components/pages/PDUs"
-import EdzestBlogs from './components/pages/EdzestBlogs.js';
+// import EdzestBlogs from './components/pages/EdzestBlogs.js';
 
 import InstructionPage from "./DragAndDropQuiz/Components/InstructionPage";
 import DragAndDropQuiz1 from "./DragAndDropQuiz/Set1/DragAndDropQuiz1";
@@ -144,7 +144,7 @@ function App() {
           <Route path="/performance-domain" element={<FlashMain />} />
              <Route path ="/PDUs" element={<PDUs/>}/>
              <Route path = "/PdfDocs" element={<PdfDocs/>}/>
-            <Route path="/blogs" element={<EdzestBlogs />} />
+            {/* <Route path="/blogs" element={<EdzestBlogs />} /> */}
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contactus />} />
         
@@ -164,7 +164,7 @@ function App() {
           <Route path="/refundpolicy" element={<RefundPolicy />} />
           <Route path="/join-us" element={<JoinNowForm />} />
           <Route path="/corporate-training" element={<CorporateTraining />} />
-          <Route path="/adminblogs" element={<AdminBlogCreate/>}/>
+          <Route path="/create-blogs" element={<AdminBlogCreate/>}/>
           
 {/* 
           <Route path ="./adminblogs" element={<AdminBlogCreate/>}/> */}

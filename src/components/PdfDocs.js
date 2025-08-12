@@ -44,7 +44,14 @@ const pdfs = [
     path: 'pdfs/Agile approach overview.pdf',
     uploadDate: '2025-05-20',
     wallpaper: '/pdf-img/Agile.jpeg'
-  }
+  },
+   {
+   
+    _id: '6',
+    name: 'PMP Exam Mindset Taskwise',
+    path: 'pdfs/PMP exam mindset taskwise.pdf',
+    uploadDate: '2025-08-11',
+    wallpaper: '/pdf-img/Mind.jpeg',  }
 ];
 
 const PdfDocs = () => {
