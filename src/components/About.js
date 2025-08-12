@@ -12,28 +12,28 @@ const teamMembers = [
   {
     name: "Akanksha Kumari",
     role: "Software Engineer",
-    department: "Software Development Team",
+    department: "Software Team",
     image: AkankshaImg ,
     linkedin: "https://www.linkedin.com/in/akanksha-kumari-a45826231/"
   },
   {
     name: "Imtiyaz Agasimani",
     role: "Software Engineer",
-    department: "Software Development Team",
+    department: "Software Team",
     image: ImtiyazImg,
     linkedin: "https://www.linkedin.com/in/imtiyaz-agasimani-52ab78266/"
   },
   {
     name: "Javid Ahammed",
     role: "Software Engineer",
-    department: "Software Development Team",
+    department: "Software Team",
     image: JavidImg,
     linkedin: "https://www.linkedin.com/in/javid-ahammed"
   },
   {
     name: "Pratibha Kumari",
     role: "Software Engineer",
-    department: "Software Development Team",
+    department: "Software Team",
     image: PatibhaImg,
     linkedin: "https://www.linkedin.com/in/pratibha-kumari-311515262/"
   },

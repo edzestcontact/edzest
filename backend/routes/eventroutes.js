@@ -45,35 +45,36 @@
 
 
 // routes/eventRoutes.js
-const router = require("express").Router();
-const multer = require("multer");
-const {
-  createEvent,
-  getAllEvents,
-  getEventById,
-  updateEvent,
-  deleteEvent,
-} = require("../controllers/eventController");
+const express = require('express');
+const router = express.Router();
 
-// In-memory storage so req.file.buffer exists for Cloudinary
-const upload = multer({
-  storage: multer.memoryStorage(),
-  limits: { fileSize: 10 * 1024 * 1024 }, // 10MB
+const eventController = require('../controllers/eventController');
+const Event = require('../models/Event');
+
+// ⬇️ Use Cloudinary-backed multer (NOT local disk)
+const upload = require('../utils/cloudinaryMulter'); // make sure this file exists
+
+// ✅ POST - Create Event (field name MUST be 'wallpaper')
+router.post('/', upload.single('wallpaper'), eventController.createEvent);
+
+// ✅ GET - All Events
+router.get('/', eventController.getAllEvents);
+
+// ✅ GET - Single Event
+router.get('/:id', async (req, res) => {
+  try {
+    const event = await Event.findById(req.params.id);
+    if (!event) return res.status(404).json({ message: 'Event not found' });
+    res.json(event);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
 });
 
-// Create
-router.post("/", upload.single("wallpaper"), createEvent);
+// ✅ PUT - Update Event (optionally replace wallpaper)
+router.put('/:id', upload.single('wallpaper'), eventController.updateEvent);
 
-// Read
-router.get("/", getAllEvents);
-router.get("/:id", getEventById);
-
-// Update (image optional)
-router.put("/:id", upload.single("wallpaper"), updateEvent);
-
-// Delete
-router.delete("/:id", deleteEvent);
-
-
+// ✅ DELETE - Delete Event
+router.delete('/:id', eventController.deleteEvent);
 
 module.exports = router;

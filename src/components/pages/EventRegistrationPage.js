@@ -137,7 +137,7 @@ const EventRegistrationPage = () => {
   useEffect(() => {
     const fetchEvent = async () => {
       try {
-        const res = await axios.get(`https://edzestweb-6.onrender.com/api/events/${eventId}`);
+        const res = await axios.get(`https://event-testing-1.onrender.com/api/events/${eventId}`);
         setEvent(res.data);
       } catch (err) {
         console.error("Failed to fetch event:", err);
@@ -192,7 +192,7 @@ const EventRegistrationPage = () => {
     }
 
     try {
-      const res = await axios.post("https://edzestweb-6.onrender.com/api/register", {
+      const res = await axios.post("https://event-testing-1.onrender.com/api/register", {
         ...formData,
         eventId: event._id,
       });

@@ -1,6 +1,3 @@
-
-
-
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
@@ -13,18 +10,10 @@ const path = require("path");
 const app = express();
 
 // ✅ Allowed origins
-// const allowedOrigins = [
-//   "http://localhost:3000",
-//   // "https://edzestweb-ypsr.vercel.app",
-//   "https://edzestweb-pjbjjjsr6-akanksha9033s-projects.vercel.app",
-//   "https://www.edzest.org"
-// ];
-
 const allowedOrigins = [
   "http://localhost:3000",
-  "https://edzest.org",
-  "https://www.edzest.org",
-  "https://edzestweb-pjbjjjsr6-akanksha9033s-projects.vercel.app"
+  "https://edzestweb-ypsr.vercel.app",
+  "https://www.edzest.org"
 ];
 
 // ✅ CORS Options
@@ -47,8 +36,6 @@ app.use(cors(corsOptions));
 app.options("*", cors(corsOptions));
 app.use(express.json({ limit: '10mb' }));
 app.use(bodyParser.json({ limit: '10mb' }));
-app.use('/api/upload', require('./routes/upload'));
-
 
 // ✅ Static file serving
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
@@ -60,17 +47,7 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(() => {
-    console.log("✅ MongoDB Connected");
-
-    // ✅ Start the reminder cron AFTER DB is connected (no other logic changed)
-    try {
-      require("./utils/reminderScheduler");
-      console.log("⏰ Reminder scheduler started");
-    } catch (err) {
-      console.error("❌ Failed to start reminder scheduler:", err);
-    }
-  })
+  .then(() => console.log("✅ MongoDB Connected"))
   .catch((err) => console.error("❌ MongoDB Connection Error:", err));
 
 // ✅ Analytics Route
@@ -199,18 +176,6 @@ app.use((err, req, res, next) => {
   console.error("🛑 Unhandled Error:", err);
   res.status(500).json({ message: "Internal server error" });
 });
-
-app.use((req, res, next) => {
-  req.reqId = Math.random().toString(36).slice(2, 8) + "-" + Date.now().toString(36);
-  console.log(`➡️ [${req.reqId}] ${req.method} ${req.originalUrl} ct=${req.headers["content-type"] || "-"}`);
-  next();
-});
-
-app.use((err, req, res, next) => {
-  console.error(`💥 [${req.reqId}] Unhandled error:`, { name: err?.name, message: err?.message, stack: err?.stack });
-  res.status(500).json({ message: err?.message || "Server error" });
-});
-
 
 // ✅ Start server
 const PORT = process.env.PORT || 5000;
