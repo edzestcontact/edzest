@@ -51,7 +51,17 @@ const pdfs = [
     name: 'PMP Exam Mindset Taskwise',
     path: 'pdfs/PMP exam mindset taskwise.pdf',
     uploadDate: '2025-08-11',
-    wallpaper: '/pdf-img/Mind.jpeg',  }
+    wallpaper: '/pdf-img/Mind.jpeg',  },
+      
+    
+    
+    {
+    _id: '7',
+    name: 'Project Documents Overview',
+     path: 'pdfs/Project.pdf',
+    uploadDate: '2025-08-21',
+    wallpaper: 'pdf-img/Project.jpeg'
+  }
 ];
 
 const PdfDocs = () => {

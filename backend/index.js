@@ -1,25 +1,439 @@
+// require("dotenv").config();
+// const express = require("express");
+// const mongoose = require("mongoose");
+// const nodemailer = require("nodemailer");
+// const cors = require("cors");
+// const bodyParser = require("body-parser");
+// const multer = require("multer");
+// const path = require("path");
+
+// const app = express();
+
+// // ✅ Allowed origins
+// const allowedOrigins = [
+//   "http://localhost:3000",
+//   "https://edzestweb-ypsr.vercel.app",
+//   "https://www.edzest.org",
+//   "http://localhost:5000/api/blogs/create"
+
+  
+// ];
+
+// // ✅ CORS Options
+// const corsOptions = {
+//   origin: function (origin, callback) {
+//     console.log("🌐 Incoming origin:", origin);
+//     if (!origin || allowedOrigins.includes(origin)) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error("CORS not allowed"), false);
+//     }
+//   },
+//   credentials: true,
+//   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+//   allowedHeaders: ["Content-Type", "Authorization"]
+// };
+
+// // ✅ Apply middlewares
+// app.use(cors(corsOptions));
+// app.options("*", cors(corsOptions));
+// app.use(express.json({ limit: '10mb' }));
+// app.use(bodyParser.json({ limit: '10mb' }));
+
+// // ✅ Static file serving
+// app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+// app.use("/data", express.static(path.join(__dirname, "data")));
+
+
+
+
+// app.set('trust proxy', true);
+// app.use('/uploads', express.static(path.resolve(process.cwd(), 'uploads')));
+
+
+// // ✅ MongoDB Connection
+// mongoose
+//   .connect(process.env.MONGO_URI, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//   })
+//   .then(() => console.log("✅ MongoDB Connected"))
+//   .catch((err) => console.error("❌ MongoDB Connection Error:", err));
+
+// // ✅ Analytics Route
+// const analyticsRoutes = require('./routes/analytics');
+// app.use('/api', analyticsRoutes);
+
+// // ✅ Event Routes
+// const eventRoutes = require("./routes/eventroutes");
+// app.use("/api/events", eventRoutes);
+
+
+// const blogRoutes = require("./routes/blogRoutes");
+// app.use("/api/blogs", blogRoutes);
+
+
+// // ✅ Registration Routes (✅ SINGLE declaration)
+// const registerRoutes = require('./routes/registrationRoutes');
+// app.use('/api/register', registerRoutes);
+
+// // ✅ Schemas
+// const Career = mongoose.model("Career", new mongoose.Schema({
+//   name: String,
+//   email: String,
+//   experience: String,
+//   linkedin: String,
+//   careerAspiration: String,
+//   interviewAssistance: String,
+//   resumePath: String,
+// }, { timestamps: true }));
+
+// const Contact = mongoose.model("Contact", new mongoose.Schema({
+//   fullName: { type: String, required: true },
+//   email: { type: String, required: true },
+//   phoneNumber: { type: String, required: true },
+//   message: { type: String, required: true },
+// }, { timestamps: true }));
+
+// const Event = require("./models/Event");
+// const Registration = require("./models/Registration");
+
+// // ✅ File upload config
+// const storage = multer.diskStorage({
+//   destination: (req, file, cb) => cb(null, "./uploads/"),
+//   filename: (req, file, cb) => cb(null, `${Date.now()}_${file.originalname}`)
+// });
+// const upload = multer({ storage });
+
+// // ✅ Nodemailer setup
+// const transporter = nodemailer.createTransport({
+//   service: "gmail",
+//   auth: {
+//     user: process.env.EMAIL_USER,
+//     pass: process.env.EMAIL_PASS,
+//   },
+// });
+
+// // ✅ Career Form with Resume Upload
+// app.post("/submit-career-form", upload.single("resume"), async (req, res) => {
+//   try {
+//     const { name, email, experience, linkedin, careerAspiration, interviewAssistance } = req.body;
+//     if (!req.file) return res.status(400).json({ message: "Resume file is required." });
+
+//     const newCareer = await Career.create({
+//       name, email, experience, linkedin, careerAspiration, interviewAssistance,
+//       resumePath: req.file.path,
+//     });
+
+//     res.status(200).json({ message: "Form submitted successfully!" });
+
+//     const mailOptions = {
+//       from: process.env.EMAIL_USER,
+//       to: process.env.EMAIL_TO,
+//       subject: "New Career Development Form Submission",
+//       text: `Name: ${name}\nEmail: ${email}\nExperience: ${experience}\nLinkedIn: ${linkedin}\nCareer Aspiration: ${careerAspiration}\nInterview Assistance: ${interviewAssistance}`,
+//       attachments: [{ filename: path.basename(req.file.path), path: req.file.path }]
+//     };
+
+//     transporter.sendMail(mailOptions, (error, info) => {
+//       if (error) console.error("❌ Error Sending Email:", error);
+//       else console.log("✅ Email Sent:", info.response);
+//     });
+
+//   } catch (error) {
+//     console.error("❌ Error Submitting Career Form:", error);
+//     res.status(500).json({ message: "Server error" });
+//   }
+// });
+
+// // ✅ Contact Form
+// app.post("/api/contact", async (req, res) => {
+//   const { fullName, email, phoneNumber, message } = req.body;
+//   if (!fullName || !email || !phoneNumber || !message)
+//     return res.status(400).json({ message: "All fields are required." });
+
+//   try {
+//     const newContact = new Contact({ fullName, email, phoneNumber, message });
+//     await newContact.save();
+
+//     const mailOptions = {
+//       from: process.env.EMAIL_USER,
+//       to: process.env.EMAIL_TO,
+//       subject: `New Contact Form Submission from ${fullName}`,
+//       text: `Name: ${fullName}\nEmail: ${email}\nPhone: ${phoneNumber}\nMessage: ${message}`
+//     };
+
+//     transporter.sendMail(mailOptions, (error, info) => {
+//       if (error) console.error("❌ Error Sending Email:", error);
+//       else console.log("✅ Email Sent:", info.response);
+//     });
+
+//     res.status(200).json({ message: "Form submitted successfully!" });
+
+//   } catch (error) {
+//     console.error("❌ Error Submitting Contact Form:", error);
+//     res.status(500).json({ message: "Server error" });
+//   }
+// });
+
+// // ✅ DB Test Endpoint
+// app.get("/check-db", async (req, res) => {
+//   try {
+//     const collections = await mongoose.connection.db.listCollections().toArray();
+//     res.json({ status: "Connected", collections });
+//   } catch (err) {
+//     res.status(500).json({ status: "Error", message: err.message });
+//   }
+// });
+
+// // ✅ Global error handler (optional)
+// app.use((err, req, res, next) => {
+//   console.error("🛑 Unhandled Error:", err);
+//   res.status(500).json({ message: "Internal server error" });
+// });
+
+// // ✅ Start server
+// const PORT = process.env.PORT || 5000;
+// app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+
+
+// require("dotenv").config();
+// const express = require("express");
+// const mongoose = require("mongoose");
+// const nodemailer = require("nodemailer");
+// const cors = require("cors");
+// const bodyParser = require("body-parser");
+// // const multer = require("multer");
+// const path = require("path");
+// const cookieParser = require("cookie-parser");
+
+// const app = express();
+
+// // ✅ Allowed origins
+
+// app.use(express.json({ limit: "25mb" }));
+// app.use(express.urlencoded({ limit: "25mb", extended: true }));
+// app.use(cookieParser());
+
+// const allowedOrigins = [
+//   "http://localhost:3000",
+//   "https://edzestweb-ypsr.vercel.app",
+//   "https://www.edzest.org",
+//   "http://localhost:5000/api/blogs/create"
+
+  
+// ];
+
+// // ✅ CORS Options
+// const corsOptions = {
+//   origin: function (origin, callback) {
+//     console.log("🌐 Incoming origin:", origin);
+//     if (!origin || allowedOrigins.includes(origin)) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error("CORS not allowed"), false);
+//     }
+//   },
+//   credentials: true,
+//   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+//   allowedHeaders: ["Content-Type", "Authorization"]
+// };
+
+// // ✅ Apply middlewares
+// app.use(cors(corsOptions));
+// app.options("*", cors(corsOptions));
+// app.use(express.json({ limit: '10mb' }));
+// app.use(bodyParser.json({ limit: '10mb' }));
+
+// // ✅ Static file serving
+// app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+// app.use("/data", express.static(path.join(__dirname, "data")));
+
+
+
+
+// app.set('trust proxy', true);
+// app.use('/uploads', express.static(path.resolve(process.cwd(), 'uploads')));
+
+
+// // ✅ MongoDB Connection
+// mongoose
+//   .connect(process.env.MONGO_URI, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//   })
+//   .then(() => console.log("✅ MongoDB Connected"))
+//   .catch((err) => console.error("❌ MongoDB Connection Error:", err));
+
+// // ✅ Analytics Route
+// const analyticsRoutes = require('./routes/analytics');
+// app.use('/api', analyticsRoutes);
+
+// // ✅ Event Routes
+// const eventRoutes = require("./routes/eventroutes");
+// app.use("/api/events", eventRoutes);
+
+
+// const blogRoutes = require("./routes/blogRoutes");
+// app.use("/api/blogs", blogRoutes);
+
+
+// // ✅ Registration Routes (✅ SINGLE declaration)
+// const registerRoutes = require('./routes/registrationRoutes');
+// app.use('/api/register', registerRoutes);
+
+// // ✅ Schemas
+// const Career = mongoose.model("Career", new mongoose.Schema({
+//   name: String,
+//   email: String,
+//   experience: String,
+//   linkedin: String,
+//   careerAspiration: String,
+//   interviewAssistance: String,
+//   resumePath: String,
+// }, { timestamps: true }));
+
+// const Contact = mongoose.model("Contact", new mongoose.Schema({
+//   fullName: { type: String, required: true },
+//   email: { type: String, required: true },
+//   phoneNumber: { type: String, required: true },
+//   message: { type: String, required: true },
+// }, { timestamps: true }));
+
+// const Event = require("./models/Event");
+// const Registration = require("./models/Registration");
+
+// // ✅ File upload config
+// const storage = multer.diskStorage({
+//   destination: (req, file, cb) => cb(null, "./uploads/"),
+//   filename: (req, file, cb) => cb(null, `${Date.now()}_${file.originalname}`)
+// });
+// const upload = multer({ storage });
+
+// // ✅ Nodemailer setup
+// const transporter = nodemailer.createTransport({
+//   service: "gmail",
+//   auth: {
+//     user: process.env.EMAIL_USER,
+//     pass: process.env.EMAIL_PASS,
+//   },
+// });
+
+// // ✅ Career Form with Resume Upload
+// app.post("/submit-career-form", upload.single("resume"), async (req, res) => {
+//   try {
+//     const { name, email, experience, linkedin, careerAspiration, interviewAssistance } = req.body;
+//     if (!req.file) return res.status(400).json({ message: "Resume file is required." });
+
+//     const newCareer = await Career.create({
+//       name, email, experience, linkedin, careerAspiration, interviewAssistance,
+//       resumePath: req.file.path,
+//     });
+
+//     res.status(200).json({ message: "Form submitted successfully!" });
+
+//     const mailOptions = {
+//       from: process.env.EMAIL_USER,
+//       to: process.env.EMAIL_TO,
+//       subject: "New Career Development Form Submission",
+//       text: `Name: ${name}\nEmail: ${email}\nExperience: ${experience}\nLinkedIn: ${linkedin}\nCareer Aspiration: ${careerAspiration}\nInterview Assistance: ${interviewAssistance}`,
+//       attachments: [{ filename: path.basename(req.file.path), path: req.file.path }]
+//     };
+
+//     transporter.sendMail(mailOptions, (error, info) => {
+//       if (error) console.error("❌ Error Sending Email:", error);
+//       else console.log("✅ Email Sent:", info.response);
+//     });
+
+//   } catch (error) {
+//     console.error("❌ Error Submitting Career Form:", error);
+//     res.status(500).json({ message: "Server error" });
+//   }
+// });
+
+// // ✅ Contact Form
+// app.post("/api/contact", async (req, res) => {
+//   const { fullName, email, phoneNumber, message } = req.body;
+//   if (!fullName || !email || !phoneNumber || !message)
+//     return res.status(400).json({ message: "All fields are required." });
+
+//   try {
+//     const newContact = new Contact({ fullName, email, phoneNumber, message });
+//     await newContact.save();
+
+//     const mailOptions = {
+//       from: process.env.EMAIL_USER,
+//       to: process.env.EMAIL_TO,
+//       subject: `New Contact Form Submission from ${fullName}`,
+//       text: `Name: ${fullName}\nEmail: ${email}\nPhone: ${phoneNumber}\nMessage: ${message}`
+//     };
+
+//     transporter.sendMail(mailOptions, (error, info) => {
+//       if (error) console.error("❌ Error Sending Email:", error);
+//       else console.log("✅ Email Sent:", info.response);
+//     });
+
+//     res.status(200).json({ message: "Form submitted successfully!" });
+
+//   } catch (error) {
+//     console.error("❌ Error Submitting Contact Form:", error);
+//     res.status(500).json({ message: "Server error" });
+//   }
+// });
+
+// // ✅ DB Test Endpoint
+// app.get("/check-db", async (req, res) => {
+//   try {
+//     const collections = await mongoose.connection.db.listCollections().toArray();
+//     res.json({ status: "Connected", collections });
+//   } catch (err) {
+//     res.status(500).json({ status: "Error", message: err.message });
+//   }
+// });
+
+// // ✅ Global error handler (optional)
+// app.use((err, req, res, next) => {
+//   console.error("🛑 Unhandled Error:", err);
+//   res.status(500).json({ message: "Internal server error" });
+// });
+
+// // ✅ Start server
+// const PORT = process.env.PORT || 5000;
+// app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+
+
+
+// backend/index.js
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const nodemailer = require("nodemailer");
 const cors = require("cors");
-const bodyParser = require("body-parser");
-const multer = require("multer");
 const path = require("path");
+const cookieParser = require("cookie-parser");
+const bodyParser = require("body-parser");
+const multer = require("multer"); // ✅ needed for Career resume upload only
 
 const app = express();
 
-// ✅ Allowed origins
+/* ---------------------- Parsers (once, with large limits) ---------------------- */
+app.use(express.json({ limit: "25mb" }));
+app.use(express.urlencoded({ limit: "25mb", extended: true }));
+// in backend/index.js
+app.use("/uploads", require("express").static(require("path").resolve(process.cwd(), "uploads")));
+
+app.use(cookieParser());
+// (Optional) If you prefer bodyParser, keep one consistent limit and don't duplicate:
+app.use(bodyParser.json({ limit: "25mb" }));
+
+/* ---------------------- CORS ---------------------- */
+// NOTE: Origins must be scheme + host (+ optional port). Do NOT include paths.
 const allowedOrigins = [
   "http://localhost:3000",
   "https://edzestweb-ypsr.vercel.app",
-  "https://www.edzest.org",
-  "http://localhost:5000/api/blogs/create"
-
-  
+  "https://www.edzest.org"
 ];
 
-// ✅ CORS Options
 const corsOptions = {
   origin: function (origin, callback) {
     console.log("🌐 Incoming origin:", origin);
@@ -34,95 +448,117 @@ const corsOptions = {
   allowedHeaders: ["Content-Type", "Authorization"]
 };
 
-// ✅ Apply middlewares
 app.use(cors(corsOptions));
 app.options("*", cors(corsOptions));
-app.use(express.json({ limit: '10mb' }));
-app.use(bodyParser.json({ limit: '10mb' }));
 
-// ✅ Static file serving
-app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+/* ---------------------- Static ---------------------- */
+app.set("trust proxy", true);
+app.use("/uploads", express.static(path.resolve(process.cwd(), "uploads")));
 app.use("/data", express.static(path.join(__dirname, "data")));
 
-
-
-
-app.set('trust proxy', true);
-app.use('/uploads', express.static(path.resolve(process.cwd(), 'uploads')));
-
-
-// ✅ MongoDB Connection
+/* ---------------------- MongoDB ---------------------- */
 mongoose
   .connect(process.env.MONGO_URI, {
+    // These two options are harmless if present; newer drivers ignore them.
     useNewUrlParser: true,
-    useUnifiedTopology: true,
+    useUnifiedTopology: true
   })
   .then(() => console.log("✅ MongoDB Connected"))
   .catch((err) => console.error("❌ MongoDB Connection Error:", err));
 
-// ✅ Analytics Route
-const analyticsRoutes = require('./routes/analytics');
-app.use('/api', analyticsRoutes);
+/* ---------------------- Simple Schemas (Career, Contact) ---------------------- */
+const Career = mongoose.model(
+  "Career",
+  new mongoose.Schema(
+    {
+      name: String,
+      email: String,
+      experience: String,
+      linkedin: String,
+      careerAspiration: String,
+      interviewAssistance: String,
+      resumePath: String
+    },
+    { timestamps: true }
+  )
+);
 
-// ✅ Event Routes
-const eventRoutes = require("./routes/eventroutes");
-app.use("/api/events", eventRoutes);
+const Contact = mongoose.model(
+  "Contact",
+  new mongoose.Schema(
+    {
+      fullName: { type: String, required: true },
+      email: { type: String, required: true },
+      phoneNumber: { type: String, required: true },
+      message: { type: String, required: true }
+    },
+    { timestamps: true }
+  )
+);
 
-
-const blogRoutes = require("./routes/blogRoutes");
-app.use("/api/blogs", blogRoutes);
-
-
-// ✅ Registration Routes (✅ SINGLE declaration)
-const registerRoutes = require('./routes/registrationRoutes');
-app.use('/api/register', registerRoutes);
-
-// ✅ Schemas
-const Career = mongoose.model("Career", new mongoose.Schema({
-  name: String,
-  email: String,
-  experience: String,
-  linkedin: String,
-  careerAspiration: String,
-  interviewAssistance: String,
-  resumePath: String,
-}, { timestamps: true }));
-
-const Contact = mongoose.model("Contact", new mongoose.Schema({
-  fullName: { type: String, required: true },
-  email: { type: String, required: true },
-  phoneNumber: { type: String, required: true },
-  message: { type: String, required: true },
-}, { timestamps: true }));
-
+/* ---------------------- Models used in controllers ---------------------- */
 const Event = require("./models/Event");
 const Registration = require("./models/Registration");
 
-// ✅ File upload config
+/* ---------------------- Multer (Career resume ONLY) ---------------------- */
 const storage = multer.diskStorage({
-  destination: (req, file, cb) => cb(null, "./uploads/"),
-  filename: (req, file, cb) => cb(null, `${Date.now()}_${file.originalname}`)
+  destination: (req, file, cb) => cb(null, path.join(process.cwd(), "uploads")),
+  filename: (req, file, cb) =>
+    cb(null, `${Date.now()}_${file.originalname.replace(/\s+/g, "_")}`)
 });
 const upload = multer({ storage });
 
-// ✅ Nodemailer setup
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
+/* ---------------------- Nodemailer ---------------------- */
+console.log("📧 Mailer env check:", {
+  EMAIL_USER: process.env.EMAIL_USER,
+  EMAIL_PASS: process.env.EMAIL_PASS ? "******" : "(missing)"
 });
 
-// ✅ Career Form with Resume Upload
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: { user: process.env.EMAIL_USER, pass: process.env.EMAIL_PASS }
+});
+
+/* ---------------------- Routes (mounted) ---------------------- */
+const analyticsRoutes = require("./routes/analytics");
+app.use("/api", analyticsRoutes);
+
+// Events (JSON-only, no multer)
+const eventRoutes = require("./routes/eventroutes"); // make sure the filename matches (eventroutes.js)
+app.use("/api/events", eventRoutes);
+
+// Blogs (as you had)
+const blogRoutes = require("./routes/blogRoutes");
+app.use("/api/blogs", blogRoutes);
+
+// Registration (as you had)
+const registerRoutes = require("./routes/registrationRoutes");
+app.use("/api/register", registerRoutes);
+
+/* ---------------------- Career Form (WITH resume upload via Multer) ---------------------- */
 app.post("/submit-career-form", upload.single("resume"), async (req, res) => {
   try {
-    const { name, email, experience, linkedin, careerAspiration, interviewAssistance } = req.body;
-    if (!req.file) return res.status(400).json({ message: "Resume file is required." });
+    const {
+      name,
+      email,
+      experience,
+      linkedin,
+      careerAspiration,
+      interviewAssistance
+    } = req.body;
+
+    if (!req.file) {
+      return res.status(400).json({ message: "Resume file is required." });
+    }
 
     const newCareer = await Career.create({
-      name, email, experience, linkedin, careerAspiration, interviewAssistance,
-      resumePath: req.file.path,
+      name,
+      email,
+      experience,
+      linkedin,
+      careerAspiration,
+      interviewAssistance,
+      resumePath: req.file.path
     });
 
     res.status(200).json({ message: "Form submitted successfully!" });
@@ -131,26 +567,33 @@ app.post("/submit-career-form", upload.single("resume"), async (req, res) => {
       from: process.env.EMAIL_USER,
       to: process.env.EMAIL_TO,
       subject: "New Career Development Form Submission",
-      text: `Name: ${name}\nEmail: ${email}\nExperience: ${experience}\nLinkedIn: ${linkedin}\nCareer Aspiration: ${careerAspiration}\nInterview Assistance: ${interviewAssistance}`,
-      attachments: [{ filename: path.basename(req.file.path), path: req.file.path }]
+      text: `Name: ${name}
+Email: ${email}
+Experience: ${experience}
+LinkedIn: ${linkedin}
+Career Aspiration: ${careerAspiration}
+Interview Assistance: ${interviewAssistance}`,
+      attachments: [
+        { filename: path.basename(req.file.path), path: req.file.path }
+      ]
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) console.error("❌ Error Sending Email:", error);
       else console.log("✅ Email Sent:", info.response);
     });
-
   } catch (error) {
     console.error("❌ Error Submitting Career Form:", error);
     res.status(500).json({ message: "Server error" });
   }
 });
 
-// ✅ Contact Form
+/* ---------------------- Contact Form ---------------------- */
 app.post("/api/contact", async (req, res) => {
   const { fullName, email, phoneNumber, message } = req.body;
-  if (!fullName || !email || !phoneNumber || !message)
+  if (!fullName || !email || !phoneNumber || !message) {
     return res.status(400).json({ message: "All fields are required." });
+  }
 
   try {
     const newContact = new Contact({ fullName, email, phoneNumber, message });
@@ -160,7 +603,10 @@ app.post("/api/contact", async (req, res) => {
       from: process.env.EMAIL_USER,
       to: process.env.EMAIL_TO,
       subject: `New Contact Form Submission from ${fullName}`,
-      text: `Name: ${fullName}\nEmail: ${email}\nPhone: ${phoneNumber}\nMessage: ${message}`
+      text: `Name: ${fullName}
+Email: ${email}
+Phone: ${phoneNumber}
+Message: ${message}`
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
@@ -169,15 +615,14 @@ app.post("/api/contact", async (req, res) => {
     });
 
     res.status(200).json({ message: "Form submitted successfully!" });
-
   } catch (error) {
     console.error("❌ Error Submitting Contact Form:", error);
     res.status(500).json({ message: "Server error" });
   }
 });
 
-// ✅ DB Test Endpoint
-app.get("/check-db", async (req, res) => {
+/* ---------------------- DB Test ---------------------- */
+app.get("/check-db", async (_req, res) => {
   try {
     const collections = await mongoose.connection.db.listCollections().toArray();
     res.json({ status: "Connected", collections });
@@ -186,12 +631,12 @@ app.get("/check-db", async (req, res) => {
   }
 });
 
-// ✅ Global error handler (optional)
-app.use((err, req, res, next) => {
+/* ---------------------- Global Error Handler ---------------------- */
+app.use((err, _req, res, _next) => {
   console.error("🛑 Unhandled Error:", err);
   res.status(500).json({ message: "Internal server error" });
 });
 
-// ✅ Start server
+/* ---------------------- Start Server ---------------------- */
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
